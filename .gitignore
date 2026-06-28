@@ -1,7 +1,18 @@
-assets/
+# Working/temp folders
 .img-tmp/
+.menu-tmp/
 .agents/
 .claude/
+node_modules/
+
+# Website scrape reference (not needed)
+assets/Website Inspiration_files/
+assets/Website Inspiration.html
+assets/screencapture-*.png
+
+# System
 *.DS_Store
 Thumbs.db
-node_modules/
+
+# Claude internal
+skills-lock.json
