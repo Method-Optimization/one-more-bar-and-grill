@@ -82,13 +82,13 @@ window.OM_DATA = {
      Sun=0 ... Sat=6
      --------------------------------------------------------------------------- */
   dailySpecials: [
-    { day: "Sunday",    deal: "75¢ wings · $2 Coors Light draft" },
-    { day: "Monday",    deal: "$10 your-choice burger & fries" },
+    { day: "Sunday",    deal: "75¢ wings · $2 Coors Light draft (eat-in)" },
+    { day: "Monday",    deal: "$10 your-choice burger & fries (eat-in)" },
     { day: "Tuesday",   deal: "$8 mini cheesesteak & fries (eat-in)" },
     { day: "Wednesday", deal: "4 free wings with purchase (eat-in)" },
     { day: "Thursday",  deal: "Tails — 3 for $5 (eat-in)" },
-    { day: "Friday",    deal: "Personal pizza $6" },
-    { day: "Saturday",  deal: "Karaoke night — come hungry" }
+    { day: "Friday",    deal: "Personal pizza $6 (eat-in)" },
+    { day: "Saturday",  deal: "Karaoke night — come hungry (eat-in)" }
   ],
 
   /* ---------------------------------------------------------------------------
@@ -117,7 +117,7 @@ window.OM_DATA = {
   signatureItems: [
     { img: "tails-signature.jpg",            alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
     { img: "wings-buffalo-plate.jpg",        alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
-    { img: "gator-bites.jpg",                alt: "Golden fried Gator Bites with a creamy dipping sauce and kale garnish.", caption: "Gator Bites", note: "Order one more." },
+    { img: null,                              alt: "", caption: "Coming Soon", note: "Check back for more." },
     { img: "brownie-sundae-dessert.jpg",     alt: "A warm brownie topped with ice cream, whipped cream and chocolate drizzle.", caption: "Save Room", note: "Or don't — get it anyway." }
   ],
 

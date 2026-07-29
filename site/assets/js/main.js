@@ -44,8 +44,11 @@
     if (!wrap || !DATA.signatureItems) return;
     var rot = [-7, 3, -4, 6]; // final scattered tilt
     wrap.innerHTML = DATA.signatureItems.map(function (it, i) {
+      var media = it.img
+        ? '<img src="assets/img/' + it.img + '" alt="' + it.alt + '" loading="lazy" decoding="async" />'
+        : '<div class="pol-placeholder"></div>';
       return '<figure class="polaroid" style="--rot:' + (rot[i % rot.length]) + 'deg">' +
-        '<img src="assets/img/' + it.img + '" alt="' + it.alt + '" loading="lazy" decoding="async" />' +
+        media +
         '<figcaption><span class="pol-cap">' + it.caption + '</span>' +
         '<span class="pol-note">' + it.note + '</span></figcaption></figure>';
     }).join("");
