@@ -421,7 +421,41 @@
   /* ---------------------------------------------------------------------------
      BOOT
      --------------------------------------------------------------------------- */
+  function initIntro() {
+    var intro = $("#intro");
+    if (!intro) return;
+
+    var video = $("#introVideo", intro);
+    var skip = $("#introSkip", intro);
+    var done = false;
+
+    function endIntro() {
+      if (done) return;
+      done = true;
+      intro.classList.add("intro--hidden");
+      document.body.classList.remove("intro-active");
+      setTimeout(function () { intro.remove(); }, 650);
+    }
+
+    if (REDUCED || !video || !video.play) {
+      endIntro();
+      return;
+    }
+
+    document.body.classList.add("intro-active");
+    video.addEventListener("ended", endIntro);
+    video.addEventListener("error", endIntro);
+    skip.addEventListener("click", endIntro);
+    // Safety net in case autoplay is blocked or the video never fires "ended".
+    setTimeout(endIntro, 8000);
+
+    var playPromise = video.play();
+    if (playPromise && playPromise.catch) playPromise.catch(endIntro);
+  }
+
   function boot() {
+    initIntro();
+
     // year
     var y = $("#year"); if (y) y.textContent = new Date().getFullYear();
 
