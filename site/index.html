@@ -66,13 +66,6 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============================ INTRO ============================ -->
-  <div class="intro" id="intro">
-    <video id="introVideo" src="assets/video/fire-breathing-logo.mp4" poster="assets/img/intro-poster.jpg"
-           autoplay muted playsinline></video>
-    <button class="intro__skip" id="introSkip" type="button">Skip</button>
-  </div>
-
   <!-- ============================ NAV ============================ -->
   <div class="accent-strip" aria-hidden="true"></div>
   <header class="nav" id="nav">
@@ -130,9 +123,9 @@
         <div class="hero__grain" aria-hidden="true"></div>
 
         <div class="hero__content">
-          <img class="hero__logo" src="assets/img/logo-onemore.png"
-               alt="One More Bar &amp; Grill logo with two Jersey Devils holding beer mugs"
-               width="1400" height="385" fetchpriority="high" />
+          <img class="hero__logo" src="assets/img/wordmark-onemore.png"
+               alt="One More Bar &amp; Grill"
+               width="1400" height="783" fetchpriority="high" />
           <p class="hero__tag">Where the Jersey Devil drinks.</p>
           <p class="hero__sub">Your local bar in the heart of the Pine Barrens.</p>
 
@@ -222,9 +215,9 @@
 
     <!-- ===================== JERSEY DEVIL BANNER ===================== -->
     <section class="banner-jd" aria-label="One More Bar &amp; Grill">
-      <img src="assets/img/logo-onemore.png"
-           alt="One More Bar &amp; Grill — two Jersey Devils with beer mugs"
-           width="1400" height="385" loading="lazy" decoding="async" />
+      <video id="bannerVideo" src="assets/video/fire-breathing-logo.mp4" poster="assets/img/intro-poster.jpg"
+             muted playsinline preload="none"
+             aria-label="Jersey Devil mascot breathing fire to reveal the One More Bar &amp; Grill logo"></video>
     </section>
 
     <!-- ===================== SPECIALS & EVENTS ===================== -->

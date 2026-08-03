@@ -72,30 +72,6 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---------- Intro animation ---------- */
-.intro {
-  position: fixed; inset: 0; z-index: 9999;
-  background: var(--black);
-  display: grid; place-items: center;
-  cursor: pointer;
-  transition: opacity .6s var(--ease-out);
-}
-.intro video {
-  width: 100%; height: 100%;
-  object-fit: contain;
-}
-.intro--hidden { opacity: 0; pointer-events: none; }
-.intro__skip {
-  position: absolute; right: 1.25rem; bottom: 1.25rem;
-  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em;
-  font-size: .8rem; color: var(--cream-dim);
-  border: 1px solid rgba(243,236,221,.3); border-radius: var(--radius);
-  padding: .5rem .9rem;
-  transition: color .2s, border-color .2s;
-}
-.intro__skip:hover { color: var(--cream); border-color: var(--cream-dim); }
-body.intro-active { overflow: hidden; }
-
 /* ---------- Utilities ---------- */
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -236,7 +212,7 @@ body.intro-active { overflow: hidden; }
   padding: 0 var(--gutter); max-width: 860px;
   will-change: transform, opacity;
 }
-.hero__logo { width: min(680px, 90vw); margin: 0 auto 1.4rem; filter: drop-shadow(0 8px 30px rgba(0,0,0,.6)); }
+.hero__logo { width: min(520px, 80vw); margin: 0 auto 1.4rem; filter: drop-shadow(0 8px 30px rgba(0,0,0,.6)); }
 .hero__tag {
   font-family: var(--font-display); text-transform: uppercase; font-weight: 700;
   font-size: clamp(1.9rem, 6vw, 3.6rem); letter-spacing: .03em; line-height: .98;
@@ -363,10 +339,11 @@ body.intro-active { overflow: hidden; }
   line-height: 0;
   background: transparent;
 }
-.banner-jd img {
+.banner-jd video {
   width: 100%;
   height: auto;
   display: block;
+  background: var(--black);
 }
 
 /* =============================================================================

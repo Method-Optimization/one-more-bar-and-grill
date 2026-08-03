@@ -421,40 +421,25 @@
   /* ---------------------------------------------------------------------------
      BOOT
      --------------------------------------------------------------------------- */
-  function initIntro() {
-    var intro = $("#intro");
-    if (!intro) return;
+  function initBannerVideo() {
+    var video = $("#bannerVideo");
+    if (!video || !video.play) return;
 
-    var video = $("#introVideo", intro);
-    var skip = $("#introSkip", intro);
-    var done = false;
+    if (REDUCED || !("IntersectionObserver" in window)) return;
 
-    function endIntro() {
-      if (done) return;
-      done = true;
-      intro.classList.add("intro--hidden");
-      document.body.classList.remove("intro-active");
-      setTimeout(function () { intro.remove(); }, 650);
-    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        video.play().catch(function () {});
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.4 });
 
-    if (REDUCED || !video || !video.play) {
-      endIntro();
-      return;
-    }
-
-    document.body.classList.add("intro-active");
-    video.addEventListener("ended", endIntro);
-    video.addEventListener("error", endIntro);
-    skip.addEventListener("click", endIntro);
-    // Safety net in case autoplay is blocked or the video never fires "ended".
-    setTimeout(endIntro, 8000);
-
-    var playPromise = video.play();
-    if (playPromise && playPromise.catch) playPromise.catch(endIntro);
+    io.observe(video);
   }
 
   function boot() {
-    initIntro();
+    initBannerVideo();
 
     // year
     var y = $("#year"); if (y) y.textContent = new Date().getFullYear();
