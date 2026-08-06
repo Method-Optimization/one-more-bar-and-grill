@@ -117,7 +117,7 @@ window.OM_DATA = {
   signatureItems: [
     { img: "tails-signature.jpg",            alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
     { img: "wings-buffalo-plate.jpg",        alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
-    { img: "pizza-specials.jpg",             alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Coming Soon", note: "Check back for more." },
+    { img: "pizza-specials.jpg",             alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Stone-Cooked Pizza", note: "Hand-tossed. Fresh out of the oven." },
     { img: "dessert-wide.jpg",               alt: "A warm brownie topped with ice cream, whipped cream and chocolate drizzle.", caption: "Save Room", note: "Or don't — get it anyway." }
   ],
 
