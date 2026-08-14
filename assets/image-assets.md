@@ -50,6 +50,27 @@ Inventory of images in this `assets/` folder, with alt-text (for accessibility +
 - **Caption:** "Save room. Or don't — get it anyway."
 - **Use:** Desserts section; the black background blends into dark sections and makes a great moody scattered-polaroid or section accent.
 
+### Takeout wings.jpg → `takeout-wings.jpg`
+- **Resolution:** 1000 × 750 (landscape) — modest; fine at card size, don't use full-bleed.
+- **Shows:** a foil takeout tray packed edge to edge with glossy whole wings in sauce.
+- **Alt text:** "A foil takeout tray packed with glossy whole buffalo wings, ready to go."
+- **Caption:** "Hot and ready, no app required."
+- **Use:** not currently placed. Landscape and lower-res than the other stack-card photos; a good fit for a wide/banner slot rather than a tall card.
+
+### Takeout Tails.jpg → `takeout-tails.jpg`
+- **Resolution:** 1536 × 2048 (portrait) — high.
+- **Shows:** a foil takeout tray filled with boneless Tails glossed in sauce.
+- **Alt text:** "A foil takeout tray filled with boneless chicken Tails coated in glossy wing sauce."
+- **Caption:** "Party trays for the whole crew."
+- **Use:** **in use** on the home-page **Takeout** card in the sticky stack. The foil tray reads instantly as takeout, and the portrait crop matches the other cards in the stack.
+
+### Buff tails.jpg → `buff-tails.jpg`
+- **Resolution:** 1536 × 2048 (portrait) — high.
+- **Shows:** buffalo-sauced boneless Tails.
+- **Alt text:** "Boneless chicken Tails tossed in buffalo sauce."
+- **Caption:** "Boneless, bold, buffalo."
+- **Use:** not yet placed. An alternate for the "The Tails" polaroid, which currently uses the lower-res `tails-signature.jpg`.
+
 ---
 
 ## Brand graphics (already extracted)
