@@ -63,7 +63,7 @@ Wings-forward bar food with a big, characterful menu. Three signature formats ru
 - Buffalo Shrimp (½ lb) $14 · Buffalo Scallops (½ lb) $23
 - Double Buffalo Rolls $9.50 · Buffalo Stix (buffalo-style mozz sticks) $9
 
-**Sauces:** Devil's Breath ("ludicrous hot"), Hot, Spicy, Mild ("super sweet with a small bite"), Garlic Parm, Johnny Yaki (teriyaki w/ kick), Russell's Pick (sweeter than sweet, tangy), Bourbon, Sesame Ginger, Sweet BBQ. Sides: celery & blue cheese / ranch.
+**Sauces:** Devil's Breath ("ludicrous hot"), Hot, Spicy, Mild ("super sweet with a small bite"), Garlic Parm, Johnny Yaki (teriyaki w/ kick), Russell's Pic II (sweeter than sweet, tangy), Bourbon, Sesame Ginger, Sweet BBQ. Sides: celery & blue cheese / ranch.
 
 ### Finger Foods (most $8.50)
 Bavarian Pretzel Rods, Broccoli Bites (now w/ bacon), Fried Mushrooms, Buffalo Roll (single $5), Jalapeño Poppers, Mozzarella Sticks, Chicken Fingers, Onion Petals, Corn Nuggets, Fried Green Beans, Fried Pickles, Buffalo Chicken Dip, Cordon Bleu Balls ($9), Nachos & Cheese ($8) / Supreme ($12.50), Cup o' Chili ($6.50), Hot Dog ($3 / $4 w/ cheese).
@@ -151,7 +151,7 @@ These named, rotating items are part of the charm and should be featured promine
 **Who comes in:** loyal locals plus regulars from surrounding Pine Barrens towns (Chatsworth, Shamong, Vincentown, Medford, Mount Laurel) and the occasional out-of-towner who gets "hooked." Strong repeat-visit loyalty. Price perceived as great value (~$10–$20/person).
 
 **What customers love (themes across all platforms):**
-- **The Wings & Tails** — the #1 highlight everywhere: "perfectly cooked," generous (whole wings, not just flats/drums), bold sauces. Most-loved sauces: **Garlic Parm**, Buffalo, Spicy, Russell's Pick, Devil's Breath. (One reviewer: the Garlic Parm is so good "they should bottle it.")
+- **The Wings & Tails** — the #1 highlight everywhere: "perfectly cooked," generous (whole wings, not just flats/drums), bold sauces. Most-loved sauces: **Garlic Parm**, Buffalo, Spicy, Russell's Pic II, Devil's Breath. (One reviewer: the Garlic Parm is so good "they should bottle it.")
 - **Other standouts:** buffalo chicken cheesesteak, meatball roll, prime rib cheesesteak, buffalo chicken egg rolls, fried mushrooms, fried cheesecake, rotating homemade soups, burgers. Portions called massive and well-priced.
 - **Atmosphere** — cozy, casual, "divey" neighborhood "Piney bar": wood paneling, Jersey Devil decor, jukebox, **pool tables**, live music, trivia/music-bingo nights, and **dog-friendly outdoor seating**. Unpretentious and welcoming.
 - **Staff** — friendly, attentive, "down to earth," treat you "like a regular." Bartender **Reenie** is named repeatedly for her warm style and cocktails (note: the menu's "2 Dog Reenie Special" ties to her — a fun brand detail).

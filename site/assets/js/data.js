@@ -126,7 +126,7 @@ window.OM_DATA = {
      --------------------------------------------------------------------------- */
   sauces: [
     "Devil's Breath", "Hot", "Spicy", "Mild", "Garlic Parm",
-    "Johnny Yaki", "Russell's Pick", "Bourbon", "Sesame Ginger", "Sweet BBQ"
+    "Johnny Yaki", "Russell's Pic II", "Bourbon", "Sesame Ginger", "Sweet BBQ"
   ],
 
   /* ---------------------------------------------------------------------------
