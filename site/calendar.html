@@ -106,10 +106,13 @@
     </section>
 
     <div class="cal-wrap">
-      <img src="assets/img/aug-calendar-2026.jpg"
+      <!-- src/alt/size are set from data.js, then from Sanity if it's connected.
+           The values here are the fallback shown if scripts don't run. -->
+      <img id="calImage"
+           src="assets/img/aug-calendar-2026.jpg"
            alt="August 2026 events and specials calendar for One More Bar and Grill."
            width="990" height="765" />
-      <p class="cal-note">Updated monthly — check back or follow us on Facebook &amp; Instagram for the latest.</p>
+      <p class="cal-note" id="calNote">Updated monthly — check back or follow us on Facebook &amp; Instagram for the latest.</p>
     </div>
   </main>
 
@@ -149,6 +152,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/sanity-config.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

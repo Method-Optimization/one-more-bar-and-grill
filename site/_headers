@@ -1,0 +1,41 @@
+# Cache + security headers.
+#
+# ⚠ AS OF THIS WRITING THIS FILE IS NOT IN EFFECT. onemorebng.org is served by a
+# Cloudflare Worker whose config lives outside this repo, and it applies its own
+# blanket "max-age=0, must-revalidate" to everything. Verified against the live
+# site: even main.js comes back must-revalidate, not the immutable set below.
+#
+# The same goes for vercel.json and netlify.toml. All three are kept in sync and
+# accurate so that they're correct if the site ever moves hosts (Cloudflare
+# Pages and Netlify read this file; Vercel reads vercel.json) — but today the
+# Worker decides. Change caching there, not here.
+#
+# The rule that matters wherever it's applied: data.js and sanity-config.js must
+# NEVER be cached as immutable. They are content, not code — caching them for a
+# year means owner edits never reach anyone who has visited before.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/main.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/data.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/js/sanity-config.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

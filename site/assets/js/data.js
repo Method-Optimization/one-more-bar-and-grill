@@ -111,6 +111,19 @@ window.OM_DATA = {
   ],
 
   /* ---------------------------------------------------------------------------
+     MONTHLY CALENDAR  (the image on calendar.html)
+     Once Sanity is connected the owner replaces this image in the Studio and
+     these values are only a fallback, used if Sanity can't be reached.
+     --------------------------------------------------------------------------- */
+  calendar: {
+    img: "aug-calendar-2026.jpg",
+    alt: "August 2026 events and specials calendar for One More Bar and Grill.",
+    note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.",
+    width: 990,
+    height: 765
+  },
+
+  /* ---------------------------------------------------------------------------
      SIGNATURE ITEMS  (the scattered polaroid food cards)
      "img" must match a file in assets/img/
      --------------------------------------------------------------------------- */

@@ -79,6 +79,38 @@
     }
   }
 
+  /* The calendar image accepts either a bare filename (a file sitting in
+     assets/img/, which is how data.js stores it) or a full https URL (which is
+     what Sanity returns). */
+  function calendarSrc(img) {
+    if (!img) return null;
+    return /^https?:\/\//i.test(img) ? img : "assets/img/" + img;
+  }
+
+  function renderCalendar() {
+    var img = $("#calImage");
+    if (!img || !DATA.calendar) return;
+    var cal = DATA.calendar;
+
+    var src = calendarSrc(cal.img);
+    if (src) img.src = src;
+    if (cal.alt) img.alt = cal.alt;
+
+    // Keep width/height in step with the actual file. A calendar shot at a
+    // different aspect ratio than the last one would otherwise reserve the
+    // wrong box and shove the page around as it loads.
+    if (cal.width && cal.height) {
+      img.setAttribute("width", cal.width);
+      img.setAttribute("height", cal.height);
+    } else {
+      img.removeAttribute("width");
+      img.removeAttribute("height");
+    }
+
+    var note = $("#calNote");
+    if (note && cal.note) note.textContent = cal.note;
+  }
+
   function renderSauces() {
     var track = $("#saucesTrack");
     if (!track || !DATA.sauces) return;
@@ -438,6 +470,81 @@
     io.observe(video);
   }
 
+  /* ---------------------------------------------------------------------------
+     SANITY (optional remote content)
+     -----------------------------------------------------------------------------
+     The page always renders from data.js first, so it is never blank and never
+     waits on the network. If assets/js/sanity-config.js is present AND has a
+     real project ID, we then fetch the owner-edited copy and re-render the few
+     sections it covers. Any failure — offline, timeout, bad response, Sanity
+     down — leaves the data.js content on screen. That is the whole fallback
+     story: doing nothing is always safe.
+     --------------------------------------------------------------------------- */
+  function sanityConfigured() {
+    var cfg = window.OM_SANITY;
+    return !!(cfg && cfg.projectId &&
+              cfg.projectId.indexOf("REPLACE_WITH") !== 0 &&
+              window.fetch);
+  }
+
+  function loadRemoteContent() {
+    if (!sanityConfigured()) return Promise.resolve(null);
+    var cfg = window.OM_SANITY;
+
+    var query =
+      "{" +
+        '"specials":*[_type=="specials"][0]{dailySpecials,weeklyEvents,rotating},' +
+        '"calendar":*[_type=="calendar"][0]{' +
+          '"img":image.asset->url,' +
+          '"width":image.asset->metadata.dimensions.width,' +
+          '"height":image.asset->metadata.dimensions.height,' +
+          "alt,note}" +
+      "}";
+
+    // apicdn = Sanity's cached read endpoint. No token: the dataset is public.
+    var url = "https://" + cfg.projectId + ".apicdn.sanity.io/v" +
+      (cfg.apiVersion || "2024-03-11") + "/data/query/" +
+      (cfg.dataset || "production") + "?query=" + encodeURIComponent(query);
+
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); },
+                           cfg.timeoutMs || 4000);
+
+    return fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (json) { return (json && json.result) || null; })
+      .catch(function () { return null; })
+      .then(function (result) { clearTimeout(timer); return result; });
+  }
+
+  function filled(v) { return Array.isArray(v) && v.length > 0; }
+
+  function applyRemoteContent(result) {
+    if (!result) return;
+
+    // Specials: only replace a list if Sanity actually has rows for it, so a
+    // half-filled Studio can't blank out a section that data.js still covers.
+    var s = result.specials, redrawSpecials = false;
+    if (s) {
+      if (filled(s.dailySpecials)) { DATA.dailySpecials = s.dailySpecials; redrawSpecials = true; }
+      if (filled(s.weeklyEvents))  { DATA.weeklyEvents  = s.weeklyEvents;  redrawSpecials = true; }
+      if (filled(s.rotating))      { DATA.rotating      = s.rotating;      redrawSpecials = true; }
+    }
+    if (redrawSpecials) renderSpecials();
+
+    var c = result.calendar;
+    if (c && c.img) {
+      DATA.calendar = {
+        img: c.img,
+        alt: c.alt || (DATA.calendar && DATA.calendar.alt) || "",
+        note: c.note || (DATA.calendar && DATA.calendar.note) || "",
+        width: c.width,
+        height: c.height
+      };
+      renderCalendar();
+    }
+  }
+
   function boot() {
     initBannerVideo();
 
@@ -447,11 +554,16 @@
     renderHeroLines();
     renderPolaroids();
     renderSpecials();
+    renderCalendar();
     renderSauces();
     renderRatings();
     renderFooterHours();
     updateStatus();
     setInterval(updateStatus, 60 * 1000); // keep the badge fresh
+
+    // Overlay the owner's Sanity edits once they arrive. Deliberately not
+    // awaited: the page is already complete and interactive without it.
+    loadRemoteContent().then(applyRemoteContent);
 
     var onScrollNav = initNav();
     initTestimonials();

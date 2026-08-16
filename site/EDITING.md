@@ -1,74 +1,77 @@
 # Updating the One More website — the simple guide
 
-You don't need to know any code. Almost everything you'll ever want to change
-lives in **one file**:
+There are now **two** places things get changed, depending on what it is.
+
+## 1. The website editor (specials, events, calendar)
+
+The things that change every week or month are edited in a web page you log into
+— no files, no code, and it goes live on its own:
+
+> ## https://onemorebng.sanity.studio
+>
+> Bookmark that. You'll be asked to sign in the first time.
+
+Sign in and you'll see two items:
+
+- **Specials & Events** — the daily specials, weekly entertainment, and the
+  rotating soup / cake / roll of the week
+- **Monthly Calendar** — the calendar picture
+
+To put up a new month's calendar: open **Monthly Calendar**, click the picture,
+upload the new one, update the description line, and press **Publish**. That's
+the whole job — no filenames to get right, no sizes to set.
+
+**Nothing is live until you press Publish.** Changes show up on the website
+within a minute or so.
+
+## 2. The content file (everything else)
+
+Things that almost never change — the food photos, the sauce list, hours, and
+all the wording on the pages — still live in:
 
 ```
 site/assets/js/data.js
 ```
 
-Open it in **Notepad** (right-click → Open with → Notepad) or any text editor.
-Change the words *between the quotation marks*, keep the quotes and commas where
-they are, **save**, then refresh the website.
+Ask your developer to change these. They need a code change to go live, so
+editing this file on your own computer won't update the public website.
 
 ---
 
 ## The things you'll change most often
 
-Look for the section marked **ROTATING FEATURES ★ UPDATE THESE OFTEN ★**:
+All of these live in the **website editor** (part 1 above), not in any file:
 
-```js
-rotating: [
-  { label: "Soup of the Week",  value: "Mary Ann's homemade — ask your server" },
-  { label: "Cake of the Week",  value: "Aimee's homemade cake" },
-  { label: "Roll of the Month", value: "Cuban Roll" },
-  { label: "Dessert Roll of the Month", value: "Strawberry Cheesecake Roll" }
-]
-```
+| What | Where in the editor |
+|---|---|
+| Soup / Cake / Roll of the week | Specials & Events → *Rotating features* |
+| Monday's burger deal, Sunday wings, etc. | Specials & Events → *Daily specials* |
+| Music Bingo, Karaoke times | Specials & Events → *Weekly entertainment* |
+| This month's calendar picture | Monthly Calendar |
 
-Just change the text after `value:`. For example, to set July's roll:
+Two handy things the site does by itself:
 
-```js
-  { label: "Roll of the Month", value: "Philly Roll" },
-```
+- Whichever day it is gets a red **TODAY** tag automatically. You don't set that.
+- The calendar picture resizes itself to fit, whatever shape you upload.
 
-## Daily specials
-
-```js
-dailySpecials: [
-  { day: "Monday", deal: "$10 your-choice burger & fries" },
-  ...
-]
-```
-
-Change the text after `deal:`. The current day automatically gets a red
-**TODAY** tag on the site — you don't do anything for that.
-
-## Events, testimonials, sauces
-
-Same idea — find the section (`weeklyEvents`, `testimonials`, `sauces`) and edit
-the text between quotes.
-
----
-
-## Rules so you don't break it
-
-1. Keep every `"quotation mark"` — text always sits between two of them.
-2. Keep the commas at the end of each line.
-3. Don't delete the `{ }` braces or the `[ ]` brackets.
-4. If something looks broken after editing, undo your change (Ctrl+Z) and save again.
-
-> Tip: make a copy of `data.js` before a big edit. If anything goes wrong, you
-> can put the copy back.
+> **If you change something and the website doesn't update:** check you pressed
+> **Publish**, then refresh the page. If it still shows the old wording after a
+> few minutes, tell your developer — there's a backup copy of this content in
+> the site's files that may need updating too.
 
 ---
 
 ## Photos
 
-Food photos live in `site/assets/img/`. To swap one, drop a new image in that
-folder and point to it in `data.js` under `signatureItems` (the `img:` line).
-For best results use a photo that's wider/taller than ~1000px and saved as a
-`.jpg`.
+The **calendar picture** is the one you can change yourself — it's in the
+website editor, described above.
+
+The **food photos** (the tilted "polaroid" snapshots and the big cards) are a
+developer job. They live in `site/assets/img/` and are pointed at from `data.js`
+under `signatureItems`. They get cropped, compressed and given descriptions to
+match the design, which is why they aren't in the editor. Send your developer
+the photo and they'll place it — for best results shoot it taller than it is
+wide, at least ~1000px.
 
 ---
 

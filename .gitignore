@@ -5,6 +5,10 @@
 .claude/
 node_modules/
 
+# Sanity Studio build output / local cache (the source in studio/ IS committed)
+studio/dist/
+studio/.sanity/
+
 # Website scrape reference (not needed)
 assets/Website Inspiration_files/
 assets/Website Inspiration.html
