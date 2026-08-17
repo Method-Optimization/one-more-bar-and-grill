@@ -41,7 +41,7 @@ Inventory of images in this `assets/` folder, with alt-text (for accessibility +
 - **Shows:** a toasted chicken bruschetta sandwich topped with diced tomato bruschetta, mozzarella and balsamic drizzle, with thick steak fries.
 - **Alt text:** "Toasted chicken bruschetta sandwich topped with diced tomato, mozzarella and balsamic, served with steak fries."
 - **Caption:** "Stacked, toasted, and piled with fries."
-- **Use:** because it's already a clean white cut-out, it's ideal for **menu/specials cards** or a sticky card-stack panel where you want the food to float without a photo background.
+- **Use:** not currently placed — the web copy has been removed from `site/assets/img/`, though this source stays here. Because it's already a clean white cut-out, it's a good candidate for **menu/specials cards** or a sticky card-stack panel where you want the food to float without a photo background; re-export it if you want it back.
 
 ### Dessert 1.jpg → `brownie-sundae-dessert.jpg`
 - **Resolution:** 992 × 1333 (portrait) — good.
