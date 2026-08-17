@@ -503,6 +503,37 @@ body::after {
 }
 .footer__devil { color: var(--cream-dim); }
 
+/* -----------------------------------------------------------------------------
+   METHOD OPTIMIZATION ATTRIBUTION BADGE
+   Values come verbatim from the "dark footer / minimal" snippet in the brand
+   pack ("Powered by MO Badges/"), lifted out of inline styles to match how the
+   rest of this site is built. Per that pack: the mark follows currentColor and
+   must not be recoloured, outlined, stretched or given effects — white on a
+   dark footer is the sanctioned treatment, so only the "Powered by" label
+   responds to hover.
+   -------------------------------------------------------------------------- */
+.mo-badge {
+  display: inline-flex; align-items: center; gap: 11px;
+  color: #ffffff; font-family: inherit; text-decoration: none;
+}
+.mo-badge__label {
+  font: 10px ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .14em; text-transform: uppercase; white-space: nowrap;
+  color: #8e9bb5; transition: color .2s ease;
+}
+.mo-badge:hover .mo-badge__label { color: #b6c0d4; }
+.mo-badge__rule { width: 1px; height: 26px; background: #2b3547; flex: none; }
+.mo-badge__mark { display: block; flex: none; }
+.mo-badge__word { display: flex; flex-direction: column; gap: 2px; flex: none; }
+.mo-badge__word-1 {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em;
+  line-height: 1; white-space: nowrap;
+}
+.mo-badge__word-2 {
+  font-size: 9.5px; letter-spacing: .19em;
+  line-height: 1; white-space: nowrap; color: #9aa6bd;
+}
+
 /* =============================================================================
    MENU PAGE
    ============================================================================= */
