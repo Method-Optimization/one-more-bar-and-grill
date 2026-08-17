@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Method Optimization — attribution badge snippets</title>
+<style>
+  body { margin:0; padding:48px 40px 80px; background:#f4f4f2; color:#16243a;
+         font:16px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  main { max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:52px; }
+  h1 { font-size:28px; margin:0 0 8px; letter-spacing:-.02em; }
+  h2 { font-size:19px; margin:0 0 6px; }
+  h3 { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#6b7280; margin:26px 0 8px; }
+  p { margin:0; color:#5b6274; max-width:66ch; }
+  pre { margin:0; background:#101828; color:#dbe3f2; border-radius:8px; padding:20px 22px;
+        font:12.5px/1.7 ui-monospace,Menlo,monospace; overflow-x:auto; }
+  .demo { margin-top:12px; padding:32px; border-radius:8px; display:flex; justify-content:center; }
+  .demo.light { background:#fff; border:1px solid #e2e2dd; }
+  .demo.dark { background:#101828; }
+  header p { margin-top:10px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Attribution badge snippets</h1>
+    <p>Fully self-contained — inline SVG mark, live text, no images to host. Paste into a footer,
+       swap the href if needed, and the badge inherits your site's font. Rendered previews sit under each snippet.</p>
+  </header>
+  <section>
+    <h2>Minimal</h2>
+    <p>Quietest option. Recommended default for client footers.</p>
+    <h3>Light footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;color:#16243a;font-family:inherit">
+    &lt;span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#6b7280">Powered by&lt;/span>
+    &lt;span style="width:1px;height:26px;background:#dfe1e6;flex:none">&lt;/span>
+    &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+    &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION&lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo light"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;color:#16243a;font-family:inherit">
+    <span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#6b7280">Powered by</span>
+    <span style="width:1px;height:26px;background:#dfe1e6;flex:none"></span>
+    <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION</span>
+    </span>
+</a></div>
+    <h3>Dark footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;color:#ffffff;font-family:inherit">
+    &lt;span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#8e9bb5">Powered by&lt;/span>
+    &lt;span style="width:1px;height:26px;background:#2b3547;flex:none">&lt;/span>
+    &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+    &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION&lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo dark"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;color:#ffffff;font-family:inherit">
+    <span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#8e9bb5">Powered by</span>
+    <span style="width:1px;height:26px;background:#2b3547;flex:none"></span>
+    <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION</span>
+    </span>
+</a></div>
+  </section>
+  <section>
+    <h2>Inline pill</h2>
+    <p>Bordered, sits on one line beside a copyright notice.</p>
+    <h3>Light footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid #dfe1e6;border-radius:999px;background:#ffffff;color:#16243a;font-family:inherit">
+    &lt;span style="font-size:12px;font-weight:500;white-space:nowrap;color:#6b7280">Site powered by&lt;/span>
+    &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+    &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION&lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo light"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid #dfe1e6;border-radius:999px;background:#ffffff;color:#16243a;font-family:inherit">
+    <span style="font-size:12px;font-weight:500;white-space:nowrap;color:#6b7280">Site powered by</span>
+    <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION</span>
+    </span>
+</a></div>
+    <h3>Dark footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid #2b3547;border-radius:999px;background:#182238;color:#ffffff;font-family:inherit">
+    &lt;span style="font-size:12px;font-weight:500;white-space:nowrap;color:#9aa6bd">Site powered by&lt;/span>
+    &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+    &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION&lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo dark"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site powered by Method Optimization"
+   style="text-decoration:none;display:inline-flex;align-items:center;gap:11px;padding:9px 16px;border:1px solid #2b3547;border-radius:999px;background:#182238;color:#ffffff;font-family:inherit">
+    <span style="font-size:12px;font-weight:500;white-space:nowrap;color:#9aa6bd">Site powered by</span>
+    <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION</span>
+    </span>
+</a></div>
+  </section>
+  <section>
+    <h2>Card</h2>
+    <p>For footers with room — 280px boxed credit.</p>
+    <h3>Light footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site managed and powered by Method Optimization"
+   style="text-decoration:none;display:flex;flex-direction:column;gap:14px;width:280px;box-sizing:border-box;padding:20px 22px;border:1px solid #dfe1e6;border-radius:10px;background:#ffffff;color:#16243a;font-family:inherit">
+    &lt;span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#6b7280">Site managed &amp;amp; powered by&lt;/span>
+    &lt;span style="display:flex;align-items:center;gap:12px">
+      &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+      &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION&lt;/span>
+    &lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo light"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site managed and powered by Method Optimization"
+   style="text-decoration:none;display:flex;flex-direction:column;gap:14px;width:280px;box-sizing:border-box;padding:20px 22px;border:1px solid #dfe1e6;border-radius:10px;background:#ffffff;color:#16243a;font-family:inherit">
+    <span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#6b7280">Site managed &amp; powered by</span>
+    <span style="display:flex;align-items:center;gap:12px">
+      <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+      <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#5b6274">OPTIMIZATION</span>
+    </span>
+    </span>
+</a></div>
+    <h3>Dark footer</h3>
+<pre><code>&lt;a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site managed and powered by Method Optimization"
+   style="text-decoration:none;display:flex;flex-direction:column;gap:14px;width:280px;box-sizing:border-box;padding:20px 22px;border:1px solid #2b3547;border-radius:10px;background:#182238;color:#ffffff;font-family:inherit">
+    &lt;span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#8e9bb5">Site managed &amp;amp; powered by&lt;/span>
+    &lt;span style="display:flex;align-items:center;gap:12px">
+      &lt;svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      &lt;path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      &lt;path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    &lt;/svg>
+      &lt;span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      &lt;span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD&lt;/span>
+      &lt;span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION&lt;/span>
+    &lt;/span>
+    &lt;/span>
+&lt;/a></code></pre>
+    <div class="demo dark"><a href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Site managed and powered by Method Optimization"
+   style="text-decoration:none;display:flex;flex-direction:column;gap:14px;width:280px;box-sizing:border-box;padding:20px 22px;border:1px solid #2b3547;border-radius:10px;background:#182238;color:#ffffff;font-family:inherit">
+    <span style="font:10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#8e9bb5">Site managed &amp; powered by</span>
+    <span style="display:flex;align-items:center;gap:12px">
+      <svg viewBox="0 0 103 54" width="42" height="22" fill="currentColor" aria-hidden="true" style="display:block;flex:none">
+      <path d="M0 0h13.25l13.4 33.1L39.75 0H53v54H42l-.15-34.9L31.25 43.8h-9.1L11.25 19.1 11 54H0z"/>
+      <path d="M79.1 5.75a19.15 21.25 0 1 0 0 42.5 19.15 21.25 0 1 0 0-42.5z" fill="none" stroke="currentColor" stroke-width="9.5"/>
+    </svg>
+      <span style="display:flex;flex-direction:column;gap:2px;flex:none">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1;white-space:nowrap">METHOD</span>
+      <span style="font-size:9.5px;letter-spacing:.19em;line-height:1;white-space:nowrap;color:#9aa6bd">OPTIMIZATION</span>
+    </span>
+    </span>
+</a></div>
+  </section>
+</main>
+</body>
+</html>
