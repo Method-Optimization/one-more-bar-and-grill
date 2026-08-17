@@ -513,25 +513,27 @@ body::after {
    responds to hover.
    -------------------------------------------------------------------------- */
 .mo-badge {
-  display: inline-flex; align-items: center; gap: 11px;
-  color: #ffffff; font-family: inherit; text-decoration: none;
+  display: inline-flex; align-items: center; gap: .7rem;
+  align-self: flex-start; flex: none;
+  text-decoration: none; color: #fff;
+  opacity: .7; transition: opacity .2s;
 }
+.mo-badge:hover, .mo-badge:focus-visible { opacity: 1; }
 .mo-badge__label {
-  font: 10px ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: .14em; text-transform: uppercase; white-space: nowrap;
-  color: #8e9bb5; transition: color .2s ease;
+  font-size: .625rem; letter-spacing: .14em; text-transform: uppercase;
+  white-space: nowrap; color: var(--muted);
 }
-.mo-badge:hover .mo-badge__label { color: #b6c0d4; }
-.mo-badge__rule { width: 1px; height: 26px; background: #2b3547; flex: none; }
+.mo-badge__rule { width: 1px; height: 26px; background: var(--line); flex: none; }
 .mo-badge__mark { display: block; flex: none; }
-.mo-badge__word { display: flex; flex-direction: column; gap: 2px; flex: none; }
-.mo-badge__word-1 {
-  font-size: 12px; font-weight: 700; letter-spacing: .1em;
+.mo-badge__type { display: flex; flex-direction: column; gap: 2px; flex: none; }
+.mo-badge__name {
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em;
   line-height: 1; white-space: nowrap;
 }
-.mo-badge__word-2 {
-  font-size: 9.5px; letter-spacing: .19em;
-  line-height: 1; white-space: nowrap; color: #9aa6bd;
+.mo-badge__sub {
+  font-size: .594rem; letter-spacing: .19em;
+  line-height: 1; white-space: nowrap;
+  color: color-mix(in srgb, #fff 70%, transparent);
 }
 
 /* =============================================================================
