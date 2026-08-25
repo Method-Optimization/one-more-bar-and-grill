@@ -492,6 +492,15 @@ body::after {
 .footer__hours th { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em; color: var(--amber); font-weight: 600; }
 .footer__hours td { color: var(--cream-dim); }
 .footer__note { color: var(--muted); font-size: .85rem; margin-top: .9rem; }
+
+/* SMS opt-in. The keyword and number are One More's texting service (833);
+   the bar's own line is the 609 number in the Find Us column. */
+.footer__sms { margin-top: 1.4rem; color: var(--cream-dim); font-size: .9rem; line-height: 1.55; }
+.footer__sms strong {
+  display: block; font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .05em; font-size: .85rem; color: var(--cream); margin-bottom: .2rem;
+}
+.footer__sms-kw { color: var(--amber); font-weight: 600; letter-spacing: .02em; }
 .footer__addr { font-style: normal; color: var(--cream-dim); line-height: 1.6; margin-bottom: .7rem; }
 .footer__link { color: var(--cream); border-bottom: 1px solid var(--red); padding-bottom: 1px; transition: color .25s; }
 .footer__link:hover { color: var(--amber); border-color: var(--amber); }

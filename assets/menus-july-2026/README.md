@@ -31,9 +31,11 @@ wings section needs rechecking.
 | Impossible Burger | +$3.00 | +$2.50 |
 | Party trays | 25-pc sizes included | 25-pc sizes omitted |
 
-**Two different SMS opt-ins appear across the documents** and neither is on the
-site: the calendar says text `onemore` to 833-440-2766; take-out page 2 says
-text `1MORE` to (609) 312-5392. Confirm which is live before publishing either.
+**Two different SMS numbers appear across the documents.** Resolved
+2026-08-25: the **833 number is the texting service** and is the one on the
+site — text `onemore` to 833-440-2766, in the footer of every page. The
+(609) 312-5392 on take-out page 2 is a phone line, not an SMS keyword, and is
+deliberately not published. Don't "fix" the footer to the 609 number.
 
 **Superseded:** `../black and white take out menu 12112024 front.pdf` and
 `...back.pdf` are the December 2024 take-out menus, kept for history.
