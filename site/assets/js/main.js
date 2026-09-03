@@ -4,7 +4,7 @@
    - Scroll-scrubbed: hero parallax, cycling headline, video-reveal
    - One-shot reveals: polaroids, per-word headlines (IntersectionObserver)
    - Live open/closed + "kitchen closes at" badge
-   - Content rendered from assets/js/data.js (the file the owner edits)
+   - Content rendered from assets/js/data.js (generated from Sanity at build time)
    - Honors prefers-reduced-motion: skips scrub/parallax, keeps content visible
    ============================================================================= */
 (function () {
@@ -45,7 +45,7 @@
     var rot = [-7, 3, -4, 6]; // final scattered tilt
     wrap.innerHTML = DATA.signatureItems.map(function (it, i) {
       var media = it.img
-        ? '<img src="assets/img/' + it.img + '" alt="' + it.alt + '" loading="lazy" decoding="async" />'
+        ? '<img src="' + imgSrc(it.img) + '" alt="' + it.alt + '" loading="lazy" decoding="async" />'
         : '<div class="pol-placeholder"></div>';
       return '<figure class="polaroid" style="--rot:' + (rot[i % rot.length]) + 'deg">' +
         media +
@@ -79,10 +79,10 @@
     }
   }
 
-  /* The calendar image accepts either a bare filename (a file sitting in
-     assets/img/, which is how data.js stores it) or a full https URL (which is
-     what Sanity returns). */
-  function calendarSrc(img) {
+  /* An image is either a bare filename — a file that ships with the site — or a
+     full https URL, which is what an image uploaded to the Studio comes back
+     as. Both forms turn up in data.js. */
+  function imgSrc(img) {
     if (!img) return null;
     return /^https?:\/\//i.test(img) ? img : "assets/img/" + img;
   }
@@ -92,7 +92,7 @@
     if (!img || !DATA.calendar) return;
     var cal = DATA.calendar;
 
-    var src = calendarSrc(cal.img);
+    var src = imgSrc(cal.img);
     if (src) img.src = src;
     if (cal.alt) img.alt = cal.alt;
 
@@ -519,6 +519,20 @@
 
   function filled(v) { return Array.isArray(v) && v.length > 0; }
 
+  /* Sanity hands back the original upload, which can be several thousand pixels
+     wide. Ask its CDN for a sensible size instead — the same cap the build
+     applies, so the overlay never swaps a lighter image for a heavier one. */
+  var MAX_IMAGE_WIDTH = 1800;
+  function capWidth(url, w, h) {
+    if (!url || url.indexOf("cdn.sanity.io") === -1) return { img: url, width: w, height: h };
+    if (!w || w <= MAX_IMAGE_WIDTH) return { img: url + "?auto=format", width: w, height: h };
+    return {
+      img: url + "?w=" + MAX_IMAGE_WIDTH + "&q=80&auto=format",
+      width: MAX_IMAGE_WIDTH,
+      height: h ? Math.round((h * MAX_IMAGE_WIDTH) / w) : null
+    };
+  }
+
   function applyRemoteContent(result) {
     if (!result) return;
 
@@ -534,12 +548,13 @@
 
     var c = result.calendar;
     if (c && c.img) {
+      var sized = capWidth(c.img, c.width, c.height);
       DATA.calendar = {
-        img: c.img,
+        img: sized.img,
         alt: c.alt || (DATA.calendar && DATA.calendar.alt) || "",
         note: c.note || (DATA.calendar && DATA.calendar.note) || "",
-        width: c.width,
-        height: c.height
+        width: sized.width,
+        height: sized.height
       };
       renderCalendar();
     }

@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- OM:seo:start -->
   <title>Menu — One More Bar &amp; Grill · Tabernacle, NJ</title>
   <meta name="description" content="The full One More Bar &amp; Grill menu — wings, boneless Tails, breaded Ears, burgers, cheesesteaks, pizza, quesadillas, party trays and more. Dine in or call ahead for takeout: (609) 388-5386." />
+  <!-- OM:seo:end -->
   <meta name="theme-color" content="#0E0E0E" />
-
+  <!-- OM:og:start -->
   <meta property="og:type" content="restaurant.menu" />
   <meta property="og:title" content="The Menu — One More Bar &amp; Grill" />
   <meta property="og:description" content="Wings, Tails, Ears, burgers, cheesesteaks, pizza and more in the heart of the Pine Barrens." />
   <meta property="og:image" content="assets/img/wings-buffalo-plate.jpg" />
-
+  <meta property="og:locale" content="en_US" />
+  <!-- OM:og:end -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet" />
@@ -37,18 +40,22 @@
       </a>
 
       <nav class="nav__links" aria-label="Primary">
+        <!-- OM:nav-links:start -->
         <a href="menu.html" aria-current="page">Menu</a>
         <a href="calendar.html">Calendar</a>
         <a href="index.html#specials">Specials</a>
         <a href="index.html#story">Our Story</a>
         <a href="index.html#find-us">Hours &amp; Find Us</a>
+      <!-- OM:nav-links:end -->
       </nav>
 
       <div class="nav__actions">
+        <!-- OM:nav-call:start -->
         <a class="btn btn--call" href="tel:+16093885386">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
           <span>Call for Takeout</span>
         </a>
+        <!-- OM:nav-call:end -->
         <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
@@ -59,27 +66,32 @@
   <!-- Mobile drawer -->
   <div class="mobile-nav" id="mobileNav" hidden>
     <nav aria-label="Mobile">
+      <!-- OM:mobile-links:start -->
       <a href="menu.html" aria-current="page">Menu</a>
       <a href="calendar.html">Calendar</a>
       <a href="index.html#specials">Specials</a>
       <a href="index.html#story">Our Story</a>
       <a href="index.html#find-us">Hours &amp; Find Us</a>
       <a class="mobile-nav__call" href="tel:+16093885386">Call for Takeout · (609) 388-5386</a>
+    <!-- OM:mobile-links:end -->
     </nav>
   </div>
 
   <main id="main">
     <!-- ============================ MENU HERO ============================ -->
     <section class="menu-hero" aria-label="The menu">
+      <!-- OM:menu-hero:start -->
       <span class="script">come hungry</span>
       <h1>The Menu</h1>
       <p class="menu-hero__sub">Wings, boneless Tails, breaded Ears and a whole mess of finger foods — plus burgers, cheesesteaks, pizza and party trays. Dine in or call ahead for takeout.</p>
       <a class="btn btn--primary" href="tel:+16093885386">Call to Order · (609) 388-5386</a>
       <p class="menu-hero__note">Prices subject to change. Sandwiches and burgers come with fries.</p>
+    <!-- OM:menu-hero:end -->
     </section>
 
     <!-- ============================ JUMP NAV ============================ -->
     <nav class="menu-jump" aria-label="Jump to a section">
+        <!-- OM:menu-jump:start -->
         <a href="#deals">Happy Hour</a>
         <a href="#fingerfoods">Fingerfoods</a>
         <a href="#soups">Soups</a>
@@ -97,9 +109,11 @@
         <a href="#drinks">Drinks</a>
         <a href="#latenight">Late Night</a>
         <a href="#trays">Party Trays</a>
+    <!-- OM:menu-jump:end -->
     </nav>
 
     <div class="menu-wrap">
+      <!-- OM:menu-body:start -->
 
       <!-- ===================== DEALS ===================== -->
       <section class="menu-cat" id="deals">
@@ -109,12 +123,12 @@
         <ul class="menu-defs">
           <li><span class="menu-defs__t">$1 off domestics</span> excludes PBR</li>
           <li><span class="menu-defs__t">$2 off select apps</span> fried pickles, corn nuggets &amp; fried mushrooms</li>
-          <li><span class="menu-defs__t">&#189; price nachos</span> during happy hour</li>
+          <li><span class="menu-defs__t">½ price nachos</span> during happy hour</li>
         </ul>
         <h3 class="menu-cat__sub">Senior Citizen Lunch Special</h3>
         <p class="menu-cat__note menu-cat__note--top">Monday to Friday, 11am to 2pm.</p>
         <ul class="menu-defs">
-          <li><span class="menu-defs__t">10% off entire bill</span> 65 and up &middot; includes beverages</li>
+          <li><span class="menu-defs__t">10% off entire bill</span> 65 and up · includes beverages</li>
         </ul>
       </section>
 
@@ -126,7 +140,7 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Broccoli Bites</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Battered broccoli, cheddar cheese &amp; now with bacon. Served with ranch.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Fried Mushrooms</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Whole mushrooms battered &amp; fried. Served with horseradish sauce.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Roll</span><span class="menu-item__lead"></span><span class="menu-item__price">$6</span></div><p class="menu-item__desc">(Single) minced all white meat chicken drenched with our awesome buffalo sauce &amp; american cheese, wrapped in a wonton and deep fried to perfection with mild on the side.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Jalape&ntilde;o Poppers</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Breaded jalape&ntilde;o peppers stuffed with cream cheese. Served with ranch.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Jalapeño Poppers</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Breaded jalapeño peppers stuffed with cream cheese. Served with ranch.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mozzarella Sticks</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Battered mozzarella cheese, deep fried and served with marinara.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Chicken Fingers</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Battered and breaded white meat chicken served with honey mustard or BBQ.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Onion Petals</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Battered onion &quot;petals&quot; served with texas petal sauce.</p></li>
@@ -137,8 +151,8 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Hot Dog</span><span class="menu-item__lead"></span><span class="menu-item__price">$3.50 / $4</span></div><p class="menu-item__desc">Single griddled angus frankfurter hot dog on a roll. With cheese sauce $4.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cordon Bleu Balls</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">Breaded chicken stuffed with ham &amp; swiss, now served with honey mustard.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Nachos &amp; Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$8</span></div><p class="menu-item__desc">Tortilla chips topped with cheese sauce, served with sour cream &amp; homemade salsa on the side.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Nachos Supreme</span><span class="menu-item__lead"></span><span class="menu-item__price">$13.50</span></div><p class="menu-item__desc">Tortilla chips topped with cheese sauce, shredded lettuce, jalape&ntilde;o peppers, tomatoes, black olives &amp; your choice of chili, seasoned chicken or beef. Served with sour cream and homemade salsa on the side.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cup O' Chili</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Mary Ann's homemade chili topped with shredded cheddar &amp; mozzarella cheese.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Nachos Supreme</span><span class="menu-item__lead"></span><span class="menu-item__price">$13.50</span></div><p class="menu-item__desc">Tortilla chips topped with cheese sauce, shredded lettuce, jalapeño peppers, tomatoes, black olives &amp; your choice of chili, seasoned chicken or beef. Served with sour cream and homemade salsa on the side.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cup O&#39; Chili</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Mary Ann&#39;s homemade chili topped with shredded cheddar &amp; mozzarella cheese.</p></li>
         </ul>
       </section>
 
@@ -146,7 +160,7 @@
       <section class="menu-cat" id="soups">
         <h2 class="menu-cat__title">Soups</h2>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mary Ann's Gourmet Soup of the Week</span><span class="menu-item__lead"></span><span class="menu-item__price">Market</span></div><p class="menu-item__desc">Home made, changes every Monday. Price changes with the soup.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mary Ann&#39;s Gourmet Soup of the Week</span><span class="menu-item__lead"></span><span class="menu-item__price">Market</span></div><p class="menu-item__desc">Home made, changes every Monday. Price changes with the soup.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Lobster Bisque</span><span class="menu-item__lead"></span><span class="menu-item__price">Cup $8 / Bowl $9.50</span></div><p class="menu-item__desc">All day, every day.</p></li>
         </ul>
       </section>
@@ -167,7 +181,7 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Caesar Salad</span><span class="menu-item__lead"></span><span class="menu-item__price">$13.50</span></div><p class="menu-item__desc">Romaine, parm cheese, croutons &amp; caesar dressing.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">House Salad</span><span class="menu-item__lead"></span><span class="menu-item__price">$10.50</span></div><p class="menu-item__desc">Lettuce, carrot shavings, cherry tomatoes, cucumbers, croutons &amp; your choice of dressing.</p></li>
         </ul>
-        <p class="menu-cat__note"><strong>Dressings:</strong> Blue Cheese &middot; Ranch &middot; Caesar &middot; Honey Mustard &middot; Balsamic Vinaigrette &middot; Italian &middot; Oil &amp; Vinegar &middot; 1000 Island &middot; Spicy Ranch &middot; Sesame Ginger &middot; Lemon Vinaigrette</p>
+        <p class="menu-cat__note"><strong>Dressings:</strong> Blue Cheese · Ranch · Caesar · Honey Mustard · Balsamic Vinaigrette · Italian · Oil &amp; Vinegar · 1000 Island · Spicy Ranch · Sesame Ginger · Lemon Vinaigrette</p>
       </section>
 
       <!-- ===================== WINGS ===================== -->
@@ -175,23 +189,23 @@
         <h2 class="menu-cat__title">Buffalo Wings &amp; Morsels</h2>
         <ul class="menu-grid">
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">One More Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">3 Ears &amp; 3 Tails.</p></li>
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Wings</span></div><p class="menu-item__desc">Not just a &quot;piece&quot; &mdash; at One More you get the WHOLE WING!</p><p class="menu-item__tiers">6 pc $9 &middot; 13 pc $15 &middot; 25 pc $27</p></li>
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Tails</span></div><p class="menu-item__desc">Boneless top-cut chicken breast, lightly floured and perfectly deep fried, then bathed in our amazing wing sauce.</p><p class="menu-item__tiers">5 pc $12 &middot; 10 pc $22 &middot; 20 pc $37</p></li>
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Ears</span></div><p class="menu-item__desc">Breaded chicken filets dipped in our signature wing sauce.</p><p class="menu-item__tiers">5 pc $12 &middot; 10 pc $22 &middot; 20 pc $37</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Shrimp</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">Cleaned and lightly floured shrimp deep fried to perfection. &#189; pound.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Scallops</span><span class="menu-item__lead"></span><span class="menu-item__price">$23</span></div><p class="menu-item__desc">Lightly floured fresh scallops deep fried. &#189; pound.</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Wings</span></div><p class="menu-item__desc">Not just a &quot;piece&quot; — at One More you get the WHOLE WING!</p><p class="menu-item__tiers">6 pc $9 · 13 pc $15 · 25 pc $27</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Tails</span></div><p class="menu-item__desc">Boneless top-cut chicken breast, lightly floured and perfectly deep fried, then bathed in our amazing wing sauce.</p><p class="menu-item__tiers">5 pc $12 · 10 pc $22 · 20 pc $37</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Ears</span></div><p class="menu-item__desc">Breaded chicken filets dipped in our signature wing sauce.</p><p class="menu-item__tiers">5 pc $12 · 10 pc $22 · 20 pc $37</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Shrimp</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">Cleaned and lightly floured shrimp deep fried to perfection. ½ pound.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Scallops</span><span class="menu-item__lead"></span><span class="menu-item__price">$23</span></div><p class="menu-item__desc">Lightly floured fresh scallops deep fried. ½ pound.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Double Buffalo Rolls</span><span class="menu-item__lead"></span><span class="menu-item__price">$11</span></div><p class="menu-item__desc">(2) minced buffalo chicken &amp; american cheese wrapped in a wonton and deep fried to goodness w/ mild sauce for dipping.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Stix</span><span class="menu-item__lead"></span><span class="menu-item__price">$9.50</span></div><p class="menu-item__desc">Mozzarella sticks, buffalo style.</p></li>
         </ul>
         <h3 class="menu-cat__sub">Sauce Options</h3>
         <ul class="menu-defs">
-          <li><span class="menu-defs__t">Devil's Breath</span> just plain ludicrous hot</li>
+          <li><span class="menu-defs__t">Devil&#39;s Breath</span> just plain ludicrous hot</li>
           <li><span class="menu-defs__t">Hot</span> hot! insanely hot! with a lot of flavor</li>
           <li><span class="menu-defs__t">Spicy</span> hotter than mild and milder than hot</li>
           <li><span class="menu-defs__t">Johnny Yaki</span> teriyaki sauce with some kick</li>
           <li><span class="menu-defs__t">Garlic Parm</span> just like our mild but loaded with garlic and parm cheese</li>
           <li><span class="menu-defs__t">Mild</span> our incredible super sweet with a small bite sauce</li>
-          <li><span class="menu-defs__t">Russell's Pic II Sauce</span> sweeter than sweet with a touch of tang</li>
+          <li><span class="menu-defs__t">Russell&#39;s Pic II Sauce</span> sweeter than sweet with a touch of tang</li>
           <li><span class="menu-defs__t">Bourbon</span> tangy &amp; sweet</li>
           <li><span class="menu-defs__t">Sesame Ginger</span> just like it sounds</li>
           <li><span class="menu-defs__t">Sweet BBQ</span> sweet baby rays</li>
@@ -199,9 +213,9 @@
         <h3 class="menu-cat__sub">Dips &amp; Sides</h3>
         <ul class="menu-grid">
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Celery</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.25 / lg $2.50</span></div></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mild Buffalo Sauce</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 &middot; 8oz $2.75 &middot; pint $5 &middot; quart $9</span></div></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Blue Cheese Dressing</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 &middot; 8oz $2.75 &middot; pint $4.25 &middot; quart $9</span></div></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ranch Dressing</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 &middot; 8oz $2.75 &middot; pint $4.25 &middot; quart $8</span></div></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mild Buffalo Sauce</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 · 8oz $2.75 · pint $5 · quart $9</span></div></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Blue Cheese Dressing</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 · 8oz $2.75 · pint $4.25 · quart $9</span></div></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Ranch Dressing</span><span class="menu-item__lead"></span><span class="menu-item__price">sm $1.50 · 8oz $2.75 · pint $4.25 · quart $8</span></div></li>
         </ul>
       </section>
 
@@ -217,9 +231,9 @@
         </ul>
         <h3 class="menu-cat__sub">Fries &amp; Tots Upgrades</h3>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese 'Em</span><span class="menu-item__lead"></span><span class="menu-item__price">+$1.50</span></div><p class="menu-item__desc">American or cheddar cheese sauce.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese &#39;Em</span><span class="menu-item__lead"></span><span class="menu-item__price">+$1.50</span></div><p class="menu-item__desc">American or cheddar cheese sauce.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Prime Rib</span><span class="menu-item__lead"></span><span class="menu-item__price">+$9</span></div><p class="menu-item__desc">Diced prime rib, provolone cheese and au jus.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Railroad 'Em</span><span class="menu-item__lead"></span><span class="menu-item__price">+$2.50</span></div><p class="menu-item__desc">American cheese sauce, spicy wing sauce &amp; sweet soy.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Railroad &#39;Em</span><span class="menu-item__lead"></span><span class="menu-item__price">+$2.50</span></div><p class="menu-item__desc">American cheese sauce, spicy wing sauce &amp; sweet soy.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Bacon and Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">+$3</span></div></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Junk Yard</span><span class="menu-item__lead"></span><span class="menu-item__price">+$2.50</span></div><p class="menu-item__desc">Brown gravy and cheddar cheese sauce.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Loaded</span><span class="menu-item__lead"></span><span class="menu-item__price">+$3.50</span></div><p class="menu-item__desc">Cheddar cheese sauce, bacon &amp; a side of sour cream.</p></li>
@@ -248,8 +262,8 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Open Faced Turkey</span><span class="menu-item__lead"></span><span class="menu-item__price">$15.50</span></div><p class="menu-item__desc">White meat turkey and gravy served over toasted texas toast.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">One More Dip</span><span class="menu-item__lead"></span><span class="menu-item__price">$20</span></div><p class="menu-item__desc">Top choice prime rib, sliced thin with caramelized onions &amp; provolone cheese on a long roll, served with a side of horseradish sauce &amp; dipping au jus.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Flat Iron Steak Grill</span><span class="menu-item__lead"></span><span class="menu-item__price">$24.50</span></div><p class="menu-item__desc">Steak strips, sauteed mushrooms &amp; fried onions, open faced on toasted garlic bread.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Meatball Sandwich</span><span class="menu-item__lead"></span><span class="menu-item__price">$17</span></div><p class="menu-item__desc">Mary Ann's famous meatballs with marinara, parm cheese, oregano &amp; provolone on a long roll.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Chicken Sandwich</span><span class="menu-item__lead"></span><span class="menu-item__price">$15.50</span></div><p class="menu-item__desc">Our awesome Ears in your choice of heat (mild, garlic parm, spicy, hot or devil's breath) served on a kaiser roll with lettuce &amp; tomato, with a side of blue cheese.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Meatball Sandwich</span><span class="menu-item__lead"></span><span class="menu-item__price">$17</span></div><p class="menu-item__desc">Mary Ann&#39;s famous meatballs with marinara, parm cheese, oregano &amp; provolone on a long roll.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Chicken Sandwich</span><span class="menu-item__lead"></span><span class="menu-item__price">$15.50</span></div><p class="menu-item__desc">Our awesome Ears in your choice of heat (mild, garlic parm, spicy, hot or devil&#39;s breath) served on a kaiser roll with lettuce &amp; tomato, with a side of blue cheese.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Grilled Chicken Sandwich</span><span class="menu-item__lead"></span><span class="menu-item__price">$14.50</span></div><p class="menu-item__desc">Grilled white meat chicken breast, lettuce, tomato &amp; a side of mayo served on a kaiser roll.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Turkey Grill</span><span class="menu-item__lead"></span><span class="menu-item__price">$16</span></div><p class="menu-item__desc">Sliced turkey, coleslaw, russian dressing &amp; swiss cheese served on grilled rye bread.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Black Angus Burger Melt</span><span class="menu-item__lead"></span><span class="menu-item__price">$17.50</span></div><p class="menu-item__desc">Black angus burger, fried onions &amp; swiss cheese on grilled rye bread.</p></li>
@@ -280,35 +294,35 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Bacon Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$16</span></div><p class="menu-item__desc">Crispy bacon &amp; american cheese.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Jersey Devil</span><span class="menu-item__lead"></span><span class="menu-item__price">$14.50</span></div><p class="menu-item__desc">Our sweet and tangy bourbon sauce &amp; cheddar cheese.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Swiss Mushroom</span><span class="menu-item__lead"></span><span class="menu-item__price">$15</span></div><p class="menu-item__desc">Mushrooms &amp; swiss goodness.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">With your choice of cheese &mdash; american, swiss, cheddar, provolone or crumbled blue cheese.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">With your choice of cheese — american, swiss, cheddar, provolone or crumbled blue cheese.</p></li>
         </ul>
       </section>
 
       <!-- ===================== STEAKS ===================== -->
       <section class="menu-cat" id="steaks">
         <h2 class="menu-cat__title">12oz Steak Sandwiches</h2>
-        <p class="menu-cat__note menu-cat__note--top">Chicken or beef &mdash; now available in full (12oz) or &#189; (6oz). Comes with fries.</p>
+        <p class="menu-cat__note menu-cat__note--top">Chicken or beef — now available in full (12oz) or ½ (6oz). Comes with fries.</p>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Flying Cow</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $15.50 / Full $19</span></div><p class="menu-item__desc">Steak AND chicken, cheddar AND american cheese.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Wiz With</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $13 / Full $17</span></div><p class="menu-item__desc">Steak, fried onions &amp; cheddar cheese sauce.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese Steak Hoagie</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $15.25 / Full $19.75</span></div><p class="menu-item__desc">Steak, american cheese, lettuce, tomato, onion, oil, vinegar, salt, pepper &amp; oregano.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Rodeo</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $14.50 / Full $19</span></div><p class="menu-item__desc">Steak, bacon, cheddar cheese &amp; BBQ sauce.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $13.50 / Full $18</span></div><p class="menu-item__desc">Chicken, american cheese, smothered in wing sauce and served with a side of blue cheese dressing.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Jersey Devil</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $12.50 / Full $16</span></div><p class="menu-item__desc">Steak, our sweet and tangy bourbon sauce &amp; cheddar cheese.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">&#189; $12 / Full $15.50</span></div><p class="menu-item__desc">With your choice of cheese &mdash; american, swiss, cheddar, provolone, crumbled blue cheese or cheese sauce.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Flying Cow</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $15.50 / Full $19</span></div><p class="menu-item__desc">Steak AND chicken, cheddar AND american cheese.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Wiz With</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $13 / Full $17</span></div><p class="menu-item__desc">Steak, fried onions &amp; cheddar cheese sauce.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese Steak Hoagie</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $15.25 / Full $19.75</span></div><p class="menu-item__desc">Steak, american cheese, lettuce, tomato, onion, oil, vinegar, salt, pepper &amp; oregano.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Rodeo</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $14.50 / Full $19</span></div><p class="menu-item__desc">Steak, bacon, cheddar cheese &amp; BBQ sauce.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $13.50 / Full $18</span></div><p class="menu-item__desc">Chicken, american cheese, smothered in wing sauce and served with a side of blue cheese dressing.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Jersey Devil</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $12.50 / Full $16</span></div><p class="menu-item__desc">Steak, our sweet and tangy bourbon sauce &amp; cheddar cheese.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">½ $12 / Full $15.50</span></div><p class="menu-item__desc">With your choice of cheese — american, swiss, cheddar, provolone, crumbled blue cheese or cheese sauce.</p></li>
         </ul>
       </section>
 
       <!-- ===================== PIZZA ===================== -->
       <section class="menu-cat" id="pizza">
         <h2 class="menu-cat__title">Pizza</h2>
-        <p class="menu-cat__note menu-cat__note--top">Home made &middot; hand tossed &middot; stone cooked.</p>
+        <p class="menu-cat__note menu-cat__note--top">Home made · hand tossed · stone cooked.</p>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Family Sized 16&quot; Plain Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$15.50</span></div><p class="menu-item__desc">Full regular toppings +$3 &middot; full premium +$5 &middot; &#189; regular +$1.50 &middot; &#189; premium +$2.50.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Personal Sized 10&quot; Plain Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$9.50</span></div><p class="menu-item__desc">Full regular toppings +$2 &middot; full premium +$3 &middot; &#189; regular +$1 &middot; &#189; premium +$1.50.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Family Sized 16&quot; Plain Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$15.50</span></div><p class="menu-item__desc">Full regular toppings +$3 · full premium +$5 · ½ regular +$1.50 · ½ premium +$2.50.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Personal Sized 10&quot; Plain Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$9.50</span></div><p class="menu-item__desc">Full regular toppings +$2 · full premium +$3 · ½ regular +$1 · ½ premium +$1.50.</p></li>
         </ul>
-        <p class="menu-cat__note"><strong>Regular toppings:</strong> black olives &middot; broccoli &middot; extra cheese &middot; minced garlic &middot; jalape&ntilde;o peppers &middot; meatballs &middot; mushroom &middot; onions &middot; pepperoni &middot; sausage &middot; spinach &middot; sweet peppers &middot; tomato &middot; banana peppers</p>
-        <p class="menu-cat__note"><strong>Premium toppings:</strong> bacon &middot; chicken &middot; steak &middot; blue cheese crumble &middot; pork roll &middot; shrimp (additional price)</p>
+        <p class="menu-cat__note"><strong>Regular toppings:</strong> black olives · broccoli · extra cheese · minced garlic · jalapeño peppers · meatballs · mushroom · onions · pepperoni · sausage · spinach · sweet peppers · tomato · banana peppers</p>
+        <p class="menu-cat__note"><strong>Premium toppings:</strong> bacon · chicken · steak · blue cheese crumble · pork roll · shrimp (additional price)</p>
         <h3 class="menu-cat__sub">Specialty Pizzas</h3>
         <ul class="menu-grid">
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">White Pizza</span><span class="menu-item__lead"></span><span class="menu-item__price">Personal $8.50 / Family $14</span></div><p class="menu-item__desc">Seasoned garlic butter base with parmesan and our mozzarella cheese blend.</p></li>
@@ -328,7 +342,7 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Taco</span><span class="menu-item__lead"></span><span class="menu-item__price">$9.50</span></div><p class="menu-item__desc">Taco seasoned chicken or beef, lettuce, tomato &amp; onion.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Veggie</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">Broccoli, tomato, onion, olives, mushrooms.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Chicken</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">All white meat chicken.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Not much more to say here&hellip; just cheese and lots of it.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Not much more to say here… just cheese and lots of it.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Steak</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">Finely diced cheese steak beef.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese Burger</span><span class="menu-item__lead"></span><span class="menu-item__price">$10.50</span></div><p class="menu-item__desc">Diced burger, lettuce &amp; tomato.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Chicken</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">Minced white meat chicken mixed with our amazing wing sauce, laid on top of our multi-cheese blend with a side of mild wing sauce and blue cheese.</p></li>
@@ -342,7 +356,7 @@
         <h2 class="menu-cat__title">For the Little Ones</h2>
         <p class="menu-cat__note menu-cat__note--top">Comes with fries.</p>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese Burger</span><span class="menu-item__lead"></span><span class="menu-item__price">$10.50</span></div><p class="menu-item__desc">Same great burger&hellip; just a smaller portion.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Cheese Burger</span><span class="menu-item__lead"></span><span class="menu-item__price">$10.50</span></div><p class="menu-item__desc">Same great burger… just a smaller portion.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Chicken Fingers</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Battered and breaded white meat chicken served with honey mustard.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Hot Dog</span><span class="menu-item__lead"></span><span class="menu-item__price">$6</span></div><p class="menu-item__desc">One griddled angus frankfurter hot dog, with fries.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Grilled Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$8</span></div><p class="menu-item__desc">Texas toast white bread grilled with american cheese.</p></li>
@@ -354,8 +368,8 @@
       <section class="menu-cat" id="desserts">
         <h2 class="menu-cat__title">Desserts</h2>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Aimee's Homemade Cake of the Week</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Something new every week.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Funnel Fries</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Just like funnel cake only&hellip; as&hellip; fries. Dusted with powdered sugar &amp; served with caramel sauce for dipping.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Aimee&#39;s Homemade Cake of the Week</span><span class="menu-item__lead"></span><span class="menu-item__price">$7.50</span></div><p class="menu-item__desc">Something new every week.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Funnel Fries</span><span class="menu-item__lead"></span><span class="menu-item__price">$9</span></div><p class="menu-item__desc">Just like funnel cake only… as… fries. Dusted with powdered sugar &amp; served with caramel sauce for dipping.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Fried Cheese Cake Roll</span><span class="menu-item__lead"></span><span class="menu-item__price">$6</span></div><p class="menu-item__desc">Delicious cheesecake wrapped in a wonton, deep fried then dusted with powdered sugar &amp; topped with whipped cream and chocolate sauce.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Specialty Dessert Roll</span><span class="menu-item__lead"></span><span class="menu-item__price">$7</span></div><p class="menu-item__desc">Changes monthly.</p></li>
         </ul>
@@ -364,19 +378,19 @@
       <!-- ===================== DRINKS ===================== -->
       <section class="menu-cat" id="drinks">
         <h2 class="menu-cat__title">Drinks</h2>
-        <p class="menu-cat__note">Pepsi &middot; Diet Pepsi &middot; Starry &middot; Raspberry Tea &middot; Pepsi Zero &middot; Ginger Ale &middot; Red Bull &middot; Sugar Free Red Bull &middot; Lemonade &middot; House Brewed Unsweetened Tea &middot; Root Beer &middot; Coffee &middot; Milk &middot; Chocolate Milk &middot; Apple Juice &middot; Orange Juice &middot; Cranberry Juice</p>
+        <p class="menu-cat__note">Pepsi · Diet Pepsi · Starry · Raspberry Tea · Pepsi Zero · Ginger Ale · Red Bull · Sugar Free Red Bull · Lemonade · House Brewed Unsweetened Tea · Root Beer · Coffee · Milk · Chocolate Milk · Apple Juice · Orange Juice · Cranberry Juice</p>
       </section>
 
       <!-- ===================== LATENIGHT ===================== -->
       <section class="menu-cat" id="latenight">
         <h2 class="menu-cat__title">Late Night Menu</h2>
-        <p class="menu-cat__note menu-cat__note--top">Sunday&ndash;Thursday 9:00pm&ndash;11:00pm &middot; Friday &amp; Saturday 11:00pm&ndash;1:00am. No deviations, substitutions or add-ons.</p>
+        <p class="menu-cat__note menu-cat__note--top">Sunday–Thursday 9:00pm–11:00pm · Friday &amp; Saturday 11:00pm–1:00am. No deviations, substitutions or add-ons.</p>
         <ul class="menu-grid">
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Wings</span></div><p class="menu-item__tiers">6 pc $9 &middot; 13 pc $15</p></li>
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Tails</span></div><p class="menu-item__tiers">5 pc $12 &middot; 10 pc $22</p></li>
-          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Ears</span></div><p class="menu-item__tiers">5 pc $12 &middot; 10 pc $22</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Wings</span></div><p class="menu-item__tiers">6 pc $9 · 13 pc $15</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Tails</span></div><p class="menu-item__tiers">5 pc $12 · 10 pc $22</p></li>
+          <li class="menu-item menu-item--tiered"><div class="menu-item__top"><span class="menu-item__name">Ears</span></div><p class="menu-item__tiers">5 pc $12 · 10 pc $22</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">One More Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$10</span></div><p class="menu-item__desc">3 Ears &amp; 3 Tails.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Shrimp</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">&#189; pound.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Shrimp</span><span class="menu-item__lead"></span><span class="menu-item__price">$14</span></div><p class="menu-item__desc">½ pound.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Buffalo Roll</span><span class="menu-item__lead"></span><span class="menu-item__price">$5 / Double $11</span></div></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Mac &amp; Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$7</span></div></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Steak Fries</span><span class="menu-item__lead"></span><span class="menu-item__price">$6</span></div></li>
@@ -384,7 +398,7 @@
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Sweet Potato Fries</span><span class="menu-item__lead"></span><span class="menu-item__price">$7</span></div></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Tater Tots</span><span class="menu-item__lead"></span><span class="menu-item__price">$7</span></div></li>
         </ul>
-        <p class="menu-cat__note"><strong>Your choice $9:</strong> Broccoli Bites &middot; Jalape&ntilde;o Poppers &middot; Chicken Fingers &middot; Onion Petals &middot; Corn Nuggets &middot; Fried Green Beans &middot; Fried Pickles &middot; Buffalo Chicken Dip &middot; Fried Mushrooms</p>
+        <p class="menu-cat__note"><strong>Your choice $9:</strong> Broccoli Bites · Jalapeño Poppers · Chicken Fingers · Onion Petals · Corn Nuggets · Fried Green Beans · Fried Pickles · Buffalo Chicken Dip · Fried Mushrooms</p>
       </section>
 
       <!-- ===================== TRAYS ===================== -->
@@ -392,23 +406,24 @@
         <h2 class="menu-cat__title">Buffalo Party Trays</h2>
         <p class="menu-cat__note menu-cat__note--top">Take-out only.</p>
         <ul class="menu-grid">
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Wings</span><span class="menu-item__lead"></span><span class="menu-item__price">$52.50</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Wings</span><span class="menu-item__lead"></span><span class="menu-item__price">$95</span></div><p class="menu-item__desc">Serves about 20&ndash;30 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$40</span></div><p class="menu-item__desc">Serves about 5&ndash;10 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$70</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$135</span></div><p class="menu-item__desc">Serves about 20&ndash;30 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$40</span></div><p class="menu-item__desc">Serves about 5&ndash;10 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$70</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$135</span></div><p class="menu-item__desc">Serves about 20&ndash;30 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Wings &amp; 25 Tails Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$65</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Wings &amp; 25 Ears Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$65</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
-          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Ears &amp; 25 Tails Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$75</span></div><p class="menu-item__desc">Serves about 10&ndash;15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Wings</span><span class="menu-item__lead"></span><span class="menu-item__price">$52.50</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Wings</span><span class="menu-item__lead"></span><span class="menu-item__price">$95</span></div><p class="menu-item__desc">Serves about 20–30 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$40</span></div><p class="menu-item__desc">Serves about 5–10 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$70</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Tails</span><span class="menu-item__lead"></span><span class="menu-item__price">$135</span></div><p class="menu-item__desc">Serves about 20–30 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$40</span></div><p class="menu-item__desc">Serves about 5–10 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">50 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$70</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">100 Ears</span><span class="menu-item__lead"></span><span class="menu-item__price">$135</span></div><p class="menu-item__desc">Serves about 20–30 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Wings &amp; 25 Tails Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$65</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Wings &amp; 25 Ears Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$65</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
+          <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">25 Ears &amp; 25 Tails Combo</span><span class="menu-item__lead"></span><span class="menu-item__price">$75</span></div><p class="menu-item__desc">Serves about 10–15 people.</p></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Celery &amp; Blue Cheese</span><span class="menu-item__lead"></span><span class="menu-item__price">$3.50</span></div></li>
           <li class="menu-item"><div class="menu-item__top"><span class="menu-item__name">Celery &amp; Ranch</span><span class="menu-item__lead"></span><span class="menu-item__price">$3.50</span></div></li>
         </ul>
         <p class="menu-cat__note">15% gratuity will be added to all tables of 6 or more. 20% gratuity will be added to all unsigned credit slips and walk outs.</p>
       </section>
 
+    <!-- OM:menu-body:end -->
     </div>
   </main>
 
@@ -416,6 +431,7 @@
   <footer class="footer" id="find-us">
     <div class="footer__grid">
       <div class="footer__col footer__brand">
+        <!-- OM:footer-brand:start -->
         <div class="footer__social">
           <a href="https://www.facebook.com/onemorebarandgrillNJ" target="_blank" rel="noopener" aria-label="One More on Facebook">Facebook</a>
           <a href="https://www.instagram.com/onemore_tabernacle_nj" target="_blank" rel="noopener" aria-label="One More on Instagram">Instagram</a>
@@ -424,15 +440,19 @@
           <strong>Get the specials by text</strong>
           Text <span class="footer__sms-kw">onemore</span> to <a class="footer__link" href="sms:+18334402766">833-440-2766</a>
         </p>
+      <!-- OM:footer-brand:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-hours:start -->
         <h3>Hours</h3>
         <table class="footer__hours" id="footerHours"><!-- filled from data.js --></table>
         <p class="footer__note">Open 7 days — most holidays. Late-night menu after the kitchen closes.</p>
+      <!-- OM:footer-hours:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-find:start -->
         <h3>Find Us</h3>
         <address class="footer__addr">
           1375 US Route 206<br/>
@@ -443,11 +463,14 @@
         <p>
           <a class="footer__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=1375+US+Route+206+Tabernacle+NJ+08088" target="_blank" rel="noopener">Get directions →</a>
         </p>
+      <!-- OM:footer-find:end -->
       </div>
     </div>
     <div class="footer__bar">
+      <!-- OM:footer-bar:start -->
       <span>© <span id="year"></span> One More Bar &amp; Grill · Tabernacle, NJ</span>
       <span class="footer__devil">Where the Jersey Devil drinks 🍺</span>
+      <!-- OM:footer-bar:end -->
       <a class="mo-badge" href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization">
         <span class="mo-badge__label">Powered by</span>
         <span class="mo-badge__rule" aria-hidden="true"></span>

@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- OM:seo:start -->
   <title>Calendar — One More Bar &amp; Grill · Tabernacle, NJ</title>
   <meta name="description" content="Events, specials, and weekly happenings at One More Bar &amp; Grill in Tabernacle, NJ." />
+  <!-- OM:seo:end -->
   <meta name="theme-color" content="#0E0E0E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,18 +69,22 @@
       </a>
 
       <nav class="nav__links" aria-label="Primary">
+        <!-- OM:nav-links:start -->
         <a href="menu.html">Menu</a>
         <a href="calendar.html" aria-current="page">Calendar</a>
         <a href="index.html#specials">Specials</a>
         <a href="index.html#story">Our Story</a>
         <a href="index.html#find-us">Hours &amp; Find Us</a>
+      <!-- OM:nav-links:end -->
       </nav>
 
       <div class="nav__actions">
+        <!-- OM:nav-call:start -->
         <a class="btn btn--call" href="tel:+16093885386">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
           <span>Call for Takeout</span>
         </a>
+        <!-- OM:nav-call:end -->
         <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
@@ -89,30 +95,34 @@
   <!-- Mobile drawer -->
   <div class="mobile-nav" id="mobileNav" hidden>
     <nav aria-label="Mobile">
+      <!-- OM:mobile-links:start -->
       <a href="menu.html">Menu</a>
       <a href="calendar.html" aria-current="page">Calendar</a>
       <a href="index.html#specials">Specials</a>
       <a href="index.html#story">Our Story</a>
       <a href="index.html#find-us">Hours &amp; Find Us</a>
       <a class="mobile-nav__call" href="tel:+16093885386">Call for Takeout · (609) 388-5386</a>
+    <!-- OM:mobile-links:end -->
     </nav>
   </div>
 
   <main id="main">
     <section class="cal-hero" aria-label="Calendar">
-      <span class="script">what's going on</span>
+      <!-- OM:cal-hero:start -->
+      <span class="script">what&#39;s going on</span>
       <h1>Calendar</h1>
       <p>Events, specials, and weekly happenings at One More.</p>
+    <!-- OM:cal-hero:end -->
     </section>
 
     <div class="cal-wrap">
-      <!-- src/alt/size are set from data.js, then from Sanity if it's connected.
-           The values here are the fallback shown if scripts don't run. -->
+      <!-- OM:cal-image:start -->
       <img id="calImage"
-           src="assets/img/aug-calendar-2026.jpg"
-           alt="August 2026 events and specials calendar for One More Bar and Grill."
-           width="990" height="765" />
+           src="https://cdn.sanity.io/images/1gjbq9h5/production/fa3d9b0adf0204483b3dab59582f47de05e71e50-3300x2550.jpg?w=1800&amp;q=80&amp;auto=format"
+           alt="September 2026 events and specials calendar for One More Bar and Grill."
+           width="1800" height="1391" />
       <p class="cal-note" id="calNote">Updated monthly — check back or follow us on Facebook &amp; Instagram for the latest.</p>
+    <!-- OM:cal-image:end -->
     </div>
   </main>
 
@@ -120,6 +130,7 @@
   <footer class="footer" id="find-us">
     <div class="footer__grid">
       <div class="footer__col footer__brand">
+        <!-- OM:footer-brand:start -->
         <div class="footer__social">
           <a href="https://www.facebook.com/onemorebarandgrillNJ" target="_blank" rel="noopener" aria-label="One More on Facebook">Facebook</a>
           <a href="https://www.instagram.com/onemore_tabernacle_nj" target="_blank" rel="noopener" aria-label="One More on Instagram">Instagram</a>
@@ -128,15 +139,19 @@
           <strong>Get the specials by text</strong>
           Text <span class="footer__sms-kw">onemore</span> to <a class="footer__link" href="sms:+18334402766">833-440-2766</a>
         </p>
+      <!-- OM:footer-brand:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-hours:start -->
         <h3>Hours</h3>
         <table class="footer__hours" id="footerHours"><!-- filled from data.js --></table>
         <p class="footer__note">Open 7 days — most holidays. Late-night menu after the kitchen closes.</p>
+      <!-- OM:footer-hours:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-find:start -->
         <h3>Find Us</h3>
         <address class="footer__addr">
           1375 US Route 206<br/>
@@ -147,11 +162,14 @@
         <p>
           <a class="footer__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=1375+US+Route+206+Tabernacle+NJ+08088" target="_blank" rel="noopener">Get directions →</a>
         </p>
+      <!-- OM:footer-find:end -->
       </div>
     </div>
     <div class="footer__bar">
+      <!-- OM:footer-bar:start -->
       <span>© <span id="year"></span> One More Bar &amp; Grill · Tabernacle, NJ</span>
       <span class="footer__devil">Where the Jersey Devil drinks 🍺</span>
+      <!-- OM:footer-bar:end -->
       <a class="mo-badge" href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization">
         <span class="mo-badge__label">Powered by</span>
         <span class="mo-badge__rule" aria-hidden="true"></span>

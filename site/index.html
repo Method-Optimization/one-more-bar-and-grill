@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- OM:seo:start -->
   <title>One More Bar &amp; Grill — Wings, Beer &amp; Locals · Tabernacle, NJ</title>
   <meta name="description" content="One More Bar &amp; Grill in Tabernacle, NJ — wings, boneless Tails, cold beer and your local Pine Barrens bar since 2012. Dine in or call ahead for takeout: (609) 388-5386." />
+  <!-- OM:seo:end -->
   <meta name="theme-color" content="#0E0E0E" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
@@ -12,20 +14,22 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
   <!-- Open Graph / social sharing -->
+  <!-- OM:og:start -->
   <meta property="og:type" content="restaurant.restaurant" />
   <meta property="og:title" content="One More Bar &amp; Grill — Where the Jersey Devil Drinks." />
   <meta property="og:description" content="Wings, boneless Tails and cold beer in the heart of the Pine Barrens. Your local bar in Tabernacle, NJ since 2012." />
   <meta property="og:image" content="assets/img/wings-buffalo-plate.jpg" />
   <meta property="og:locale" content="en_US" />
-
+  <!-- OM:og:end -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Local-search structured data. Hours/address rarely change; if they do,
-       update this block AND assets/js/data.js. -->
+  <!-- Local-search structured data. Generated from the hours and address in
+       the Studio, so it can never drift out of step with the page. -->
+  <!-- OM:jsonld:start -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,6 +65,7 @@
     }
   }
   </script>
+  <!-- OM:jsonld:end -->
 </head>
 
 <body>
@@ -77,18 +82,22 @@
       </a>
 
       <nav class="nav__links" aria-label="Primary">
+        <!-- OM:nav-links:start -->
         <a href="menu.html">Menu</a>
         <a href="calendar.html">Calendar</a>
         <a href="#specials">Specials</a>
         <a href="#story">Our Story</a>
         <a href="#find-us">Hours &amp; Find Us</a>
+      <!-- OM:nav-links:end -->
       </nav>
 
       <div class="nav__actions">
+        <!-- OM:nav-call:start -->
         <a class="btn btn--call" href="tel:+16093885386">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
           <span>Call for Takeout</span>
         </a>
+        <!-- OM:nav-call:end -->
         <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
@@ -99,12 +108,14 @@
   <!-- Mobile drawer -->
   <div class="mobile-nav" id="mobileNav" hidden>
     <nav aria-label="Mobile">
+      <!-- OM:mobile-links:start -->
       <a href="menu.html">Menu</a>
       <a href="calendar.html">Calendar</a>
       <a href="#specials">Specials</a>
       <a href="#story">Our Story</a>
       <a href="#find-us">Hours &amp; Find Us</a>
       <a class="mobile-nav__call" href="tel:+16093885386">Call for Takeout · (609) 388-5386</a>
+    <!-- OM:mobile-links:end -->
     </nav>
   </div>
 
@@ -126,16 +137,19 @@
           <img class="hero__logo" src="assets/img/wordmark-onemore.png"
                alt="One More Bar &amp; Grill"
                width="1400" height="783" fetchpriority="high" />
+          <!-- OM:hero-copy:start -->
           <p class="hero__tag">Where the Jersey Devil drinks.</p>
           <p class="hero__sub">Your local bar in the heart of the Pine Barrens.</p>
-
+          <!-- OM:hero-copy:end -->
           <div class="hero__status" id="status" aria-live="polite">
             <span class="dot" aria-hidden="true"></span>
             <span class="status__text">Checking today's hours…</span>
           </div>
 
           <div class="hero__cta">
+            <!-- OM:hero-cta:start -->
             <a class="btn btn--primary" href="menu.html">View the Menu</a>
+          <!-- OM:hero-cta:end -->
           </div>
         </div>
 
@@ -151,13 +165,14 @@
 
     <!-- ======================= STICKY CARD STACK ======================= -->
     <section class="stack" id="stack" aria-label="What you can do here">
+      <!-- OM:stack:start -->
       <article class="stack__card" data-card>
         <div class="stack__text">
           <span class="script">come hungry</span>
           <h2>The Menu</h2>
-          <p>Wings, boneless Tails, breaded Ears, burgers, cheesesteaks, pizza, and a whole mess of finger foods. Ten sauces, from Mild to Devil's Breath.</p>
+          <p>Wings, boneless Tails, breaded Ears, burgers, cheesesteaks, pizza, and a whole mess of finger foods. Ten sauces, from Mild to Devil&#39;s Breath.</p>
           <a class="reveal-btn" href="menu.html" data-reveal-btn>
-            <span>See what's cooking</span>
+            <span>See what&#39;s cooking</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -172,7 +187,7 @@
         <div class="stack__text">
           <span class="script">every single day</span>
           <h2>Specials &amp; Events</h2>
-          <p>75¢ wing Sundays, $10 burger Mondays, Music Bingo Tuesdays, Karaoke Saturdays — plus Mary Ann's soup and Aimee's cake, fresh every week.</p>
+          <p>75¢ wing Sundays, $10 burger Mondays, Music Bingo Tuesdays, Karaoke Saturdays — plus Mary Ann&#39;s soup and Aimee&#39;s cake, fresh every week.</p>
           <a class="reveal-btn" href="#specials" data-reveal-btn>
             <span>See this week</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -189,7 +204,7 @@
         <div class="stack__text">
           <span class="script">no app, no fees</span>
           <h2>Takeout</h2>
-          <p>Just pick up the phone. Call ahead and we'll have it hot and ready. Party trays for the whole crew, too.</p>
+          <p>Just pick up the phone. Call ahead and we&#39;ll have it hot and ready. Party trays for the whole crew, too.</p>
           <a class="reveal-btn" href="tel:+16093885386" data-reveal-btn>
             <span>Call (609) 388-5386</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -198,22 +213,26 @@
         <div class="stack__media">
           <img src="assets/img/takeout-tails.jpg"
                alt="A foil takeout tray filled with boneless chicken Tails coated in glossy wing sauce."
-               width="1536" height="2048" loading="lazy" decoding="async"
-               />
+               width="1536" height="2048" loading="lazy" decoding="async" />
         </div>
       </article>
+    <!-- OM:stack:end -->
     </section>
 
     <!-- ===================== POLAROID SHOWCASE ===================== -->
     <section class="showcase" id="showcase" aria-label="Our favorites">
       <div class="showcase__head">
+        <!-- OM:showcase-head:start -->
         <span class="script">the good stuff</span>
         <h2 class="reveal-words">Our Favorites</h2>
-        <p class="showcase__tagline">There's no wrong order here.</p>
+        <p class="showcase__tagline">There&#39;s no wrong order here.</p>
+      <!-- OM:showcase-head:end -->
       </div>
       <div class="polaroids" id="polaroids"><!-- filled from data.js --></div>
       <div class="showcase__cta">
+        <!-- OM:showcase-cta:start -->
         <a class="btn btn--primary" href="menu.html">See the Full Menu</a>
+      <!-- OM:showcase-cta:end -->
       </div>
     </section>
 
@@ -227,11 +246,14 @@
     <!-- ===================== SPECIALS & EVENTS ===================== -->
     <section class="specials" id="specials" aria-label="Specials and events">
       <div class="specials__head">
+        <!-- OM:specials-head:start -->
         <span class="script">chalk it up</span>
         <h2 class="reveal-words">This week at One More</h2>
+      <!-- OM:specials-head:end -->
       </div>
 
       <div class="specials__grid">
+        <!-- OM:specials-grid:start -->
         <div class="specials__col">
           <h3>Daily Specials</h3>
           <ul class="daily" id="dailyList"><!-- filled from data.js --></ul>
@@ -244,6 +266,7 @@
           <h3 class="specials__roth">Fresh This Week</h3>
           <ul class="rotating" id="rotatingList"><!-- filled from data.js --></ul>
         </div>
+      <!-- OM:specials-grid:end -->
       </div>
     </section>
 
@@ -265,10 +288,12 @@
     <!-- ===================== STORY / HERITAGE ===================== -->
     <section class="story" id="story" aria-label="Our story">
       <div class="story__body">
+        <!-- OM:story:start -->
         <span class="script">since 2012</span>
         <h2 class="reveal-words">A Piney bar — the highest compliment.</h2>
-        <p class="reveal-words">One More is its own animal. It's Mary Ann's homemade soups, Aimee's cakes, Reenie behind the bar making a proper drink, the wings, the pool tables, the jukebox, live music, and our pet friendly patio.</p>
+        <p class="reveal-words">One More is its own animal. It&#39;s Mary Ann&#39;s homemade soups, Aimee&#39;s cakes, Reenie behind the bar making a proper drink, the wings, the pool tables, the jukebox, live music, and our pet friendly patio.</p>
         <p class="story__order">ORDER ONE MORE</p>
+      <!-- OM:story:end -->
       </div>
     </section>
   </main>
@@ -277,6 +302,7 @@
   <footer class="footer" id="find-us">
     <div class="footer__grid">
       <div class="footer__col footer__brand">
+        <!-- OM:footer-brand:start -->
         <div class="footer__social">
           <a href="https://www.facebook.com/onemorebarandgrillNJ" target="_blank" rel="noopener" aria-label="One More on Facebook">Facebook</a>
           <a href="https://www.instagram.com/onemore_tabernacle_nj" target="_blank" rel="noopener" aria-label="One More on Instagram">Instagram</a>
@@ -285,15 +311,19 @@
           <strong>Get the specials by text</strong>
           Text <span class="footer__sms-kw">onemore</span> to <a class="footer__link" href="sms:+18334402766">833-440-2766</a>
         </p>
+      <!-- OM:footer-brand:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-hours:start -->
         <h3>Hours</h3>
         <table class="footer__hours" id="footerHours"><!-- filled from data.js --></table>
         <p class="footer__note">Open 7 days — most holidays. Late-night menu after the kitchen closes.</p>
+      <!-- OM:footer-hours:end -->
       </div>
 
       <div class="footer__col">
+        <!-- OM:footer-find:start -->
         <h3>Find Us</h3>
         <address class="footer__addr">
           1375 US Route 206<br/>
@@ -304,11 +334,14 @@
         <p>
           <a class="footer__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=1375+US+Route+206+Tabernacle+NJ+08088" target="_blank" rel="noopener">Get directions →</a>
         </p>
+      <!-- OM:footer-find:end -->
       </div>
     </div>
     <div class="footer__bar">
+      <!-- OM:footer-bar:start -->
       <span>© <span id="year"></span> One More Bar &amp; Grill · Tabernacle, NJ</span>
       <span class="footer__devil">Where the Jersey Devil drinks 🍺</span>
+      <!-- OM:footer-bar:end -->
       <a class="mo-badge" href="https://methodoptimization.com" target="_blank" rel="noopener" aria-label="Powered by Method Optimization">
         <span class="mo-badge__label">Powered by</span>
         <span class="mo-badge__rule" aria-hidden="true"></span>

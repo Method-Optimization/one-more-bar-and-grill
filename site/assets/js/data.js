@@ -1,21 +1,17 @@
 /* =============================================================================
-   ONE MORE BAR & GRILL — EDITABLE CONTENT
+   ONE MORE BAR & GRILL — SITE CONTENT
    -----------------------------------------------------------------------------
-   THIS IS THE ONE FILE YOU EDIT to keep the site fresh. No coding needed —
-   just change the text between the quotes. Keep the quotes, commas, and
-   brackets exactly where they are.
+   GENERATED FILE — DO NOT EDIT BY HAND.
 
-   Rotating items (Soup of the Week, Cake of the Week, Roll of the Month) are
-   the things to update most often. Search for "ROTATING" below.
+   Everything below comes from the Sanity Studio at
+   https://onemorebng.sanity.studio and is written here by `npm run build`.
+   Editing this file directly works until the next build, then it is overwritten.
 
-   After editing: save the file and refresh the website.
+   To change any of it, edit it in the Studio and publish.
    ============================================================================= */
 
 window.OM_DATA = {
 
-  /* ---------------------------------------------------------------------------
-     BUSINESS INFO  (rarely changes)
-     --------------------------------------------------------------------------- */
   business: {
     name: "One More Bar & Grill",
     tagline: "Just your local bar trying to get through the day like you.",
@@ -24,52 +20,39 @@ window.OM_DATA = {
     addressRegion: "NJ",
     addressZip: "08088",
     phoneDisplay: "(609) 388-5386",
-    phoneDial: "+16093885386",          // used by the "tap to call" buttons
+    phoneDial: "+16093885386",
     email: "wendyonemore@gmail.com",
     facebook: "https://www.facebook.com/onemorebarandgrillNJ",
     instagram: "https://www.instagram.com/onemore_tabernacle_nj",
-    // Directions link opens Google Maps to the address:
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=1375+US+Route+206+Tabernacle+NJ+08088",
     establishedYear: 2012
   },
 
-  /* ---------------------------------------------------------------------------
-     HOURS  (drives the live "Open now / Kitchen closes at" badge)
-     Times are 24-hour. Bar close after midnight is written as next-day hours.
-     Sun=0, Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6
-     --------------------------------------------------------------------------- */
   hours: {
-    // Bar open hours per day. "close" past 24:00 means it closes after midnight.
     bar: {
       0: { open: "11:00", close: "24:00" }, // Sun
       1: { open: "11:00", close: "24:00" }, // Mon
       2: { open: "11:00", close: "24:00" }, // Tue
       3: { open: "11:00", close: "24:00" }, // Wed
       4: { open: "11:00", close: "24:00" }, // Thu
-      5: { open: "11:00", close: "26:00" }, // Fri  (26:00 = 2:00 AM)
-      6: { open: "11:00", close: "26:00" }  // Sat  (26:00 = 2:00 AM)
+      5: { open: "11:00", close: "26:00" }, // Fri
+      6: { open: "11:00", close: "26:00" }, // Sat
     },
-    // Full kitchen hours (the badge shows "Kitchen closes at ___").
     kitchen: {
       0: { open: "11:00", close: "21:00" }, // Sun
-      1: { open: "11:00", close: "21:00" },
-      2: { open: "11:00", close: "21:00" },
-      3: { open: "11:00", close: "21:00" },
-      4: { open: "11:00", close: "21:00" },
+      1: { open: "11:00", close: "21:00" }, // Mon
+      2: { open: "11:00", close: "21:00" }, // Tue
+      3: { open: "11:00", close: "21:00" }, // Wed
+      4: { open: "11:00", close: "21:00" }, // Thu
       5: { open: "11:00", close: "23:00" }, // Fri
-      6: { open: "11:00", close: "23:00" }  // Sat
+      6: { open: "11:00", close: "23:00" }, // Sat
     },
-    // Plain-English summary shown in the footer hours table.
     summary: [
       { label: "Sun – Thu", bar: "11am – 12am", kitchen: "11am – 9pm", late: "9pm – 11pm" },
-      { label: "Fri – Sat", bar: "11am – 2am",  kitchen: "11am – 11pm", late: "11pm – 1am" }
+      { label: "Fri – Sat", bar: "11am – 2am", kitchen: "11am – 11pm", late: "11pm – 1am" }
     ]
   },
 
-  /* ---------------------------------------------------------------------------
-     CYCLING HERO LINES  (the big phrases that light up word-by-word on scroll)
-     Keep them SHORT and punchy. 3–5 lines works best.
-     --------------------------------------------------------------------------- */
   heroLines: [
     "Cold beer.",
     "Wings.",
@@ -77,82 +60,55 @@ window.OM_DATA = {
     "Where the Jersey Devil drinks."
   ],
 
-  /* ---------------------------------------------------------------------------
-     DAILY SPECIALS  (shown in the Specials section)
-     Sun=0 ... Sat=6
-     --------------------------------------------------------------------------- */
   dailySpecials: [
-    { day: "Sunday",    deal: "75¢ wings · $2 Coors Light draft (eat-in)" },
-    { day: "Monday",    deal: "$10 your-choice burger & fries (eat-in)" },
-    { day: "Tuesday",   deal: "$8 mini cheesesteak & fries (eat-in)" },
-    { day: "Wednesday", deal: "4 free wings with purchase (eat-in)" },
-    { day: "Thursday",  deal: "Tails — 3 for $5 (eat-in)" },
-    { day: "Friday",    deal: "Personal pizza $6 (eat-in)" },
-    { day: "Saturday",  deal: "Karaoke night — come hungry (eat-in)" }
+    { day: "Sunday", deal: "75¢ wings · $2 Coors Light draft (eat-in)" },
+    { day: "Monday", deal: "$12 your-choice burger & fries (eat-in)" },
+    { day: "Tuesday", deal: "$9 mini cheesesteak & fries (eat-in)" },
+    { day: "Wednesday", deal: "4 free wings with any wings, Tails, Ears, shrimp, scallops or combo (eat-in)" },
+    { day: "Thursday", deal: "Tails — 3 for $5 (eat-in, limit 2 per person)" },
+    { day: "Friday", deal: "Personal pizza $7 — add $1.50 for gluten free (eat-in)" },
+    { day: "Saturday", deal: "Karaoke night — come hungry (eat-in)" }
   ],
 
-  /* ---------------------------------------------------------------------------
-     WEEKLY ENTERTAINMENT
-     --------------------------------------------------------------------------- */
   weeklyEvents: [
     { name: "Music Bingo", when: "Every Tuesday · 7–9pm" },
-    { name: "Karaoke",     when: "Every Saturday · 9pm–1am" }
+    { name: "Karaoke", when: "Every Saturday · 9pm–1am" }
   ],
 
-  /* ---------------------------------------------------------------------------
-     ROTATING FEATURES  ★ UPDATE THESE OFTEN ★
-     This is the stuff that keeps regulars checking back.
-     --------------------------------------------------------------------------- */
   rotating: [
-    { label: "Soup of the Week",        value: "Mary Ann's homemade — ask your server" },
-    { label: "Cake of the Week",        value: "Aimee's homemade cake" },
-    { label: "Roll of the Month",       value: "Cuban Roll" },
-    { label: "Dessert Roll of the Month", value: "Strawberry Cheesecake Roll" }
+    { label: "Soup of the Week", value: "Mary Ann's homemade — ask your server" },
+    { label: "Cake of the Week", value: "Aimee's homemade cake" },
+    { label: "Roll of the Month", value: "Chicken Bacon Ranch Roll" },
+    { label: "Dessert Roll of the Month", value: "Chocolate Peanut Butter Cheese Cake Roll" }
   ],
 
-  /* ---------------------------------------------------------------------------
-     MONTHLY CALENDAR  (the image on calendar.html)
-     Once Sanity is connected the owner replaces this image in the Studio and
-     these values are only a fallback, used if Sanity can't be reached.
-     --------------------------------------------------------------------------- */
-  calendar: {
-    img: "aug-calendar-2026.jpg",
-    alt: "August 2026 events and specials calendar for One More Bar and Grill.",
-    note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.",
-    width: 990,
-    height: 765
-  },
+  calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/fa3d9b0adf0204483b3dab59582f47de05e71e50-3300x2550.jpg?w=1800&q=80&auto=format", alt: "September 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1800, height: 1391 },
 
-  /* ---------------------------------------------------------------------------
-     SIGNATURE ITEMS  (the scattered polaroid food cards)
-     "img" must match a file in assets/img/
-     --------------------------------------------------------------------------- */
   signatureItems: [
-    { img: "tails-signature.jpg",            alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
-    { img: "wings-buffalo-plate.jpg",        alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
-    { img: "pizza-specials.jpg",             alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Stone-Cooked Pizza", note: "Hand-tossed. Fresh out of the oven." },
-    { img: "cake-oreo.jpg",                  alt: "Cookies and cream layer cake with a whipped cream border, made fresh at One More Bar and Grill.", caption: "Save Room", note: "Or don't — get it anyway." }
+    { img: "tails-signature.jpg", alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
+    { img: "wings-buffalo-plate.jpg", alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
+    { img: "pizza-specials.jpg", alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Stone-Cooked Pizza", note: "Hand-tossed. Fresh out of the oven." },
+    { img: "cake-oreo.jpg", alt: "Cookies and cream layer cake with a whipped cream border, made fresh at One More Bar and Grill.", caption: "Save Room", note: "Or don't — get it anyway." }
   ],
 
-  /* ---------------------------------------------------------------------------
-     SAUCES  (shown as a marquee strip)
-     --------------------------------------------------------------------------- */
   sauces: [
-    "Devil's Breath", "Hot", "Spicy", "Mild", "Garlic Parm",
-    "Johnny Yaki", "Russell's Pic II", "Bourbon", "Sesame Ginger", "Sweet BBQ"
+    "Devil's Breath",
+    "Hot",
+    "Spicy",
+    "Mild",
+    "Garlic Parm",
+    "Johnny Yaki",
+    "Russell's Pic II",
+    "Bourbon",
+    "Sesame Ginger",
+    "Sweet BBQ"
   ],
 
-  /* ---------------------------------------------------------------------------
-     RATINGS  (social proof bar)
-     --------------------------------------------------------------------------- */
   ratings: [
-    { source: "Google",   score: "4.5", count: "812 reviews" },
+    { source: "Google", score: "4.5", count: "812 reviews" },
     { source: "Facebook", score: "4.8", count: "96% recommend" }
   ],
 
-  /* ---------------------------------------------------------------------------
-     TESTIMONIALS  (rotate automatically)
-     --------------------------------------------------------------------------- */
   testimonials: [
     { quote: "This is what a country bar should be. Cheap beer, great service, live music and pretty damn good food. The Garlic Parm Mild Wings are ridiculous.", who: "Ryan B.", where: "Medford, NJ" },
     { quote: "The coolest laid-back cozy place… They make proper drinks (not weak). The meatball roll RULED. I'll always stop here from now on.", who: "Liz F.", where: "Yelp Elite" },

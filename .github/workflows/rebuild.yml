@@ -1,0 +1,56 @@
+# =============================================================================
+# REBUILD ON PUBLISH
+# -----------------------------------------------------------------------------
+# Pulls the current content out of Sanity, writes it into the site files, and
+# commits the result. Cloudflare deploys the commit the way it deploys any
+# other push to main, so the whole trip from a Publish in the Studio to a live
+# page is one pipeline with no extra hosting moving parts.
+#
+# Fires on:
+#   • a Sanity webhook  — POST to the repository_dispatch API with
+#     {"event_type": "sanity-publish"}
+#   • the "Run workflow" button on the Actions tab
+#
+# If nothing changed the job commits nothing, so a stray webhook is free.
+# =============================================================================
+
+name: Rebuild site from Sanity
+
+on:
+  repository_dispatch:
+    types: [sanity-publish]
+  workflow_dispatch:
+
+# Only one rebuild at a time, and drop any that queue up behind a newer one:
+# publishing three edits in a row should deploy once, not three times.
+concurrency:
+  group: rebuild-from-sanity
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build the site from Sanity
+        run: npm run build
+
+      - name: Commit the result
+        run: |
+          git config user.name  "One More content bot"
+          git config user.email "actions@github.com"
+          if git diff --quiet; then
+            echo "No content changes — nothing to deploy."
+            exit 0
+          fi
+          git add content.json site
+          git commit -m "Content update from Sanity"
+          git push

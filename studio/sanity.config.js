@@ -1,12 +1,12 @@
 /* =============================================================================
    ONE MORE BAR & GRILL — Sanity Studio configuration
    -----------------------------------------------------------------------------
-   ★ BEFORE THIS WILL RUN: put your real project ID on the PROJECT_ID line below.
-     You get it from sanity.io/manage after creating the project. It looks like
-     a short string of letters and numbers, e.g. "7f3k9d2p".
+   The sidebar is arranged the way the owner thinks about the site: the things
+   that change weekly at the top, the things that almost never change at the
+   bottom.
 
-     The same ID also goes in site/assets/js/sanity-config.js so the website
-     knows where to read from. Both files must match.
+   Publishing here does not change the live site on its own. A publish fires a
+   webhook that rebuilds and redeploys it — see build/README.md.
    ============================================================================= */
 
 import { defineConfig } from "sanity";
@@ -16,15 +16,27 @@ import { schemaTypes } from "./schemas";
 const PROJECT_ID = "1gjbq9h5";
 const DATASET = "production";
 
-/* The two documents the owner edits. Each exists exactly once ("singletons"),
-   so the Studio pins them in the sidebar instead of showing a list with a
-   "create new" button — there is nothing to create, only to edit. */
+/* Documents that exist exactly once. The Studio pins them in the sidebar
+   instead of showing a list with a "create new" button — there is nothing to
+   create, only to edit. */
 const SINGLETONS = [
   { id: "specials", type: "specials", title: "Specials & Events" },
-  { id: "calendar", type: "calendar", title: "Monthly Calendar" }
+  { id: "calendar", type: "calendar", title: "Monthly Calendar" },
+  { id: "homePage", type: "homePage", title: "Home Page" },
+  { id: "menuPage", type: "menuPage", title: "Menu Page" },
+  { id: "calendarPage", type: "calendarPage", title: "Calendar Page" },
+  { id: "siteSettings", type: "siteSettings", title: "Business Info & Hours" }
 ];
 
 const SINGLETON_TYPES = new Set(SINGLETONS.map((s) => s.type));
+
+const single = (S, id) => {
+  const def = SINGLETONS.filter((s) => s.id === id)[0];
+  return S.listItem()
+    .title(def.title)
+    .id(def.id)
+    .child(S.document().schemaType(def.type).documentId(def.id).title(def.title));
+};
 
 export default defineConfig({
   name: "default",
@@ -38,19 +50,24 @@ export default defineConfig({
       structure: (S) =>
         S.list()
           .title("Website content")
-          .items(
-            SINGLETONS.map((single) =>
-              S.listItem()
-                .title(single.title)
-                .id(single.id)
-                .child(
-                  S.document()
-                    .schemaType(single.type)
-                    .documentId(single.id)
-                    .title(single.title)
-                )
-            )
-          )
+          .items([
+            single(S, "specials"),
+            single(S, "calendar"),
+            S.divider(),
+            single(S, "homePage"),
+            single(S, "menuPage"),
+            S.listItem()
+              .title("Menu Sections")
+              .id("menuSections")
+              .child(
+                S.documentTypeList("menuCategory")
+                  .title("Menu Sections")
+                  .defaultOrdering([{ field: "order", direction: "asc" }])
+              ),
+            single(S, "calendarPage"),
+            S.divider(),
+            single(S, "siteSettings")
+          ])
     })
   ],
 
@@ -60,7 +77,7 @@ export default defineConfig({
 
   document: {
     /* Singletons can be edited but not created or deleted, so the owner can't
-       accidentally end up with two calendars or none. */
+       accidentally end up with two home pages or none. */
     actions: (prev, { schemaType }) =>
       SINGLETON_TYPES.has(schemaType)
         ? prev.filter(({ action }) =>

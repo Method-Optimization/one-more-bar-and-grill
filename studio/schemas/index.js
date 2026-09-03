@@ -1,4 +1,17 @@
+import siteSettings from "./siteSettings";
+import homePage from "./homePage";
+import menuPage from "./menuPage";
+import calendarPage from "./calendarPage";
+import menuCategory from "./menuCategory";
 import specials from "./specials";
 import calendar from "./calendar";
 
-export const schemaTypes = [specials, calendar];
+export const schemaTypes = [
+  siteSettings,
+  homePage,
+  menuPage,
+  calendarPage,
+  menuCategory,
+  specials,
+  calendar
+];

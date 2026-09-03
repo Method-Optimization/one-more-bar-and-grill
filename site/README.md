@@ -1,9 +1,14 @@
 # One More Bar & Grill — website (home page)
 
-A self-contained, **no-build** static site. There's no framework, bundler, or
-install step — `index.html` opens directly in a browser and can be hosted on any
-static host (Netlify drag-and-drop, Cloudflare Pages, GitHub Pages, or the
-existing GoDaddy hosting).
+A self-contained static site — no framework, no bundler, no runtime
+dependencies. `index.html` opens directly in a browser and can be hosted
+anywhere static.
+
+The files in this folder are **build output**. Every word, price and photo comes
+from the Sanity Studio and is written in by `npm run build` from the repo root;
+see [`../build/README.md`](../build/README.md). Edit the HTML directly and the
+next build overwrites the parts between the `<!-- OM:...:start -->` markers.
+Everything outside those markers is hand-written and stays put.
 
 ## Run / preview it
 - **Double-click** `index.html`, **or**
@@ -24,7 +29,7 @@ site/
 ├─ index.html              # the page (semantic HTML + JSON-LD SEO)
 ├─ assets/
 │  ├─ css/style.css        # all styling + responsive + reduced-motion
-│  ├─ js/data.js           # ← OWNER EDITS THIS (specials, hours, quotes)
+│  ├─ js/data.js           # GENERATED from Sanity — do not edit by hand
 │  ├─ js/main.js           # animations, live hours badge, rendering
 │  └─ img/                 # food photos + logo (web-optimized)
 ├─ EDITING.md              # plain-English guide for the owner

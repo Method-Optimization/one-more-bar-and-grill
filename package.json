@@ -1,0 +1,13 @@
+{
+  "name": "one-more-bar-and-grill",
+  "private": true,
+  "version": "1.0.0",
+  "description": "One More Bar & Grill — static site, content built from Sanity",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "build:offline": "node build/build.mjs --offline",
+    "extract": "node build/extract.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
