@@ -39,6 +39,11 @@ deleted, so the owner can't end up with two home pages or none.
 items, sub-headings, small print and price-less lists the way the printed menu
 does. `build/render.mjs` switches on `_type` to render each one.
 
+`menuCategory.showInFooter` repeats one section in the footer of every page;
+it is ticked on `menuCategory.latenight`. The footer panel is rendered from that
+same document rather than from a copy, so the two can't drift apart. The first
+flagged section wins if more than one is ticked.
+
 ## Running it
 
 ```bash

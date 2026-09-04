@@ -1380,7 +1380,8 @@
             "lead": "Your choice $9:",
             "text": "Broccoli Bites · Jalapeño Poppers · Chicken Fingers · Onion Petals · Corn Nuggets · Fried Green Beans · Fried Pickles · Buffalo Chicken Dip · Fried Mushrooms"
           }
-        ]
+        ],
+        "showInFooter": true
       },
       {
         "anchor": "trays",

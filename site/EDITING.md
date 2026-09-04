@@ -91,6 +91,13 @@ On an individual item:
   it breaks any existing link to that section, so leave it alone unless you mean
   it.
 
+At the bottom of a section there's **Also show this section in the footer**.
+That's ticked on **Late Night Menu**, which is why it also appears under Hours &
+Find Us at the bottom of every page — someone checking the footer at 11pm is
+asking whether the kitchen is still on and what they can get. It's the same
+section either way, so a price you change once changes in both places. Only one
+section can be down there at a time.
+
 ---
 
 ## Photos

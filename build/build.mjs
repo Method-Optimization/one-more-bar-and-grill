@@ -80,6 +80,8 @@ function chrome(html, self) {
   html = replaceRegion(html, "footer-brand", R.renderFooterBrand(c.business, c.footer));
   html = replaceRegion(html, "footer-hours", R.renderFooterHours(c.footer));
   html = replaceRegion(html, "footer-find", R.renderFooterFind(c.business, c.footer));
+  html = replaceRegion(html, "footer-latenight",
+    R.renderFooterLateNight(c.menu.categories));
   html = replaceRegion(html, "footer-bar", R.renderFooterBar(c.business, c.footer));
   return html;
 }

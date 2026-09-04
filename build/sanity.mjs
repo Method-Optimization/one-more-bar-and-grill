@@ -46,7 +46,7 @@ export const QUERY = `{
     "height": image.asset->metadata.dimensions.height
   },
   "menu": *[_type == "menuCategory"] | order(order asc){
-    title, jumpLabel, anchor, order, comment, blocks
+    title, jumpLabel, anchor, order, comment, showInFooter, blocks
   }
 }`;
 
@@ -250,13 +250,15 @@ export function fromSanity(r, base) {
 
   if (has(r.menu)) {
     out.menu.categories = r.menu.map(function (c) {
-      return {
+      const out = {
         anchor: c.anchor,
         comment: c.comment || String(c.anchor || "").toUpperCase(),
         title: c.title,
         jumpLabel: c.jumpLabel || c.title,
         blocks: (c.blocks || []).map(cleanBlock)
       };
+      if (c.showInFooter) out.showInFooter = true;
+      return out;
     });
   }
 
@@ -429,6 +431,7 @@ export function toSanity(c) {
       anchor: cat.anchor,
       order: (i + 1) * 10,
       comment: cat.comment,
+      showInFooter: !!cat.showInFooter,
       blocks: cat.blocks.map(function (b) {
         const out = { _key: key(), _type: b._type };
         if (b._type === "menuItems") {

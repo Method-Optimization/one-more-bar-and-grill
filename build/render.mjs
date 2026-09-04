@@ -604,3 +604,54 @@ export function renderEvents(events, emptyMessage) {
 
   return NL + out.join(NL + NL) + NL + "    ";
 }
+
+/* --------------------------------------------------------------------------
+   FOOTER LATE NIGHT PANEL
+   -------------------------------------------------------------------------- */
+
+/* Repeats one menu section — in practice the late night one — at the bottom of
+   every page. It reads straight off that section's own document rather than
+   holding a second copy, so a price changed on the menu page cannot fall out of
+   step with the footer. Which section appears is the "Also show this section in
+   the footer" tick in the Studio. */
+export function renderFooterLateNight(categories) {
+  const cat = (categories || []).filter(function (c) { return c.showInFooter; })[0];
+  if (!cat) return NL + "      ";
+
+  const items = [];
+  const notes = [];
+  (cat.blocks || []).forEach(function (b) {
+    if (b._type === "menuItems") (b.items || []).forEach(function (i) { items.push(i); });
+    else if (b._type === "menuNote") notes.push(b);
+  });
+  if (!items.length) return NL + "      ";
+
+  const rows = items.map(function (i) {
+    return '          <li><span class="ln-item__name">' + esc(i.name) + "</span>" +
+      '<span class="ln-item__price">' + esc(i.tiers || i.price || "") + "</span></li>";
+  });
+
+  const out = [
+    "",
+    '      <section class="footer__latenight" aria-label="' + esc(cat.title) + '">',
+    '        <h3 class="ln-head">' + esc(cat.title) + "</h3>"
+  ];
+  // The introducing note carries the serving times, which is the whole reason
+  // this panel is worth having down here.
+  const top = notes.filter(function (n) { return n.top; })[0];
+  if (top) out.push('        <p class="ln-when">' + esc(top.text) + "</p>");
+
+  out.push('        <ul class="ln-list">');
+  out.push.apply(out, rows);
+  out.push("        </ul>");
+
+  notes.filter(function (n) { return !n.top; }).forEach(function (n) {
+    const lead = n.lead ? "<strong>" + esc(n.lead) + "</strong> " : "";
+    out.push('        <p class="ln-note">' + lead + esc(n.text) + "</p>");
+  });
+
+  out.push('        <a class="ln-link" href="menu.html#' + esc(cat.anchor) + '">See the full menu →</a>');
+  out.push("      </section>");
+  out.push("      ");
+  return out.join(NL);
+}

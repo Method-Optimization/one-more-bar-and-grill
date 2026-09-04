@@ -183,6 +183,18 @@ export default {
     },
 
     {
+      name: "showInFooter",
+      title: "Also show this section in the footer",
+      description:
+        "Repeats this section at the bottom of every page, under Hours & Find " +
+        "Us. Meant for the late night menu — it is what someone is looking for " +
+        "when they check whether the kitchen is still open. Only one section " +
+        "shows there; if you tick more than one, the first wins.",
+      type: "boolean",
+      initialValue: false
+    },
+
+    {
       name: "comment",
       title: "Internal label",
       description:

@@ -682,6 +682,54 @@ body::after {
 }
 
 /* =============================================================================
+   FOOTER — LATE NIGHT PANEL
+   -----------------------------------------------------------------------------
+   The late night menu repeated under Hours & Find Us. Someone checking the
+   footer at 11pm is asking one question — is the kitchen still on, and what can
+   I get — so the answer sits next to the hours instead of a page away.
+   ============================================================================= */
+.footer__latenight {
+  border-top: 1px solid var(--line);
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+.ln-head {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; font-size: 1.05rem; color: var(--cream);
+  margin-bottom: .35rem;
+}
+.ln-when {
+  color: var(--amber); font-size: .82rem; letter-spacing: .04em;
+  margin-bottom: 1.1rem;
+}
+.ln-list {
+  list-style: none; margin: 0 0 1rem; padding: 0;
+  display: grid; gap: .1rem 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+}
+.ln-list li {
+  display: flex; align-items: baseline; gap: .5rem;
+  padding: .3rem 0; border-bottom: 1px dotted var(--line);
+}
+.ln-item__name { color: var(--cream-dim); font-size: .88rem; }
+.ln-item__price {
+  margin-left: auto; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: .82rem; color: var(--cream);
+}
+.ln-note {
+  color: var(--muted); font-size: .78rem; line-height: 1.5;
+  max-width: 70ch; margin-bottom: .5rem;
+}
+.ln-link {
+  display: inline-block; margin-top: .6rem;
+  font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  border-bottom: 1px solid var(--line); padding-bottom: .15rem;
+}
+.ln-link:hover, .ln-link:focus-visible { color: var(--cream); border-color: var(--red); }
+
+/* =============================================================================
    SPECIAL EVENTS PAGE
    -----------------------------------------------------------------------------
    A stack of flyers, each with its name, date and blurb written out beside it.
