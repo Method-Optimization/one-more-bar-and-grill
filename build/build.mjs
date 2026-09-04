@@ -115,6 +115,17 @@ function chrome(html, self) {
   write("menu.html", html);
 }
 
+/* ----------------------------------------------------------------- events */
+{
+  let html = page("events.html");
+  html = replaceRegion(html, "seo", R.renderSeo(c.events.seo));
+  html = replaceRegion(html, "events-hero", R.renderEventsHero(c.events.hero));
+  html = replaceRegion(html, "events-body",
+    R.renderEvents(c.events.items, c.events.emptyMessage));
+  html = chrome(html, "events.html");
+  write("events.html", html);
+}
+
 /* --------------------------------------------------------------- calendar */
 {
   let html = page("calendar.html");
@@ -131,5 +142,6 @@ writeFileSync(join(SITE, "assets/js/data.js"), R.renderDataJs(c), "utf8");
 const items = c.menu.categories.reduce(
   (n, cat) => n + cat.blocks.reduce((k, b) => k + (b.items ? b.items.length : 0), 0), 0);
 
-console.log("built  index.html  menu.html  calendar.html  assets/js/data.js");
-console.log("       " + c.menu.categories.length + " menu sections, " + items + " items");
+console.log("built  index.html  menu.html  events.html  calendar.html  assets/js/data.js");
+console.log("       " + c.menu.categories.length + " menu sections, " + items + " items, " +
+  c.events.items.length + " events");

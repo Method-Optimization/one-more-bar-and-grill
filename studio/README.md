@@ -20,7 +20,7 @@ Cloudflare serves. See [`build/README.md`](../build/README.md) for the pipeline.
 
 ## The documents
 
-Six singletons plus one list. Singletons can be edited but not created or
+Seven singletons plus one list. Singletons can be edited but not created or
 deleted, so the owner can't end up with two home pages or none.
 
 | Type | id | Holds |
@@ -30,6 +30,7 @@ deleted, so the owner can't end up with two home pages or none.
 | `homePage` | `homePage` | Every word and photo on the front page |
 | `menuPage` | `menuPage` | The menu page's hero copy |
 | `menuCategory` | `menuCategory.<anchor>` | One per menu section — 17 of them |
+| `eventsPage` | `eventsPage` | The special event flyers, plus that page's copy |
 | `calendarPage` | `calendarPage` | The calendar page's hero copy |
 | `siteSettings` | `siteSettings` | Business details, hours, nav, footer |
 
@@ -75,12 +76,23 @@ sections and 144 items among it — into the Studio.
 node build/make-seed.mjs                                  # from the repo root
 cd studio
 npx sanity exec scripts/seed-content.mjs --with-user-token
+npx sanity exec scripts/upload-photos.mjs --with-user-token
 ```
 
 `--with-user-token` borrows the login the Sanity CLI already has, so no API
-token has to be created, pasted or stored. The script leaves `specials` and
-`calendar` alone if they already exist, because the owner had been editing those
-before the rest of the site moved in.
+token has to be created, pasted or stored.
+
+**`seed-content.mjs` never touches a document that already exists.** Once
+content lives in the Studio it is the source of truth, and the script has no way
+to tell an owner's edit from a stale line in `content.json`. That makes it safe
+to re-run, and it is how a newly added page gets its document — which is exactly
+what happened when the Special Events page was added.
+
+**`upload-photos.mjs` fills in photo fields that have a built-in filename but no
+uploaded image.** Without it the owner opens a photo field and sees an empty
+upload box, with no way to tell what is currently on the page or what they are
+about to replace. It skips fields that already have an image, so it is also safe
+to re-run. Add any new photo field to its `TARGETS` list.
 
 `scripts/upload-calendar.mjs` runs the same way and exists because the MCP
 connector can't upload binaries.

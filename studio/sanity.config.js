@@ -24,6 +24,7 @@ const SINGLETONS = [
   { id: "calendar", type: "calendar", title: "Monthly Calendar" },
   { id: "homePage", type: "homePage", title: "Home Page" },
   { id: "menuPage", type: "menuPage", title: "Menu Page" },
+  { id: "eventsPage", type: "eventsPage", title: "Special Events" },
   { id: "calendarPage", type: "calendarPage", title: "Calendar Page" },
   { id: "siteSettings", type: "siteSettings", title: "Business Info & Hours" }
 ];
@@ -64,6 +65,8 @@ export default defineConfig({
                   .title("Menu Sections")
                   .defaultOrdering([{ field: "order", direction: "asc" }])
               ),
+            S.divider(),
+            single(S, "eventsPage"),
             single(S, "calendarPage"),
             S.divider(),
             single(S, "siteSettings")

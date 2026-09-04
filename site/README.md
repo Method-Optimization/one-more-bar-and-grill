@@ -26,7 +26,10 @@ Everything outside those markers is hand-written and stays put.
 ## What's here
 ```
 site/
-├─ index.html              # the page (semantic HTML + JSON-LD SEO)
+├─ index.html              # home (semantic HTML + JSON-LD SEO)
+├─ menu.html               # the full menu
+├─ events.html             # special event flyers
+├─ calendar.html           # the monthly calendar
 ├─ assets/
 │  ├─ css/style.css        # all styling + responsive + reduced-motion
 │  ├─ js/data.js           # GENERATED from Sanity — do not edit by hand

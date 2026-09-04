@@ -33,6 +33,10 @@ export const QUERY = `{
     signatureItems[]{..., photo${PHOTO}}
   },
   "menuPage": *[_id == "menuPage"][0],
+  "eventsPage": *[_id == "eventsPage"][0]{
+    ...,
+    events[]{..., flyer${PHOTO}}
+  },
   "calendarPage": *[_id == "calendarPage"][0],
   "specials": *[_id == "specials"][0]{dailySpecials, weeklyEvents, rotating},
   "calendar": *[_id == "calendar"][0]{
@@ -214,6 +218,31 @@ export function fromSanity(r, base) {
     if (r.menuPage.seo) Object.assign(out.menu.seo, stripEmpty(r.menuPage.seo));
     if (r.menuPage.hero) Object.assign(out.menu.hero, stripEmpty(r.menuPage.hero));
   }
+  if (r.eventsPage) {
+    const e = r.eventsPage;
+    if (e.seo) Object.assign(out.events.seo, stripEmpty(e.seo));
+    if (e.hero) Object.assign(out.events.hero, stripEmpty(e.hero));
+    out.events.emptyMessage = pick(e.emptyMessage, out.events.emptyMessage);
+    /* Unlike every other list, an empty events list is taken at face value:
+       once the last event is over the owner deletes it, and the page is meant
+       to say so rather than keep advertising it. `events` being absent (the
+       document was never created) still falls back. */
+    if (Array.isArray(e.events)) {
+      out.events.items = e.events.map(function (ev, i) {
+        const was = out.events.items[i] || {};
+        const photo = photoOut(ev.flyer, {
+          img: was.img, alt: was.alt, width: was.width, height: was.height
+        });
+        return {
+          title: pick(ev.title, was.title),
+          when: pick(ev.when, was.when),
+          blurb: pick(ev.blurb, was.blurb),
+          img: photo.img, alt: photo.alt, width: photo.width, height: photo.height
+        };
+      });
+    }
+  }
+
   if (r.calendarPage) {
     if (r.calendarPage.seo) Object.assign(out.calendarPage.seo, stripEmpty(r.calendarPage.seo));
     if (r.calendarPage.hero) Object.assign(out.calendarPage.hero, stripEmpty(r.calendarPage.hero));
@@ -363,6 +392,24 @@ export function toSanity(c) {
   docs.push({
     _id: "calendarPage", _type: "calendarPage",
     seo: c.calendarPage.seo, hero: c.calendarPage.hero
+  });
+
+  docs.push({
+    _id: "eventsPage",
+    _type: "eventsPage",
+    seo: c.events.seo,
+    hero: c.events.hero,
+    emptyMessage: c.events.emptyMessage,
+    events: c.events.items.map(function (e) {
+      return {
+        _key: key(),
+        _type: "eventFlyer",
+        title: e.title,
+        when: e.when,
+        blurb: e.blurb,
+        flyer: photoIn(e)
+      };
+    })
   });
 
   docs.push({

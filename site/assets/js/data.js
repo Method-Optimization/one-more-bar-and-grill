@@ -85,10 +85,10 @@ window.OM_DATA = {
   calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/fa3d9b0adf0204483b3dab59582f47de05e71e50-3300x2550.jpg?w=1800&q=80&auto=format", alt: "September 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1800, height: 1391 },
 
   signatureItems: [
-    { img: "tails-signature.jpg", alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
-    { img: "wings-buffalo-plate.jpg", alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
-    { img: "pizza-specials.jpg", alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Stone-Cooked Pizza", note: "Hand-tossed. Fresh out of the oven." },
-    { img: "cake-oreo.jpg", alt: "Cookies and cream layer cake with a whipped cream border, made fresh at One More Bar and Grill.", caption: "Save Room", note: "Or don't — get it anyway." }
+    { img: "https://cdn.sanity.io/images/1gjbq9h5/production/07ef3cf59433b5cc4377612f4c38b45f384650d5-720x960.jpg?auto=format", alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
+    { img: "https://cdn.sanity.io/images/1gjbq9h5/production/e367dc56a64ea62f1f1259e1f3578556968ae13c-1536x2048.jpg?auto=format", alt: "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.", caption: "Wings", note: "Sauced to order." },
+    { img: "https://cdn.sanity.io/images/1gjbq9h5/production/3dc3bf28b45bdf62660b078e16bce4b1b3cdc3e0-1600x2123.jpg?auto=format", alt: "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.", caption: "Stone-Cooked Pizza", note: "Hand-tossed. Fresh out of the oven." },
+    { img: "https://cdn.sanity.io/images/1gjbq9h5/production/8079dfe4c4855f67fa278e372df2ffac3ed6d088-1400x1867.jpg?auto=format", alt: "Cookies and cream layer cake with a whipped cream border, made fresh at One More Bar and Grill.", caption: "Save Room", note: "Or don't — get it anyway." }
   ],
 
   sauces: [

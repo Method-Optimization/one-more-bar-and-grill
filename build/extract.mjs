@@ -341,6 +341,12 @@ const content = {
   }
 };
 
+/* The Special Events page did not exist when this migration was written, so it
+   has no hand-written original to read back out of. Carry the existing block
+   through rather than letting a re-run quietly drop it. */
+const existing = JSON.parse(readFileSync(join(ROOT, "content.json"), "utf8"));
+if (existing.events) content.events = existing.events;
+
 writeFileSync(join(ROOT, "content.json"), JSON.stringify(content, null, 2) + "\n", "utf8");
 
 const itemCount = menu.categories.reduce(

@@ -682,6 +682,87 @@ body::after {
 }
 
 /* =============================================================================
+   SPECIAL EVENTS PAGE
+   -----------------------------------------------------------------------------
+   A stack of flyers, each with its name, date and blurb written out beside it.
+   The flyer carries the design; the text beside it is what Google and a screen
+   reader actually read, so it is never just decoration.
+   ============================================================================= */
+.events-page { padding-top: calc(var(--nav-h) + 4px); }
+
+.events-hero {
+  text-align: center; max-width: 760px; margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) var(--gutter) clamp(1.5rem, 4vw, 2.5rem);
+}
+.events-hero h1 {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2.8rem, 9vw, 5.5rem); line-height: .95; letter-spacing: .01em;
+  margin: .3rem 0 1rem;
+}
+.events-hero p { color: var(--cream-dim); max-width: 52ch; margin: 0 auto; }
+
+.events-wrap {
+  max-width: var(--maxw); margin: 0 auto clamp(3rem, 8vw, 6rem);
+  padding: 0 var(--gutter);
+  display: grid; gap: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.event {
+  display: grid; gap: clamp(1.25rem, 4vw, 2.5rem);
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+.events-wrap > .event:first-child { border-top: 0; padding-top: 0; }
+
+/* Side by side once there is room for the flyer to stay legible. Flyers are
+   portrait, so the picture column is the narrower one. */
+@media (min-width: 820px) {
+  .event { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 3.5rem); }
+  .event__body { position: sticky; top: calc(var(--nav-h) + 2rem); }
+}
+
+.event__flyer { display: block; text-decoration: none; }
+.event__flyer img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,.8);
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+}
+.event__flyer:hover img,
+.event__flyer:focus-visible img {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px -18px rgba(0,0,0,.9);
+}
+
+.event__when {
+  display: inline-block;
+  font-family: var(--font-display); font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em; font-size: .8rem;
+  color: var(--ink); background: var(--amber);
+  padding: .4rem .75rem; border-radius: 3px;
+  margin-bottom: .9rem;
+}
+.event__title {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem); line-height: 1;
+  margin-bottom: .85rem;
+}
+.event__blurb { color: var(--cream-dim); max-width: 46ch; }
+.event__zoom {
+  display: inline-block; margin-top: 1.1rem;
+  font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); border-bottom: 1px solid var(--line);
+  padding-bottom: .15rem; text-decoration: none;
+}
+.event__zoom:hover, .event__zoom:focus-visible { color: var(--cream); border-color: var(--red); }
+
+.events-empty {
+  text-align: center; color: var(--cream-dim);
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+/* =============================================================================
    REDUCED MOTION — disable scrubbing/parallax, fall back to simple visibility
    ============================================================================= */
 @media (prefers-reduced-motion: reduce) {

@@ -1,8 +1,9 @@
 # The build — how content gets from Sanity onto the page
 
-Every word, price and photo on the site is stored in Sanity and written into
-`site/*.html` and `site/assets/js/data.js` by `npm run build`. The pages that
-ship are ordinary static HTML: a visitor with JavaScript disabled, and Google's
+Every word, price and photo on the four pages — home, menu, special events and
+calendar — is stored in Sanity and written into `site/*.html` and
+`site/assets/js/data.js` by `npm run build`. The pages that ship are ordinary
+static HTML: a visitor with JavaScript disabled, and Google's
 crawler, get the finished page with no CMS in the loop.
 
 ```
@@ -23,7 +24,7 @@ npm run extract          # re-derive content.json from the site files (migration
 
 | File | What it does |
 |---|---|
-| `build/build.mjs` | The build. Fetches, merges, writes the four output files. |
+| `build/build.mjs` | The build. Fetches, merges, writes the four pages and `data.js`. |
 | `build/sanity.mjs` | The GROQ query and both directions of the Sanity ⇄ `content.json` translation. |
 | `build/render.mjs` | Every content-to-HTML function. |
 | `build/lib.mjs` | Escaping, entity handling, and the marker surgery. |
@@ -91,7 +92,7 @@ on the Actions tab works with no further setup. To have Publish trigger it:
    a webhook:
    - URL: `https://api.github.com/repos/Method-Optimization/one-more-bar-and-grill/dispatches`
    - Trigger on: Create, Update, Delete
-   - Filter: `_type in ["siteSettings","homePage","menuPage","calendarPage","menuCategory","specials","calendar"]`
+   - Filter: `_type in ["siteSettings","homePage","menuPage","eventsPage","calendarPage","menuCategory","specials","calendar"]`
    - HTTP method: `POST`
    - Headers: `Authorization: Bearer <the token>`, `Accept: application/vnd.github+json`
    - Body: `{"event_type": "sanity-publish"}`
@@ -110,6 +111,22 @@ directions:
   shape → `content.json` is identical.
 
 All 17 menu sections and 144 items came across without a keystroke.
+
+## Adding a new page
+
+The Special Events page is the worked example, added after the migration:
+
+1. Copy an existing page as the shell and mark its editable regions.
+2. Add a schema in `studio/schemas/`, register it in `schemas/index.js`, and put
+   it in the sidebar in `sanity.config.js`.
+3. Add the block to `content.json`, and a nav link under `chrome.navLinks`.
+4. Map it in `build/sanity.mjs` — the GROQ query, `fromSanity`, `toSanity`.
+5. Render it in `build/render.mjs`, wire the page in `build/build.mjs`.
+6. `node build/make-seed.mjs`, then from `studio/` run `seed-content.mjs` and
+   `upload-photos.mjs`, then `npm run deploy`.
+7. Patch anything already in Sanity that the seed won't touch — a new nav link
+   lives inside the existing `siteSettings` document, so it has to be added
+   there directly rather than by re-seeding.
 
 ## Adding a new editable region
 

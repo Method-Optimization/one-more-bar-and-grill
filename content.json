@@ -102,6 +102,10 @@
         "label": "Calendar"
       },
       {
+        "href": "events.html",
+        "label": "Special Events"
+      },
+      {
         "href": "index.html#specials",
         "label": "Specials"
       },
@@ -152,7 +156,7 @@
         "body": "Wings, boneless Tails, breaded Ears, burgers, cheesesteaks, pizza, and a whole mess of finger foods. Ten sauces, from Mild to Devil's Breath.",
         "linkLabel": "See what's cooking",
         "linkHref": "menu.html",
-        "img": "wings-buffalo-closeup.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/283817eaf0ab24af2e18fcd2be777935acbe912c-1536x2048.jpg?auto=format",
         "alt": "Close-up of glossy buffalo wings tossed in red-orange sauce.",
         "width": 1536,
         "height": 2048
@@ -163,7 +167,7 @@
         "body": "75¢ wing Sundays, $10 burger Mondays, Music Bingo Tuesdays, Karaoke Saturdays — plus Mary Ann's soup and Aimee's cake, fresh every week.",
         "linkLabel": "See this week",
         "linkHref": "#specials",
-        "img": "pizza-specials.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/3dc3bf28b45bdf62660b078e16bce4b1b3cdc3e0-1600x2123.jpg?auto=format",
         "alt": "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.",
         "width": 1600,
         "height": 2123
@@ -174,7 +178,7 @@
         "body": "Just pick up the phone. Call ahead and we'll have it hot and ready. Party trays for the whole crew, too.",
         "linkLabel": "Call (609) 388-5386",
         "linkHref": "tel:+16093885386",
-        "img": "takeout-tails.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/0de6f4e5a370c5f27888606252cbef8cd6b9e3d9-1536x2048.jpg?auto=format",
         "alt": "A foil takeout tray filled with boneless chicken Tails coated in glossy wing sauce.",
         "width": 1536,
         "height": 2048
@@ -201,25 +205,25 @@
     },
     "signatureItems": [
       {
-        "img": "tails-signature.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/07ef3cf59433b5cc4377612f4c38b45f384650d5-720x960.jpg?auto=format",
         "alt": "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.",
         "caption": "The Tails",
         "note": "Boneless. The reason regulars keep coming back."
       },
       {
-        "img": "wings-buffalo-plate.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/e367dc56a64ea62f1f1259e1f3578556968ae13c-1536x2048.jpg?auto=format",
         "alt": "A heaping plate of glossy wings tossed in red-orange sauce, garnished with kale.",
         "caption": "Wings",
         "note": "Sauced to order."
       },
       {
-        "img": "pizza-specials.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/3dc3bf28b45bdf62660b078e16bce4b1b3cdc3e0-1600x2123.jpg?auto=format",
         "alt": "A fresh cheese pizza, hot out of the kitchen at One More Bar and Grill.",
         "caption": "Stone-Cooked Pizza",
         "note": "Hand-tossed. Fresh out of the oven."
       },
       {
-        "img": "cake-oreo.jpg",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/8079dfe4c4855f67fa278e372df2ffac3ed6d088-1400x1867.jpg?auto=format",
         "alt": "Cookies and cream layer cake with a whipped cream border, made fresh at One More Bar and Grill.",
         "caption": "Save Room",
         "note": "Or don't — get it anyway."
@@ -1462,6 +1466,41 @@
             "text": "15% gratuity will be added to all tables of 6 or more. 20% gratuity will be added to all unsigned credit slips and walk outs."
           }
         ]
+      }
+    ]
+  },
+  "events": {
+    "seo": {
+      "title": "Special Events — One More Bar & Grill · Tabernacle, NJ",
+      "description": "What's coming up at One More Bar & Grill in Tabernacle, NJ — smoked meat weekends, tribute nights and everything else worth driving out for.",
+      "ogType": "website",
+      "ogTitle": "Special Events — One More Bar & Grill",
+      "ogDescription": "Smoked meat weekends, tribute nights and everything else worth driving out to Tabernacle for."
+    },
+    "hero": {
+      "script": "mark the calendar",
+      "title": "Special Events",
+      "sub": "The one-off nights worth driving out for."
+    },
+    "emptyMessage": "Nothing on the calendar just this minute. Check back soon.",
+    "items": [
+      {
+        "title": "4th Annual Smoked Meat Weekend",
+        "when": "September 26th & 27th",
+        "blurb": "Two days of barbecue smoked in the Carbecue — a 1954 Chrysler New Yorker turned smoker. Brisket, pulled pork, ribs, pulled chicken and salmon, with street corn, coleslaw, corn bread, potato salad and baked beans. Served all day Saturday and Sunday while supplies last.",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/5768fd9a31fe396a70993c85cf3e2d71365eeeae-1200x1680.jpg?auto=format",
+        "alt": "Flyer for the 4th Annual Smoked Meat Weekend at One More Bar and Grill, September 26th and 27th, featuring the Carbecue — a flamed 1954 Chrysler New Yorker converted into a smoker.",
+        "width": 1200,
+        "height": 1680
+      },
+      {
+        "title": "Dolly Parton Tribute Night",
+        "when": "September 12th",
+        "blurb": "Themed drink and food specials, the whole staff in Dolly attire, and a $100 gift card for the best Dolly costume. A portion of the profits goes to Dolly Parton's Imagination Library.",
+        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/227439bce69f6325af7909c7f3e74d52ecbc07fb-1060x1484.jpg?auto=format",
+        "alt": "Flyer for Dolly Parton Tribute Night at One More Bar and Grill on September 12th, with themed specials and a $100 gift card for the best Dolly costume.",
+        "width": 1060,
+        "height": 1484
       }
     ]
   }

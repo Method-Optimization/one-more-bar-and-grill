@@ -549,3 +549,58 @@ export function renderDataJs(c) {
   out.push("");
   return out.join(NL);
 }
+
+/* --------------------------------------------------------------------------
+   SPECIAL EVENTS PAGE
+   -------------------------------------------------------------------------- */
+
+export function renderEventsHero(hero) {
+  return [
+    "",
+    '      <span class="script">' + esc(hero.script) + "</span>",
+    "      <h1>" + esc(hero.title) + "</h1>",
+    "      <p>" + esc(hero.sub) + "</p>",
+    "    "
+  ].join(NL);
+}
+
+/* The flyer is a picture, so nothing written on it is readable by Google or a
+   screen reader. The name, date and blurb are rendered as real text beside it —
+   that is what makes an event findable, and it is why the Studio asks for them
+   separately instead of just taking the poster. */
+export function renderEvents(events, emptyMessage) {
+  if (!events || !events.length) {
+    return NL + '      <p class="events-empty">' + esc(emptyMessage) + "</p>" + NL + "    ";
+  }
+
+  const out = events.map(function (e, i) {
+    const src = imgSrc(e.img);
+    const dims = e.width && e.height
+      ? ' width="' + esc(e.width) + '" height="' + esc(e.height) + '"'
+      : "";
+    // The top flyer is what the page is about and is almost always the largest
+    // thing on screen, so it is fetched eagerly; the rest wait until scrolled to.
+    const loading = i === 0
+      ? 'fetchpriority="high" decoding="async"'
+      : 'loading="lazy" decoding="async"';
+    const lines = [
+      '      <article class="event">',
+      '        <a class="event__flyer" href="' + esc(src) + '" target="_blank" rel="noopener">',
+      '          <img src="' + esc(src) + '"',
+      '               alt="' + esc(e.alt) + '"' + dims,
+      "               " + loading + " />",
+      "        </a>",
+      '        <div class="event__body">',
+      '          <span class="event__when">' + esc(e.when) + "</span>",
+      '          <h2 class="event__title">' + esc(e.title) + "</h2>"
+    ];
+    if (e.blurb) lines.push('          <p class="event__blurb">' + esc(e.blurb) + "</p>");
+    lines.push('          <a class="event__zoom" href="' + esc(src) +
+      '" target="_blank" rel="noopener">See the full flyer →</a>');
+    lines.push("        </div>");
+    lines.push("      </article>");
+    return lines.join(NL);
+  });
+
+  return NL + out.join(NL + NL) + NL + "    ";
+}

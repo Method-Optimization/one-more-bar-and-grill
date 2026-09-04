@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- OM:seo:start -->
-  <title>Calendar — One More Bar &amp; Grill · Tabernacle, NJ</title>
-  <meta name="description" content="Events, specials, and weekly happenings at One More Bar &amp; Grill in Tabernacle, NJ." />
+  <title>Special Events — One More Bar &amp; Grill · Tabernacle, NJ</title>
+  <meta name="description" content="What&#39;s coming up at One More Bar &amp; Grill in Tabernacle, NJ — smoked meat weekends, tribute nights and everything else worth driving out for." />
   <!-- OM:seo:end -->
   <meta name="theme-color" content="#0E0E0E" />
 
@@ -19,43 +19,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <style>
-    .cal-page { padding-top: calc(var(--nav-h) + 4px); }
-    .cal-hero {
-      text-align: center;
-      padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) clamp(1.5rem, 4vw, 2.5rem);
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-    .cal-hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      text-transform: uppercase;
-      line-height: .95;
-      margin: .3rem 0 1rem;
-    }
-    .cal-hero p { color: var(--cream-dim); max-width: 52ch; margin: 0 auto; }
-    .cal-wrap {
-      max-width: 960px;
-      margin: 0 auto clamp(3rem, 8vw, 6rem);
-      padding: 0 var(--gutter);
-    }
-    .cal-wrap img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 20px 60px -20px rgba(0,0,0,.8);
-      display: block;
-    }
-    .cal-note {
-      text-align: center;
-      color: var(--cream-dim);
-      font-size: .9rem;
-      margin-top: 1.25rem;
-    }
-  </style>
 </head>
 
-<body class="cal-page">
+<body class="events-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================ NAV ============================ -->
@@ -71,8 +37,8 @@
       <nav class="nav__links" aria-label="Primary">
         <!-- OM:nav-links:start -->
         <a href="menu.html">Menu</a>
-        <a href="calendar.html" aria-current="page">Calendar</a>
-        <a href="events.html">Special Events</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="events.html" aria-current="page">Special Events</a>
         <a href="index.html#specials">Specials</a>
         <a href="index.html#story">Our Story</a>
         <a href="index.html#find-us">Hours &amp; Find Us</a>
@@ -98,8 +64,8 @@
     <nav aria-label="Mobile">
       <!-- OM:mobile-links:start -->
       <a href="menu.html">Menu</a>
-      <a href="calendar.html" aria-current="page">Calendar</a>
-      <a href="events.html">Special Events</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="events.html" aria-current="page">Special Events</a>
       <a href="index.html#specials">Specials</a>
       <a href="index.html#story">Our Story</a>
       <a href="index.html#find-us">Hours &amp; Find Us</a>
@@ -109,22 +75,44 @@
   </div>
 
   <main id="main">
-    <section class="cal-hero" aria-label="Calendar">
-      <!-- OM:cal-hero:start -->
-      <span class="script">what&#39;s going on</span>
-      <h1>Calendar</h1>
-      <p>Events, specials, and weekly happenings at One More.</p>
-    <!-- OM:cal-hero:end -->
+    <section class="events-hero" aria-label="Special events">
+      <!-- OM:events-hero:start -->
+      <span class="script">mark the calendar</span>
+      <h1>Special Events</h1>
+      <p>The one-off nights worth driving out for.</p>
+    <!-- OM:events-hero:end -->
     </section>
 
-    <div class="cal-wrap">
-      <!-- OM:cal-image:start -->
-      <img id="calImage"
-           src="https://cdn.sanity.io/images/1gjbq9h5/production/fa3d9b0adf0204483b3dab59582f47de05e71e50-3300x2550.jpg?w=1800&amp;q=80&amp;auto=format"
-           alt="September 2026 events and specials calendar for One More Bar and Grill."
-           width="1800" height="1391" />
-      <p class="cal-note" id="calNote">Updated monthly — check back or follow us on Facebook &amp; Instagram for the latest.</p>
-    <!-- OM:cal-image:end -->
+    <div class="events-wrap">
+      <!-- OM:events-body:start -->
+      <article class="event">
+        <a class="event__flyer" href="https://cdn.sanity.io/images/1gjbq9h5/production/5768fd9a31fe396a70993c85cf3e2d71365eeeae-1200x1680.jpg?auto=format" target="_blank" rel="noopener">
+          <img src="https://cdn.sanity.io/images/1gjbq9h5/production/5768fd9a31fe396a70993c85cf3e2d71365eeeae-1200x1680.jpg?auto=format"
+               alt="Flyer for the 4th Annual Smoked Meat Weekend at One More Bar and Grill, September 26th and 27th, featuring the Carbecue — a flamed 1954 Chrysler New Yorker converted into a smoker." width="1200" height="1680"
+               fetchpriority="high" decoding="async" />
+        </a>
+        <div class="event__body">
+          <span class="event__when">September 26th &amp; 27th</span>
+          <h2 class="event__title">4th Annual Smoked Meat Weekend</h2>
+          <p class="event__blurb">Two days of barbecue smoked in the Carbecue — a 1954 Chrysler New Yorker turned smoker. Brisket, pulled pork, ribs, pulled chicken and salmon, with street corn, coleslaw, corn bread, potato salad and baked beans. Served all day Saturday and Sunday while supplies last.</p>
+          <a class="event__zoom" href="https://cdn.sanity.io/images/1gjbq9h5/production/5768fd9a31fe396a70993c85cf3e2d71365eeeae-1200x1680.jpg?auto=format" target="_blank" rel="noopener">See the full flyer →</a>
+        </div>
+      </article>
+
+      <article class="event">
+        <a class="event__flyer" href="https://cdn.sanity.io/images/1gjbq9h5/production/227439bce69f6325af7909c7f3e74d52ecbc07fb-1060x1484.jpg?auto=format" target="_blank" rel="noopener">
+          <img src="https://cdn.sanity.io/images/1gjbq9h5/production/227439bce69f6325af7909c7f3e74d52ecbc07fb-1060x1484.jpg?auto=format"
+               alt="Flyer for Dolly Parton Tribute Night at One More Bar and Grill on September 12th, with themed specials and a $100 gift card for the best Dolly costume." width="1060" height="1484"
+               loading="lazy" decoding="async" />
+        </a>
+        <div class="event__body">
+          <span class="event__when">September 12th</span>
+          <h2 class="event__title">Dolly Parton Tribute Night</h2>
+          <p class="event__blurb">Themed drink and food specials, the whole staff in Dolly attire, and a $100 gift card for the best Dolly costume. A portion of the profits goes to Dolly Parton&#39;s Imagination Library.</p>
+          <a class="event__zoom" href="https://cdn.sanity.io/images/1gjbq9h5/production/227439bce69f6325af7909c7f3e74d52ecbc07fb-1060x1484.jpg?auto=format" target="_blank" rel="noopener">See the full flyer →</a>
+        </div>
+      </article>
+    <!-- OM:events-body:end -->
     </div>
   </main>
 

@@ -20,6 +20,7 @@ The list down the left is ordered by how often you'll need it.
 |---|---|
 | **Specials & Events** | The daily specials, Music Bingo and Karaoke, and the rotating soup / cake / roll |
 | **Monthly Calendar** | The calendar picture |
+| **Special Events** | The flyers for one-off nights — tribute nights, smoked meat weekends |
 | **Home Page** | Every word and photo on the front page |
 | **Menu Page** | The wording at the top of the menu page |
 | **Menu Sections** | The menu itself — all 17 sections and every item and price |
@@ -45,6 +46,20 @@ whatever shape you upload.
   red **TODAY** tag on the website automatically; you don't set that.
 - **Weekly entertainment** — Music Bingo, Karaoke.
 - **Rotating features** — Soup of the Week, Cake of the Week, Roll of the Month.
+
+### Putting up a new event
+
+Open **Special Events** and add a row. Upload the flyer, then type the event's
+name, the date and a sentence about it.
+
+Typing those three out matters: the words printed on a flyer are part of a
+picture, so Google can't read them and neither can anyone using a screen
+reader. The flyer is the poster; those three fields are what actually gets the
+event found by someone searching for it.
+
+Events show in the order you list them, so drag the soonest to the top. Delete
+one once it's over — the page has its own message for when the list is empty, so
+it never looks broken between events.
 
 ### A price change on the menu
 
@@ -86,6 +101,7 @@ line is for screen readers and for Google, so it's worth doing).
 
 - **Home Page → The three cards** — the three big full-screen cards
 - **Home Page → Favorites photos** — the tilted "polaroid" snapshots
+- **Special Events** — each event's flyer
 - **Monthly Calendar** — the calendar
 
 For best results shoot food photos **taller than they are wide**, at least about
