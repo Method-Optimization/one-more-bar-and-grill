@@ -25,3 +25,6 @@ Thumbs.db
 skills-lock.json
 
 .vercel
+
+# Wrangler local cache (account details)
+.wrangler/

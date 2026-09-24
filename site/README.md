@@ -41,16 +41,24 @@ site/
 └─ README.md
 ```
 
-`sponsorship.html` posts to `/api/form`, a Cloudflare Pages Function at
-`../functions/api/form.ts` (repo root, alongside `../functions/_lib/`). Like
-`privacy.html`, it's hand-written policy/utility content rather than Sanity
-content, so `npm run build` never touches it, and it deliberately skips
-`main.js` (see the comment above its own inline script). The handler
-validates the submission, then forwards it to the Method dashboard's
-Requests inbox — it does not write to a local database or send email itself,
-because this site has neither. See the file header in `functions/api/form.ts`
-for the env bindings it needs (`FORM_INGEST_SECRET`, `FORM_SITE_KEY`,
-optional `TURNSTILE_SECRET_KEY`) and what's still unconfigured.
+`sponsorship.html` posts straight to Method's dashboard
+(`https://dashboard.methodoptimization.com/api/forms/public`), which stores the
+request, keeps any attached letter, and emails the owners. This site has no
+server of its own — it's static files served by a Worker — so there is no form
+handler here to maintain, and nothing secret lives in the page: the `site`
+value identifies the site, and it is public by design.
+
+Like `privacy.html`, both `sponsorship.html` and `sponsorship-thanks.html` are
+hand-written rather than built from the CMS, so `npm run build` never touches
+them, and they deliberately skip `main.js` (see the comment above the inline
+script in each). With JavaScript on, the form submits in the background and
+shows a message in place; with it off, the browser posts the form and lands on
+`sponsorship-thanks.html`.
+
+Spam is handled by a hidden honeypot field and rate limiting at the dashboard.
+A Turnstile widget can be added later: create one for this domain, paste its
+secret into the business's page in the Method admin area, and add the widget
+markup to the form.
 
 ## Design / motion
 Dark Pine Barrens tavern: black / blood-red / amber / warm cream, condensed

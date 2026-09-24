@@ -172,18 +172,26 @@
         <li>We get more requests than we can say yes to, so we'll only be in touch about the ones we can help with.</li>
       </ul>
 
+      <!-- Posts straight to Method's dashboard: this site is static, with no
+           server of its own, and the dashboard stores the request, keeps the
+           letter and emails the owners. Works with JavaScript off — the script
+           at the bottom only keeps the visitor on the page. -->
       <form
         name="sponsorship"
         method="POST"
-        action="/api/form"
+        action="https://dashboard.methodoptimization.com/api/forms/public"
         enctype="multipart/form-data"
-        data-endpoint="/api/form"
+        data-endpoint="https://dashboard.methodoptimization.com/api/forms/public"
         data-ajax-form
         data-success="Thanks — your request is in. If we can help, someone will be in touch."
         class="sform"
         id="sponsorshipForm"
       >
-        <input type="hidden" name="form-name" value="sponsorship" />
+        <input type="hidden" name="site" value="ef59c8c29ec19c207da1b736" />
+        <input type="hidden" name="form" value="sponsorship" />
+        <input type="hidden" name="form_label" value="Sponsorship request" />
+        <input type="hidden" name="redirect" value="https://onemorebng.org/sponsorship-thanks.html" />
+        <input type="hidden" name="_schema" value='[{"name":"org_name","label":"Organization name"},{"name":"contact_name","label":"Contact person"},{"name":"tax_id","label":"Tax ID / EIN"},{"name":"phone","label":"Phone","type":"phone"},{"name":"email","label":"Email","type":"email"},{"name":"org_address","label":"Mailing address"},{"name":"about_group","label":"What does your group do?","type":"long_text"},{"name":"donation_requested","label":"What are you asking for?"},{"name":"event_date","label":"Date of event","type":"date"},{"name":"donation_purpose","label":"What is the event, and what is it raising money for?","type":"long_text"},{"name":"community_benefit","label":"How does it help the local community?","type":"long_text"},{"name":"pickup_when","label":"When could you collect a donation?"},{"name":"recognition","label":"How would One More be recognised?","type":"long_text"},{"name":"comments","label":"Anything else we should know?","type":"long_text"}]' />
         <!-- Honeypot: real people never see or fill this. A bot that fills
              every field it finds does, and gets a quiet success response. -->
         <p class="sp-hp" aria-hidden="true">
@@ -200,7 +208,7 @@
         <div class="sform__row">
           <div class="field">
             <label for="sp-contact">Contact person <span class="req">*</span></label>
-            <input id="sp-contact" name="name" type="text" autocomplete="name" required />
+            <input id="sp-contact" name="contact_name" type="text" autocomplete="name" required />
           </div>
           <div class="field">
             <label for="sp-taxid">Tax ID / EIN</label>
