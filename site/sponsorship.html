@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sponsorship &amp; Donation Requests — One More Bar &amp; Grill · Tabernacle, NJ</title>
+  <meta name="description" content="Ask One More Bar &amp; Grill to sponsor or donate to your Tabernacle-area school, team, fire company or non-profit fundraiser." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0E0E0E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- This page is plain text on the site's own colours, so it carries its own
+       small stylesheet rather than adding one-off rules to style.css — same
+       pattern as privacy.html. -->
+  <style>
+    .legal { padding: clamp(5rem, 12vw, 8rem) var(--gutter) 4rem; }
+    .legal__inner { max-width: 44rem; margin: 0 auto; }
+    .legal__eyebrow {
+      font-family: var(--font-display); font-size: .78rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--amber); margin: 0 0 .6rem;
+    }
+    .legal h1 {
+      font-family: var(--font-display); font-weight: 700; line-height: 1.02;
+      font-size: clamp(2.4rem, 7vw, 3.6rem); color: var(--cream); margin: 0 0 .5rem;
+      text-transform: uppercase;
+    }
+    .legal__lede { font-size: 1.1rem; color: var(--cream-dim); max-width: 54ch; margin: 0 0 2.5rem; }
+    .legal h2 {
+      font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em;
+      font-size: clamp(1.15rem, 2.6vw, 1.35rem); color: var(--cream);
+      margin: 0 0 .9rem;
+    }
+    .legal p, .legal li { color: var(--cream-dim); line-height: 1.7; }
+    .legal ul { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+    .legal li { margin-bottom: .55rem; }
+    .legal strong { color: var(--cream); }
+    .legal a { color: var(--amber-soft); }
+
+    /* Before-you-start note */
+    .sp-note {
+      border-left: 3px solid var(--red);
+      padding: .1rem 0 .1rem 1.1rem;
+      margin: 0 0 2.6rem;
+    }
+    .sp-note li { display: flex; gap: .6rem; align-items: flex-start; margin-bottom: .8rem; }
+    .sp-note li::before { content: "✓"; color: var(--amber); flex-shrink: 0; font-weight: 700; }
+
+    /* form */
+    .sform {
+      background: linear-gradient(135deg, #171310, #100d0b);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: clamp(1.4rem, 4vw, 2rem);
+      display: grid;
+      gap: 1rem;
+    }
+    .sform__row { display: grid; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+    .field label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+    .req { color: var(--red); }
+    .sform input, .sform textarea {
+      width: 100%; min-height: 3rem; padding: .7rem 1rem;
+      border-radius: var(--radius);
+      border: 1.5px solid rgba(243,236,221,.18);
+      background: rgba(0,0,0,.35);
+      color: var(--cream);
+      font-family: var(--font-body); font-size: 1rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .sform textarea { min-height: 4.5rem; resize: vertical; }
+    .sform input::placeholder, .sform textarea::placeholder { color: rgba(243,236,221,.4); }
+    .sform input:focus, .sform textarea:focus {
+      outline: none; border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(232,163,23,.28);
+    }
+    .field__hint { font-size: .78rem; color: var(--muted); }
+    .sform__file { padding: .6rem .7rem; font-size: .9rem; }
+    .sform__file::file-selector-button {
+      margin-right: .8rem; padding: .45rem .9rem; border: 0; border-radius: .5rem;
+      background: var(--amber); color: #1a1206; font-family: var(--font-body);
+      font-weight: 700; font-size: .85rem; cursor: pointer;
+    }
+    .sform__file::file-selector-button:hover { background: var(--amber-soft); }
+
+    .sform__submit { margin-top: .4rem; justify-self: start; }
+    .sform__status { min-height: 1.2rem; font-size: .9rem; margin: 0; }
+    .sform__status.is-success { color: var(--amber); font-weight: 600; }
+    .sform__status.is-error { color: #ffb4a2; }
+    .sform__note { font-size: .8rem; color: var(--muted); margin: 0; }
+
+    /* honeypot: hidden from sighted users and mouse/keyboard, but present in
+       the DOM for a bot that fills every field it finds */
+    .sp-hp { position: absolute; left: -9999px; top: -9999px; }
+
+    @media (min-width: 560px) { .sform__row { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+
+<body class="legal-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ NAV ============================ -->
+  <div class="accent-strip" aria-hidden="true"></div>
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="One More Bar and Grill — home">
+        <span class="nav__brand-swap" data-swap>
+          <span class="nav__wordmark">One More <em>Bar &amp; Grill</em></span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="menu.html">Menu</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="events.html">Special Events</a>
+        <a href="index.html#specials">Specials</a>
+        <a href="index.html#story">Our Story</a>
+        <a href="index.html#find-us">Hours &amp; Find Us</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--call" href="tel:+16093885386">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+          <span>Call for Takeout</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <nav aria-label="Mobile">
+      <a href="menu.html">Menu</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="events.html">Special Events</a>
+      <a href="index.html#specials">Specials</a>
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#find-us">Hours &amp; Find Us</a>
+      <a class="mobile-nav__call" href="tel:+16093885386">Call for Takeout · (609) 388-5386</a>
+    </nav>
+  </div>
+
+  <main id="main" class="legal">
+    <div class="legal__inner">
+      <p class="legal__eyebrow">One More Bar &amp; Grill</p>
+      <h1>Sponsorship &amp; Donations</h1>
+      <p class="legal__lede">
+        We've been part of Tabernacle since 2012, and we like helping out local schools,
+        teams, fire companies and non-profits doing good work. If that's your group, tell
+        us about it below.
+      </p>
+
+      <ul class="sp-note">
+        <li>Send your request at least a few weeks before your event, so we have time to plan for it.</li>
+        <li>We give priority to groups in and around Tabernacle and the surrounding towns.</li>
+        <li>Non-profits: attach a copy of your 501(c)(3) letter below. We can't release a donation without it.</li>
+        <li>We get more requests than we can say yes to, so we'll only be in touch about the ones we can help with.</li>
+      </ul>
+
+      <form
+        name="sponsorship"
+        method="POST"
+        action="/api/form"
+        enctype="multipart/form-data"
+        data-endpoint="/api/form"
+        data-ajax-form
+        data-success="Thanks — your request is in. If we can help, someone will be in touch."
+        class="sform"
+        id="sponsorshipForm"
+      >
+        <input type="hidden" name="form-name" value="sponsorship" />
+        <!-- Honeypot: real people never see or fill this. A bot that fills
+             every field it finds does, and gets a quiet success response. -->
+        <p class="sp-hp" aria-hidden="true">
+          <label>Leave this blank: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <h2>Request form</h2>
+
+        <div class="field">
+          <label for="sp-org">Organization name <span class="req">*</span></label>
+          <input id="sp-org" name="org_name" type="text" autocomplete="organization" required />
+        </div>
+
+        <div class="sform__row">
+          <div class="field">
+            <label for="sp-contact">Contact person <span class="req">*</span></label>
+            <input id="sp-contact" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="sp-taxid">Tax ID / EIN</label>
+            <input id="sp-taxid" name="tax_id" type="text" />
+          </div>
+        </div>
+
+        <div class="sform__row">
+          <div class="field">
+            <label for="sp-phone">Phone <span class="req">*</span></label>
+            <input id="sp-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+          </div>
+          <div class="field">
+            <label for="sp-email">Email <span class="req">*</span></label>
+            <input id="sp-email" name="email" type="email" inputmode="email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sp-address">Mailing address</label>
+          <input id="sp-address" name="org_address" type="text" autocomplete="street-address" />
+        </div>
+
+        <div class="field">
+          <label for="sp-about">What does your group do? <span class="req">*</span></label>
+          <textarea id="sp-about" name="about_group" rows="3" required placeholder="A sentence or two about your organization."></textarea>
+        </div>
+
+        <div class="sform__row">
+          <div class="field">
+            <label for="sp-ask">What are you asking for? <span class="req">*</span></label>
+            <input id="sp-ask" name="donation_requested" type="text" required placeholder="Gift certificate, tray of wings, raffle basket…" />
+          </div>
+          <div class="field">
+            <label for="sp-date">Date of event</label>
+            <input id="sp-date" name="event_date" type="date" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sp-purpose">What's the event, and what's it raising money for?</label>
+          <textarea id="sp-purpose" name="donation_purpose" rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="sp-benefit">How does it help the local community?</label>
+          <textarea id="sp-benefit" name="community_benefit" rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="sp-pickup">When could you collect a donation from One More?</label>
+          <input id="sp-pickup" name="pickup_when" type="text" placeholder="e.g. weekday afternoons, the week of the 12th" />
+        </div>
+
+        <div class="field">
+          <label for="sp-recognition">How would One More be recognized?</label>
+          <textarea id="sp-recognition" name="recognition" rows="2" placeholder="Banner, program listing, social post, announcement…"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="sp-doc">Attach your 501(c)(3) letter</label>
+          <input
+            id="sp-doc"
+            name="doc"
+            type="file"
+            class="sform__file"
+            accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.heif,application/pdf,image/*"
+          />
+          <p class="field__hint">A PDF or a photo of the letter is fine, up to 8MB. Not a registered non-profit? Leave this blank.</p>
+        </div>
+
+        <div class="field">
+          <label for="sp-comments">Anything else we should know?</label>
+          <textarea id="sp-comments" name="comments" rows="2"></textarea>
+        </div>
+
+        <!-- Cloudflare Turnstile. No sitekey is set yet, so this stays empty
+             and renders nothing — the honeypot and the handler's rate limit
+             carry the load until PJ adds one. See the script below and the
+             comment on TURNSTILE_SECRET_KEY in functions/api/form.ts: add
+             the sitekey here FIRST, then the server secret, never the other
+             way — a secret with no sitekey fails every real visitor. -->
+        <div class="turnstile" id="turnstileWidget" data-sitekey="" hidden></div>
+
+        <button type="submit" class="btn btn--primary sform__submit">
+          <span class="btn-label">Send request</span>
+        </button>
+        <p class="sform__status" data-form-status role="status" aria-live="polite"></p>
+        <p class="sform__note">We read every request. Because of the number we get, we only reply to the ones we can help with.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col footer__brand">
+        <div class="footer__social">
+          <a href="https://www.facebook.com/onemorebarandgrillNJ" target="_blank" rel="noopener" aria-label="One More on Facebook">Facebook</a>
+          <a href="https://www.instagram.com/onemore_tabernacle_nj" target="_blank" rel="noopener" aria-label="One More on Instagram">Instagram</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3>Find Us</h3>
+        <address class="footer__addr">
+          1375 US Route 206<br/>
+          Tabernacle, NJ 08088
+        </address>
+        <p><a class="footer__link" href="tel:+16093885386">(609) 388-5386</a></p>
+        <p><a class="footer__link" href="mailto:wendyonemore@gmail.com">wendyonemore@gmail.com</a></p>
+      </div>
+
+      <div class="footer__col">
+        <h3>The Site</h3>
+        <p><a class="footer__link" href="menu.html">Menu</a></p>
+        <p><a class="footer__link" href="calendar.html">Calendar</a></p>
+        <p><a class="footer__link" href="index.html#find-us">Hours &amp; Find Us</a></p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <span>© <span id="year"></span> One More Bar &amp; Grill · Tabernacle, NJ</span>
+      <span class="footer__devil">Where the Jersey Devil drinks 🍺</span>
+      <a class="footer__link" href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <!-- Not main.js: it drives the home page's scroll effects and leaves this
+       page unable to scroll at all. Everything this page needs is here. -->
+  <script>
+    (function () {
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+
+      var toggle = document.getElementById("navToggle");
+      var drawer = document.getElementById("mobileNav");
+      if (toggle && drawer) {
+        toggle.addEventListener("click", function () {
+          var open = drawer.hasAttribute("hidden");
+          if (open) drawer.removeAttribute("hidden");
+          else drawer.setAttribute("hidden", "");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+      }
+
+      // Cloudflare Turnstile: only renders once a sitekey is filled in to
+      // the data-sitekey attribute above (empty today — see the comment by
+      // that element). Skipped entirely otherwise, so the form works exactly
+      // as it does now until PJ adds a key.
+      var widget = document.getElementById("turnstileWidget");
+      if (widget && widget.getAttribute("data-sitekey")) {
+        widget.hidden = false;
+        if (!document.querySelector("script[data-turnstile-api]")) {
+          var s = document.createElement("script");
+          s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+          s.async = true;
+          s.defer = true;
+          s.setAttribute("data-turnstile-api", "");
+          document.head.appendChild(s);
+        }
+        widget.classList.add("cf-turnstile");
+      }
+
+      // Progressive enhancement: without this script the form above is a
+      // plain POST to /api/form and the handler's no-JS branch returns a
+      // full thank-you page. With JS, submit it in the background instead
+      // and swap in a status message so the visitor never leaves the page.
+      var form = document.getElementById("sponsorshipForm");
+      if (!form) return;
+      var status = form.querySelector("[data-form-status]");
+      var endpoint = form.getAttribute("data-endpoint") || form.action;
+      var successMsg = form.getAttribute("data-success") || "Thanks — your request is in.";
+
+      form.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+        if (status) {
+          status.textContent = "Sending…";
+          status.classList.remove("is-success", "is-error");
+        }
+        var submitBtn = form.querySelector("button[type=submit]");
+        if (submitBtn) submitBtn.disabled = true;
+
+        fetch(endpoint, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            if (result.ok && !result.data.error) {
+              if (status) {
+                status.textContent = successMsg;
+                status.classList.add("is-success");
+              }
+              form.reset();
+            } else {
+              if (status) {
+                status.textContent = (result.data && result.data.error) || "Something went wrong. Please try again or call us.";
+                status.classList.add("is-error");
+              }
+            }
+          })
+          .catch(function () {
+            if (status) {
+              status.textContent = "Something went wrong. Please try again or call us.";
+              status.classList.add("is-error");
+            }
+          })
+          .then(function () {
+            if (submitBtn) submitBtn.disabled = false;
+          });
+      });
+    })();
+  </script>
+  <!-- Counts page views for the owner's dashboard. No cookies, no IP
+       address, nothing that identifies a visitor; skipped entirely for
+       anyone with Do Not Track or Global Privacy Control switched on. -->
+  <script defer src="https://dashboard.methodoptimization.com/hit.js" data-site="ef59c8c29ec19c207da1b736"></script>
+</body>
+</html>

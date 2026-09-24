@@ -30,6 +30,8 @@ site/
 ├─ menu.html               # the full menu
 ├─ events.html             # special event flyers
 ├─ calendar.html           # the monthly calendar
+├─ sponsorship.html        # sponsorship / donation request form (hand-written, not Sanity)
+├─ privacy.html            # privacy & cookies (hand-written, not Sanity)
 ├─ assets/
 │  ├─ css/style.css        # all styling + responsive + reduced-motion
 │  ├─ js/data.js           # GENERATED from Sanity — do not edit by hand
@@ -38,6 +40,17 @@ site/
 ├─ EDITING.md              # plain-English guide for the owner
 └─ README.md
 ```
+
+`sponsorship.html` posts to `/api/form`, a Cloudflare Pages Function at
+`../functions/api/form.ts` (repo root, alongside `../functions/_lib/`). Like
+`privacy.html`, it's hand-written policy/utility content rather than Sanity
+content, so `npm run build` never touches it, and it deliberately skips
+`main.js` (see the comment above its own inline script). The handler
+validates the submission, then forwards it to the Method dashboard's
+Requests inbox — it does not write to a local database or send email itself,
+because this site has neither. See the file header in `functions/api/form.ts`
+for the env bindings it needs (`FORM_INGEST_SECRET`, `FORM_SITE_KEY`,
+optional `TURNSTILE_SECRET_KEY`) and what's still unconfigured.
 
 ## Design / motion
 Dark Pine Barrens tavern: black / blood-red / amber / warm cream, condensed
