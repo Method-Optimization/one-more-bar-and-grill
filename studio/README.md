@@ -29,7 +29,7 @@ deleted, so the owner can't end up with two home pages or none.
 | `calendar` | `calendar` | The monthly calendar image |
 | `homePage` | `homePage` | Every word and photo on the front page |
 | `menuPage` | `menuPage` | The menu page's hero copy |
-| `menuCategory` | `menuCategory.<anchor>` | One per menu section — 17 of them |
+| `menuCategory` | `menuCategory-<anchor>` | One per menu section — 17 of them |
 | `eventsPage` | `eventsPage` | The special event flyers, plus that page's copy |
 | `calendarPage` | `calendarPage` | The calendar page's hero copy |
 | `siteSettings` | `siteSettings` | Business details, hours, nav, footer |
@@ -101,6 +101,19 @@ to re-run. Add any new photo field to its `TARGETS` list.
 
 `scripts/upload-calendar.mjs` runs the same way and exists because the MCP
 connector can't upload binaries.
+
+## Document ids: never use a dot
+
+**Sanity treats any document id containing a dot as private.** The public API
+— which is what the build reads, with no token — silently leaves it out. The
+menu sections were first created as `menuCategory.deals` and so on, and for
+most of September every price edited in Menu Sections was invisible to the
+build, which kept rendering the saved snapshot. Nothing failed; the edits just
+never arrived.
+
+They were moved to `menuCategory-deals` on 2026-09-29 by
+`scripts/rename-menu-ids.mjs`. Use dashes in any id you create by hand or in a
+script. The Studio's own "create new" ids are random and safe.
 
 ## Two behaviours worth knowing
 

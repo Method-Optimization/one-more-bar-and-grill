@@ -32,6 +32,19 @@ npm run extract          # re-derive content.json from the site files (migration
 | `build/make-seed.mjs` | Turns `content.json` into the documents the seed script pushes. |
 | `content.json` | The committed snapshot the render actually reads. |
 
+## What else the build writes
+
+- **Versioned asset links.** `style.css` and `main.js` are cached as immutable
+  for a year (see `site/_headers`), so every page references them with a hash of
+  the file: `style.css?v=2181283217`. The hash changes only when the file does,
+  so a CSS change reaches returning visitors and an unchanged rebuild produces
+  no diff. It is applied to every page in `site/`, hand-written ones included.
+- **`site/sitemap.xml`**, listed from the pages actually in `site/`, so a new
+  page is included without anyone remembering to add it.
+
+`site/robots.txt`, `site/_redirects`, `site/favicon.ico` and the root
+`apple-touch-icon*.png` files are plain static files, not generated.
+
 ## Why markers instead of templates
 
 The pages are not generated from templates. Each editable stretch of HTML is

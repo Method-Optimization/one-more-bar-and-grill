@@ -1,0 +1,5 @@
+# Everything on this site is public and meant to be found.
+User-agent: *
+Allow: /
+
+Sitemap: https://onemorebng.org/sitemap.xml

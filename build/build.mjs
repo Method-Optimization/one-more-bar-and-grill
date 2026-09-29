@@ -13,7 +13,8 @@
    revertable like any other change.
    ============================================================================= */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { ROOT, SITE, replaceRegion } from "./lib.mjs";
 import { queryUrl, fromSanity } from "./sanity.mjs";
@@ -141,9 +142,56 @@ function chrome(html, self) {
 /* --------------------------------------------------------------- data.js */
 writeFileSync(join(SITE, "assets/js/data.js"), R.renderDataJs(c), "utf8");
 
+/* ------------------------------------------------------- cache versioning */
+/* style.css and main.js are served with a one-year "immutable" cache (see
+   site/_headers), which is right for speed but means a browser that already
+   has them never asks again. Without a version on the URL, a returning visitor
+   keeps last month's stylesheet and a new page renders unstyled for them.
+
+   So every page references them as style.css?v=<hash of the file>. The hash
+   only changes when the file does, so a rebuild with no CSS change leaves the
+   pages byte-identical, and a CSS change reaches everyone on their next visit.
+   Applied to every page in site/, including the hand-written ones. */
+const PAGES = readdirSync(SITE).filter((f) => f.endsWith(".html"));
+const VERSIONED = ["assets/css/style.css", "assets/js/main.js"];
+const versions = {};
+for (const asset of VERSIONED) {
+  versions[asset] = createHash("sha256")
+    .update(readFileSync(join(SITE, asset))).digest("hex").slice(0, 10);
+}
+for (const file of PAGES) {
+  const before = page(file);
+  let html = before;
+  for (const asset of VERSIONED) {
+    const re = new RegExp('((?:href|src)=")' + asset.replace(/[.]/g, "\\.") + '(?:\\?v=[0-9a-f]+)?"', "g");
+    html = html.replace(re, "$1" + asset + "?v=" + versions[asset] + '"');
+  }
+  if (html !== before) write(file, html);
+}
+
+/* ------------------------------------------------------------- sitemap.xml */
+/* Every public page in site/, written the way the site serves them: no .html
+   (the host drops it with a redirect) and the home page as "/". Built from the
+   folder rather than a list, so a new page is included without anyone
+   remembering to add it. No <lastmod>: it would change on every build and
+   make each rebuild look like a content change. */
+const ORIGIN = (c.business.siteUrl || "https://onemorebng.org").replace(/\/$/, "");
+const NOT_IN_SITEMAP = new Set(["sponsorship-thanks.html"]);
+const urls = PAGES.filter((f) => !NOT_IN_SITEMAP.has(f))
+  .map((f) => (f === "index.html" ? "/" : "/" + f.replace(/\.html$/, "")))
+  .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
+writeFileSync(join(SITE, "sitemap.xml"), [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...urls.map((u) => "  <url><loc>" + ORIGIN + u + "</loc></url>"),
+  "</urlset>",
+  ""
+].join("\n"), "utf8");
+
 const items = c.menu.categories.reduce(
   (n, cat) => n + cat.blocks.reduce((k, b) => k + (b.items ? b.items.length : 0), 0), 0);
 
-console.log("built  index.html  menu.html  events.html  calendar.html  assets/js/data.js");
+console.log("built  index.html  menu.html  events.html  calendar.html  assets/js/data.js  sitemap.xml");
+console.log("       versioned " + VERSIONED.map((a) => a.split("/").pop() + "?v=" + versions[a]).join("  ") + " on " + PAGES.length + " pages");
 console.log("       " + c.menu.categories.length + " menu sections, " + items + " items, " +
   c.events.items.length + " events");

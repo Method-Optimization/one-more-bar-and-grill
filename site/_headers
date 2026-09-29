@@ -1,14 +1,18 @@
 # Cache + security headers.
 #
-# ⚠ AS OF THIS WRITING THIS FILE IS NOT IN EFFECT. onemorebng.org is served by a
-# Cloudflare Worker whose config lives outside this repo, and it applies its own
-# blanket "max-age=0, must-revalidate" to everything. Verified against the live
-# site: even main.js comes back must-revalidate, not the immutable set below.
+# IN EFFECT. Cloudflare serves site/ as the Worker's static assets and applies
+# this file — verified against the live site on 2026-09-29: main.js comes back
+# "immutable" and every response carries X-Frame-Options. (An earlier note here
+# said the opposite; that was true once and no longer is.) site/_redirects is
+# applied the same way.
 #
-# The same goes for vercel.json and netlify.toml. All three are kept in sync and
-# accurate so that they're correct if the site ever moves hosts (Cloudflare
-# Pages and Netlify read this file; Vercel reads vercel.json) — but today the
-# Worker decides. Change caching there, not here.
+# vercel.json and netlify.toml mirror these rules in case the site ever moves.
+#
+# Because style.css and main.js are cached as immutable for a year, the build
+# puts a content hash on every reference to them (style.css?v=<hash>). Without
+# that, a returning visitor would keep the old file and never see a CSS change.
+# A new stylesheet or script that is cached this way needs the same treatment:
+# add it to VERSIONED in build/build.mjs.
 #
 # The rule that matters wherever it's applied: data.js and sanity-config.js must
 # NEVER be cached as immutable. They are content, not code — caching them for a

@@ -424,7 +424,7 @@ export function toSanity(c) {
 
   c.menu.categories.forEach(function (cat, i) {
     docs.push({
-      _id: "menuCategory." + cat.anchor,
+      _id: "menuCategory-" + cat.anchor, // never a dot: dotted ids are private to Sanity's public API
       _type: "menuCategory",
       title: cat.title,
       jumpLabel: cat.jumpLabel,
