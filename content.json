@@ -617,6 +617,133 @@
         ]
       },
       {
+        "anchor": "wings",
+        "comment": "WINGS",
+        "title": "Buffalo Wings & Morsels",
+        "jumpLabel": "Wings & Morsels",
+        "blocks": [
+          {
+            "_type": "menuItems",
+            "items": [
+              {
+                "name": "One More Combo",
+                "price": "$10",
+                "desc": "3 Ears & 3 Tails."
+              },
+              {
+                "name": "Wings",
+                "desc": "Not just a \"piece\" — at One More you get the WHOLE WING!",
+                "tiers": "6 pc $9 · 13 pc $15 · 25 pc $27"
+              },
+              {
+                "name": "Tails",
+                "desc": "Boneless top-cut chicken breast, lightly floured and perfectly deep fried, then bathed in our amazing wing sauce.",
+                "tiers": "5 pc $12 · 10 pc $22 · 20 pc $37"
+              },
+              {
+                "name": "Ears",
+                "desc": "Breaded chicken filets dipped in our signature wing sauce.",
+                "tiers": "5 pc $12 · 10 pc $22 · 20 pc $37"
+              },
+              {
+                "name": "Buffalo Shrimp",
+                "price": "$14",
+                "desc": "Cleaned and lightly floured shrimp deep fried to perfection. ½ pound."
+              },
+              {
+                "name": "Buffalo Scallops",
+                "price": "$23",
+                "desc": "Lightly floured fresh scallops deep fried. ½ pound."
+              },
+              {
+                "name": "Double Buffalo Rolls",
+                "price": "$11",
+                "desc": "(2) minced buffalo chicken & american cheese wrapped in a wonton and deep fried to goodness w/ mild sauce for dipping."
+              },
+              {
+                "name": "Buffalo Stix",
+                "price": "$9.50",
+                "desc": "Mozzarella sticks, buffalo style."
+              }
+            ]
+          },
+          {
+            "_type": "menuHeading",
+            "text": "Sauce Options"
+          },
+          {
+            "_type": "menuDefs",
+            "entries": [
+              {
+                "term": "Devil's Breath",
+                "detail": "just plain ludicrous hot"
+              },
+              {
+                "term": "Hot",
+                "detail": "hot! insanely hot! with a lot of flavor"
+              },
+              {
+                "term": "Spicy",
+                "detail": "hotter than mild and milder than hot"
+              },
+              {
+                "term": "Johnny Yaki",
+                "detail": "teriyaki sauce with some kick"
+              },
+              {
+                "term": "Garlic Parm",
+                "detail": "just like our mild but loaded with garlic and parm cheese"
+              },
+              {
+                "term": "Mild",
+                "detail": "our incredible super sweet with a small bite sauce"
+              },
+              {
+                "term": "Russell's Pic II Sauce",
+                "detail": "sweeter than sweet with a touch of tang"
+              },
+              {
+                "term": "Bourbon",
+                "detail": "tangy & sweet"
+              },
+              {
+                "term": "Sesame Ginger",
+                "detail": "just like it sounds"
+              },
+              {
+                "term": "Sweet BBQ",
+                "detail": "sweet baby rays"
+              }
+            ]
+          },
+          {
+            "_type": "menuHeading",
+            "text": "Dips & Sides"
+          },
+          {
+            "_type": "menuItems",
+            "items": [
+              {
+                "name": "Celery",
+                "price": "sm $1.25 / lg $2.50"
+              },
+              {
+                "name": "Mild Buffalo Sauce",
+                "price": "sm $1.50 · 8oz $2.75 · pint $5 · quart $9"
+              },
+              {
+                "name": "Blue Cheese Dressing",
+                "price": "sm $1.50 · 8oz $2.75 · pint $4.25 · quart $9"
+              },
+              {
+                "name": "Ranch Dressing",
+                "price": "sm $1.50 · 8oz $2.75 · pint $4.25 · quart $8"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "anchor": "fries",
         "comment": "FRIES",
         "title": "Fries, Tots & More",
