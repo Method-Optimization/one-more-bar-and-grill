@@ -1484,25 +1484,6 @@
       "sub": "The one-off nights worth driving out for."
     },
     "emptyMessage": "Nothing on the calendar just this minute. Check back soon.",
-    "items": [
-      {
-        "title": "4th Annual Smoked Meat Weekend",
-        "when": "September 26th & 27th",
-        "blurb": "Two days of barbecue smoked in the Carbecue — a 1954 Chrysler New Yorker turned smoker. Brisket, pulled pork, ribs, pulled chicken and salmon, with street corn, coleslaw, corn bread, potato salad and baked beans. Served all day Saturday and Sunday while supplies last.",
-        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/5768fd9a31fe396a70993c85cf3e2d71365eeeae-1200x1680.jpg?auto=format",
-        "alt": "Flyer for the 4th Annual Smoked Meat Weekend at One More Bar and Grill, September 26th and 27th, featuring the Carbecue — a flamed 1954 Chrysler New Yorker converted into a smoker.",
-        "width": 1200,
-        "height": 1680
-      },
-      {
-        "title": "Dolly Parton Tribute Night",
-        "when": "September 12th",
-        "blurb": "Themed drink and food specials, the whole staff in Dolly attire, and a $100 gift card for the best Dolly costume. A portion of the profits goes to Dolly Parton's Imagination Library.",
-        "img": "https://cdn.sanity.io/images/1gjbq9h5/production/227439bce69f6325af7909c7f3e74d52ecbc07fb-1060x1484.jpg?auto=format",
-        "alt": "Flyer for Dolly Parton Tribute Night at One More Bar and Grill on September 12th, with themed specials and a $100 gift card for the best Dolly costume.",
-        "width": 1060,
-        "height": 1484
-      }
-    ]
+    "items": []
   }
 }
