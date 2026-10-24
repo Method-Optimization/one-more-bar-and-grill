@@ -696,8 +696,12 @@
       '</div>';
     document.body.appendChild(dialog);
 
-    function close() { if (dialog.open) dialog.close(); }
+    // Every way out records the dismissal itself rather than trusting the
+    // dialog's "close" event, which some browsers were seen not to fire.
+    function close() { remember(); if (dialog.open) dialog.close(); }
     dialog.addEventListener("close", function () { remember(); dialog.remove(); });
+    dialog.addEventListener("cancel", remember); // Esc
+    dialog.addEventListener("keydown", function (ev) { if (ev.key === "Escape") remember(); });
     dialog.querySelector(".promo__close").addEventListener("click", close);
     dialog.querySelector(".promo__later").addEventListener("click", close);
     dialog.querySelector(".promo__join").addEventListener("click", remember);
