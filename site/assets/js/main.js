@@ -685,8 +685,8 @@
         '<img class="promo__img" src="assets/img/wings-buffalo-closeup.jpg" alt="" width="640" height="640" />' +
         '<div class="promo__body">' +
           '<p class="promo__eyebrow">The Wingman Rewards Club</p>' +
-          '<h2 id="promoTitle" class="promo__title">Eight visits. One free order of wings.</h2>' +
-          '<p class="promo__text">Join free in about 30 seconds. Your card lives in your phone&#39;s wallet, every visit earns a punch, and your eighth gets you a free order of wings.</p>' +
+          '<h2 id="promoTitle" class="promo__title">Earn free wings.</h2>' +
+          '<p class="promo__text">Join free in about 30 seconds. Your card lives in your phone&#39;s wallet, and every visit gets you closer to a free order of wings.</p>' +
           '<div class="promo__actions">' +
             '<a class="btn btn--primary promo__join" href="' + JOIN_URL + '" rel="noopener">Join the club</a>' +
             '<button class="promo__later" type="button">Maybe later</button>' +
