@@ -846,46 +846,46 @@ body::after {
 .rewards__btn { justify-content: center; }
 @media (max-width: 600px) { .rewards__btn { width: 100%; } }
 
-/* ---------- Wingman Rewards Club popup (hand-written, see main.js) ---------- */
-.promo {
+/* ---------- Wingman Rewards Club popup: Method's popup.js, in One More's look ---------- */
+.mo-pop {
   padding: 0; border: 0; background: transparent; color: var(--cream);
   margin: auto; /* the site reset zeroes margins; a modal dialog centers with auto */
   max-width: min(760px, calc(100vw - 2rem)); width: 100%;
   overflow: visible; max-height: calc(100dvh - 1.5rem);
 }
-.promo::backdrop { background: rgba(5, 4, 3, .68); backdrop-filter: blur(3px); }
-.promo__card {
+.mo-pop::backdrop { background: rgba(5, 4, 3, .68); backdrop-filter: blur(3px); }
+.mo-pop__card {
   position: relative; display: grid; grid-template-columns: 0.9fr 1.1fr;
   background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--radius) * 2);
   overflow: hidden auto; max-height: calc(100dvh - 1.5rem); box-shadow: 0 30px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(196, 43, 39, .15);
 }
-.promo__img { width: 100%; height: 100%; object-fit: cover; min-height: 100%; }
-.promo__body { padding: clamp(1.6rem, 4vw, 2.6rem); display: flex; flex-direction: column; justify-content: center; }
-.promo__eyebrow { font-family: var(--font-script); color: var(--amber); font-size: 1.6rem; line-height: 1; margin-bottom: .6rem; }
-.promo__title { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.02; letter-spacing: .01em; }
-.promo__text { color: var(--cream-dim); margin: 1rem 0 1.6rem; font-size: 1.02rem; line-height: 1.55; }
-.promo__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; }
-.promo__later { background: none; border: 0; color: var(--muted); font: inherit; font-size: .95rem; cursor: pointer; padding: .4rem 0; text-decoration: underline; text-underline-offset: 3px; }
-.promo__later:hover { color: var(--cream); }
-.promo__close {
+.mo-pop__img { width: 100%; height: 100%; object-fit: cover; min-height: 100%; }
+.mo-pop__body { padding: clamp(1.6rem, 4vw, 2.6rem); display: flex; flex-direction: column; justify-content: center; }
+.mo-pop__eyebrow { font-family: var(--font-script); color: var(--amber); font-size: 1.6rem; line-height: 1; margin-bottom: .6rem; }
+.mo-pop__title { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.02; letter-spacing: .01em; }
+.mo-pop__text { color: var(--cream-dim); margin: 1rem 0 1.6rem; font-size: 1.02rem; line-height: 1.55; }
+.mo-pop__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; }
+.mo-pop__later { background: none; border: 0; color: var(--muted); font: inherit; font-size: .95rem; cursor: pointer; padding: .4rem 0; text-decoration: underline; text-underline-offset: 3px; }
+.mo-pop__later:hover { color: var(--cream); }
+.mo-pop__close {
   position: absolute; top: .55rem; right: .55rem; width: 2.4rem; height: 2.4rem; border-radius: 50%;
   border: 0; background: rgba(11, 11, 11, .55); color: var(--cream); font-size: 1.5rem; line-height: 1; cursor: pointer;
 }
-.promo__close:hover { background: var(--red); }
-.promo :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.mo-pop__close:hover { background: var(--red); }
+.mo-pop :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 
-.promo[open] .promo__card { animation: promo-in .5s var(--ease-out) both; }
-@keyframes promo-in { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+.mo-pop[open] .mo-pop__card { animation: mo-pop-in-om .5s var(--ease-out) both; }
+@keyframes mo-pop-in-om { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
 
 /* Phones: a card that slides up from the bottom, image as a short banner. */
 @media (max-width: 640px) {
-  .promo { margin: auto auto 0; max-width: 100vw; }
-  .promo__card { grid-template-columns: 1fr; border-radius: 18px 18px 0 0; border-bottom: 0; }
-  .promo__img { height: 140px; min-height: 0; }
-  .promo__body { padding: 1.4rem 1.25rem calc(1.4rem + env(safe-area-inset-bottom)); }
-  .promo[open] .promo__card { animation-name: promo-up; }
-  @keyframes promo-up { from { transform: translateY(100%); } to { transform: none; } }
+  .mo-pop { margin: auto auto 0; max-width: 100vw; }
+  .mo-pop__card { grid-template-columns: 1fr; border-radius: 18px 18px 0 0; border-bottom: 0; }
+  .mo-pop__img { height: 140px; min-height: 0; }
+  .mo-pop__body { padding: 1.4rem 1.25rem calc(1.4rem + env(safe-area-inset-bottom)); }
+  .mo-pop[open] .mo-pop__card { animation-name: mo-pop-up-om; }
+  @keyframes mo-pop-up-om { from { transform: translateY(100%); } to { transform: none; } }
 }
 @media (prefers-reduced-motion: reduce) {
-  .promo[open] .promo__card { animation: none; }
+  .mo-pop[open] .mo-pop__card { animation: none; }
 }
