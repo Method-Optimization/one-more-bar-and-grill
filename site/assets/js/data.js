@@ -82,7 +82,7 @@ window.OM_DATA = {
     { label: "Dessert Roll of the Month", value: "Chocolate Peanut Butter Cheese Cake Roll" }
   ],
 
-  calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/48b763d90809597c8c7e41377a07d27b23120371-1650x1275.jpg?auto=format", alt: "September 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1650, height: 1275 },
+  calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/48b763d90809597c8c7e41377a07d27b23120371-1650x1275.jpg?auto=format", alt: "October 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1650, height: 1275 },
 
   signatureItems: [
     { img: "https://cdn.sanity.io/images/1gjbq9h5/production/07ef3cf59433b5cc4377612f4c38b45f384650d5-720x960.jpg?auto=format", alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },
