@@ -12,7 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=be07c4c873" />
+  <link rel="stylesheet" href="assets/css/style.css?v=b5877b3a98" />
+
+  <!-- Closed-Thanksgiving banner + Thanksgiving Roll pop-up; both switch themselves off after Nov 26, 2026. -->
+  <script src="assets/js/seasonal.js"></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
@@ -21,7 +24,7 @@
   <!-- This page is plain text on the site's own colours, so it carries its own
        small stylesheet rather than adding one-off rules to style.css. -->
   <style>
-    .legal { padding: clamp(5rem, 12vw, 8rem) var(--gutter) 4rem; }
+    .legal { padding: calc(clamp(5rem, 12vw, 8rem) + var(--notice-h)) var(--gutter) 4rem; } /* --notice-h: the closing banner, when showing */
     .legal__inner { max-width: 44rem; margin: 0 auto; }
     .legal__eyebrow {
       font-family: var(--font-display); font-size: .78rem; letter-spacing: .22em;
@@ -63,6 +66,9 @@
   <!-- ============================ NAV ============================ -->
   <div class="accent-strip" aria-hidden="true"></div>
   <header class="nav" id="nav">
+    <div class="notice" role="region" aria-label="Holiday closing">
+      <p>Closed Thanksgiving Day, Thursday, Nov 26.</p>
+    </div>
     <div class="nav__inner">
       <a class="nav__brand" href="index.html" aria-label="One More Bar and Grill — home">
         <span class="nav__brand-swap" data-swap>

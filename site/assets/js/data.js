@@ -78,11 +78,11 @@ window.OM_DATA = {
   rotating: [
     { label: "Soup of the Week", value: "Mary Ann's homemade — ask your server" },
     { label: "Cake of the Week", value: "Aimee's homemade cake" },
-    { label: "Roll of the Month", value: "Chicken Bacon Ranch Roll" },
-    { label: "Dessert Roll of the Month", value: "Chocolate Peanut Butter Cheese Cake Roll" }
+    { label: "Roll of the Month", value: "The Thanksgiving Roll is back — oven-roasted turkey, Mom's homemade stuffing and Mary Ann's mashed potatoes in a wonton, deep fried. Turkey gravy and cranberry sauce on the side." },
+    { label: "Dessert Roll of the Month", value: "Pumpkin Pie Cheesecake Roll — cheesecake and pumpkin pie in a wonton wrapper, deep fried, topped with whipped cream and cinnamon." }
   ],
 
-  calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/48b763d90809597c8c7e41377a07d27b23120371-1650x1275.jpg?auto=format", alt: "October 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1650, height: 1275 },
+  calendar: { img: "https://cdn.sanity.io/images/1gjbq9h5/production/09572ae6b94acba2f4667bcf14ae1ea86c88984c-1651x1275.jpg?auto=format", alt: "November 2026 events and specials calendar for One More Bar and Grill.", note: "Updated monthly — check back or follow us on Facebook & Instagram for the latest.", width: 1651, height: 1275 },
 
   signatureItems: [
     { img: "https://cdn.sanity.io/images/1gjbq9h5/production/07ef3cf59433b5cc4377612f4c38b45f384650d5-720x960.jpg?auto=format", alt: "Three boneless chicken 'Tails' coated in glossy wing sauce on a white plate.", caption: "The Tails", note: "Boneless. The reason regulars keep coming back." },

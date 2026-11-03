@@ -630,7 +630,9 @@
         var target = document.querySelector(id);
         if (!target) return;
         ev.preventDefault();
-        if (lenis) lenis.scrollTo(target, { offset: -70 });
+        var notice = $(".notice");
+        var offset = -70 - (notice && notice.offsetHeight ? notice.offsetHeight : 0); // clear the closing banner too
+        if (lenis) lenis.scrollTo(target, { offset: offset });
         else target.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
       });
     });

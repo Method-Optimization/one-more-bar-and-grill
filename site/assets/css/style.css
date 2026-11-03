@@ -33,8 +33,13 @@
   --ease-tavern: cubic-bezier(0.49, 0.03, 0.13, 0.99); /* slow start, sharp snap */
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 
-  --nav-h: 4.35rem;
+  --bar-h: 4.35rem;                 /* the nav bar itself */
+  --notice-h: 0px;                  /* the closing banner above it; see .has-notice */
+  --nav-h: calc(var(--bar-h) + var(--notice-h)); /* everything that sits under the nav */
 }
+/* A one-line banner inside the fixed nav (seasonal.js decides whether it
+   shows). Everything positioned off --nav-h moves down with it. */
+html.has-notice { --notice-h: 2rem; }
 
 /* ---------- Reset / base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -131,7 +136,7 @@ body::after {
 }
 .nav__inner {
   max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter);
-  height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  height: var(--bar-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
 .nav__brand { position: relative; display: block; overflow: hidden; height: 2.2rem; flex: 0 0 auto; }
 .nav__brand-swap { position: relative; display: block; height: 2.2rem; }
@@ -167,6 +172,16 @@ body::after {
 .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Closing banner: plain text, one line, no controls. */
+.notice { display: none; }
+.has-notice .notice {
+  display: flex; align-items: center; justify-content: center; height: var(--notice-h);
+  padding: 0 var(--gutter); background: var(--red-deep); color: var(--cream);
+  font-family: var(--font-body); font-weight: 600; font-size: clamp(.78rem, 3.3vw, .9rem); letter-spacing: .01em;
+  text-align: center; white-space: nowrap; overflow: hidden;
+}
+.notice p { margin: 0; overflow: hidden; text-overflow: ellipsis; }
 
 /* Mobile drawer */
 .mobile-nav {
@@ -888,4 +903,15 @@ body::after {
 }
 @media (prefers-reduced-motion: reduce) {
   .mo-pop[open] .mo-pop__card { animation: none; }
+}
+
+/* The Thanksgiving Roll pop-up (seasonal.js): the same card, with the flyer shown
+   whole instead of cropped. */
+.mo-pop--flyer .mo-pop__card { grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); }
+.mo-pop--flyer .mo-pop__img { height: auto; min-height: 0; align-self: start; object-fit: contain; background: #fff; }
+.mo-pop--flyer .mo-pop__title { font-size: clamp(1.5rem, 3vw, 2rem); }
+@media (max-width: 640px) {
+  .mo-pop--flyer .mo-pop__card { grid-template-columns: 1fr; }
+  .mo-pop--flyer .mo-pop__img { height: min(42dvh, 21rem); width: 100%; }
+  .mo-pop--flyer .mo-pop__text { margin: .7rem 0 1.1rem; font-size: .98rem; }
 }

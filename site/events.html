@@ -13,7 +13,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=be07c4c873" />
+  <link rel="stylesheet" href="assets/css/style.css?v=b5877b3a98" />
+
+  <!-- Closed-Thanksgiving banner + Thanksgiving Roll pop-up; both switch themselves off after Nov 26, 2026. -->
+  <script src="assets/js/seasonal.js"></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
@@ -27,6 +30,9 @@
   <!-- ============================ NAV ============================ -->
   <div class="accent-strip" aria-hidden="true"></div>
   <header class="nav" id="nav">
+    <div class="notice" role="region" aria-label="Holiday closing">
+      <p>Closed Thanksgiving Day, Thursday, Nov 26.</p>
+    </div>
     <div class="nav__inner">
       <a class="nav__brand" href="index.html" aria-label="One More Bar and Grill — home">
         <span class="nav__brand-swap" data-swap>
@@ -85,7 +91,19 @@
 
     <div class="events-wrap">
       <!-- OM:events-body:start -->
-      <p class="events-empty">Nothing on the calendar just this minute. Check back soon.</p>
+      <article class="event">
+        <a class="event__flyer" href="https://cdn.sanity.io/images/1gjbq9h5/production/f61775c12d331fe279e2cb46b56755979a8a7f5c-1060x1484.jpg?auto=format" target="_blank" rel="noopener">
+          <img src="https://cdn.sanity.io/images/1gjbq9h5/production/f61775c12d331fe279e2cb46b56755979a8a7f5c-1060x1484.jpg?auto=format"
+               alt="Flyer for the Thanksgiving Roll: oven-roasted turkey, Mom&#39;s homemade stuffing and Mary Ann&#39;s creamy mashed potatoes in a wonton, deep fried, served with turkey gravy and cranberry sauce. A plate of the cut roll with gravy and cranberry sauce on the side." width="1060" height="1484"
+               fetchpriority="high" decoding="async" />
+        </a>
+        <div class="event__body">
+          <span class="event__when">This November</span>
+          <h2 class="event__title">The Thanksgiving Roll</h2>
+          <p class="event__blurb">The Thanksgiving Roll is back: oven-roasted turkey, Mom&#39;s homemade stuffing and Mary Ann&#39;s creamy mashed potatoes, wrapped in a wonton and deep fried. Served with turkey gravy and cranberry sauce on the side. Last November we sold 1,350 of them.</p>
+          <a class="event__zoom" href="https://cdn.sanity.io/images/1gjbq9h5/production/f61775c12d331fe279e2cb46b56755979a8a7f5c-1060x1484.jpg?auto=format" target="_blank" rel="noopener">See the full flyer →</a>
+        </div>
+      </article>
     <!-- OM:events-body:end -->
     </div>
   </main>
@@ -178,7 +196,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="assets/js/sanity-config.js"></script>
   <script src="assets/js/data.js"></script>
-  <script src="assets/js/main.js?v=0bab9b3376"></script>
+  <script src="assets/js/main.js?v=e4fe08ebca"></script>
     <!-- Counts page views for the owner's dashboard. No cookies, no IP
          address, nothing that identifies a visitor; skipped entirely for
          anyone with Do Not Track or Global Privacy Control switched on. -->
